@@ -1,10 +1,12 @@
 ﻿using Axelor.SDK;
-using AxelorCSharp.Models;
+using Axelor.SDK.Models;
 using Newtonsoft.Json;
 using System.Text;
 using System.Text.RegularExpressions;
 
 const string generatedFilesPath = "..\\..\\..\\..\\AxelorCSharp\\Models\\Generated";
+const string generatedTestPath = "..\\..\\..\\..\\Axelor.SDK.Test\\Generated";
+
 
 HttpClient httpClient = new HttpClient();
 httpClient.BaseAddress = new Uri("https://7ebb376912.axelor.nemcrunchers.dev");
@@ -58,6 +60,11 @@ foreach(string modelName in serviceMetadata.data)
     using (System.IO.StreamWriter file = new System.IO.StreamWriter(@$"{generatedFilesPath}\{className}.cs"))
     {
         file.WriteLine(sb.ToString());
+    }
+    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@$"{generatedTestPath}\{className}Test.cs"))
+    {
+        List<string> testNamespace = nameSpace.SkipLast(1).Skip(1).ToList();
+        file.WriteLine($"using Axelor.SDK.Test;\n\nnamespace Axelor.SDK.Test.{String.Join(".", testNamespace)}\n{{\n    [TestClass]\n    public class {className}Test: TestModel\n    {{\n        public {className}Test(): base(typeof({String.Join(".", nameSpace)})){{}}\n    }}\n}}");
     }
 }
 

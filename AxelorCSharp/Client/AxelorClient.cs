@@ -2,7 +2,7 @@
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using Axelor.SDK.Exceptions;
-using AxelorCSharp.Models;
+using Axelor.SDK.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -49,15 +49,20 @@ namespace Axelor.SDK
             }
             throw new AxelorRequestException();
         }
-        public async Task<List<TObject>> List<TObject>(int offset = 0, int limit = 10)
+        public async Task<IEnumerable<TObject>> List<TObject>(int offset = 0, int limit = 10)
         {
-            string modelName = AxelorModelHelper.verifyTypeAndGetModelName(typeof(TObject));
-            //HttpResponseMessage res = await this.httpClient.SendAsync(createRequest(HttpMethod.Get, $"/ws/meta/models"));
-            //if (res.IsSuccessStatusCode)
-            //{
-            //    string rawContent = await res.Content.ReadAsStringAsync();
-            //    return JsonConvert.DeserializeObject<ServiceMetadata>(rawContent);
-            //}
+            string modelName = AxelorModelHelper.VerifyTypeAndGetModelName(typeof(TObject));
+            HttpResponseMessage res = await this.httpClient.SendAsync(createRequest(HttpMethod.Get, $"/ws/rest/{modelName}?offset={offset}&limit={limit}"));
+            if (res.IsSuccessStatusCode)
+            {
+                string rawContent = await res.Content.ReadAsStringAsync();
+                ListModelResponse listResponse = JsonConvert.DeserializeObject<ListModelResponse>(rawContent);
+                if(listResponse.data == null)
+                {
+                    listResponse.data = new List<JObject>();
+                }
+                return listResponse.data.Select(t => AxelorModelHelper.Cast<TObject>(t));
+            }
             throw new AxelorRequestException();
         }
 

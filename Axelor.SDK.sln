@@ -6,6 +6,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Axelor.SDK", "AxelorCSharp\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SDKBuilder", "SDKBuilder\SDKBuilder.csproj", "{AF830947-1E63-4EB6-91C9-25B432438374}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Axelor.SDK.Test", "Axelor.SDK.Test\Axelor.SDK.Test.csproj", "{E0F8FF87-E80A-4E2C-98B3-DCA7389DAD21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{AF830947-1E63-4EB6-91C9-25B432438374}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF830947-1E63-4EB6-91C9-25B432438374}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF830947-1E63-4EB6-91C9-25B432438374}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0F8FF87-E80A-4E2C-98B3-DCA7389DAD21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0F8FF87-E80A-4E2C-98B3-DCA7389DAD21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0F8FF87-E80A-4E2C-98B3-DCA7389DAD21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0F8FF87-E80A-4E2C-98B3-DCA7389DAD21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
