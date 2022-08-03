@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
@@ -157,8 +158,19 @@ namespace Axelor.SDK
 
         public async Task AuthorizeUser(string username, string password)
         {
-            JObject body = JObject.Parse($"{{'username': '{username}', 'password': '{password}'  }}");
-            HttpResponseMessage response = await httpClient.PostAsJsonAsync("/login.jsp", body);
+            var request = new HttpRequestMessage
+            {
+                Method = HttpMethod.Post,
+                RequestUri = new Uri($"{httpClient.BaseAddress}login.jsp"),
+                Content = new StringContent("{\n  \"username\": \""+username+"\",\n  \"password\" : \""+password+"\"\n}")
+                {
+                    Headers =
+                        {
+                            ContentType = new MediaTypeHeaderValue("application/json")
+                        }
+                }
+            };
+            HttpResponseMessage response = await httpClient.SendAsync(request);
             
             if (response.IsSuccessStatusCode)
             {
@@ -188,7 +200,7 @@ namespace Axelor.SDK
         private HttpRequestMessage createRequest(HttpMethod method, string path, HttpContent body = null, bool json = true)
         {
             HttpRequestMessage req = new HttpRequestMessage(method, $"{path}");
-            req.Headers.Add("cookie", $"JSESSIONID=1D7D1A1389F0C6EC5AF69432203D85E8");
+            req.Headers.Add("cookie", $"JSESSIONID={this.cookie.JSessionId}");
             if (json)
             {
                 req.Headers.Add("Accept", "application/json");
