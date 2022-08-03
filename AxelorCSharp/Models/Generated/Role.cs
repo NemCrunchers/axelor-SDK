@@ -1,50 +1,66 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Auth.Db
 {
+	[Serializable]
 	[Model("com.axelor.auth.db.Role")]
 	public class Role : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("metaPermissions")]
+		[JsonProperty("metaPermissions")]
+		[Field("metaPermissions", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Meta.Db.MetaPermission>? MetaPermissions;
 
-		[Field("description")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
 		public string? Description;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("permissions")]
+		[JsonProperty("permissions")]
+		[Field("permissions", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Auth.Db.Permission>? Permissions;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("menus")]
+		[JsonProperty("menus")]
+		[Field("menus", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Meta.Db.MetaMenu>? Menus;
 
 	}

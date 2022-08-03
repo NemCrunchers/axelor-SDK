@@ -1,62 +1,90 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.Reconcile")]
 	public class Reconcile : AxelorModel
 	{
-		[Field("debitMoveLine")]
+		[JsonProperty("debitMoveLine")]
+		[Field("debitMoveLine", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.MoveLine? DebitMoveLine;
 
-		[Field("importOrigin")]
+		[JsonProperty("amount")]
+		[Field("amount", false, "0.0", Int32.MaxValue)]
+		public decimal? Amount;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("mustBeZeroBalanceOk")]
+		[JsonProperty("mustBeZeroBalanceOk")]
+		[Field("mustBeZeroBalanceOk", false, "False", Int32.MaxValue)]
 		public bool? MustBeZeroBalanceOk;
 
-		[Field("canBeZeroBalanceOk")]
+		[JsonProperty("reconciliationDate")]
+		[Field("reconciliationDate", false, null, Int32.MaxValue)]
+		public DateTime? ReconciliationDate;
+
+		[JsonProperty("canBeZeroBalanceOk")]
+		[Field("canBeZeroBalanceOk", false, "False", Int32.MaxValue)]
 		public bool? CanBeZeroBalanceOk;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("reconcileSeq")]
+		[JsonProperty("reconcileSeq")]
+		[Field("reconcileSeq", false, null, Int32.MaxValue)]
 		public string? ReconcileSeq;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "1", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("creditMoveLine")]
+		[JsonProperty("creditMoveLine")]
+		[Field("creditMoveLine", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.MoveLine? CreditMoveLine;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("reconcileGroup")]
+		[JsonProperty("reconcileGroup")]
+		[Field("reconcileGroup", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.ReconcileGroup? ReconcileGroup;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

@@ -1,122 +1,198 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Crm.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.crm.db.Lead")]
 	public class Lead : AxelorModel
 	{
-		[Field("officeName")]
+		[JsonProperty("officeName")]
+		[Field("officeName", false, null, Int32.MaxValue)]
 		public string? OfficeName;
 
-		[Field("jobTitle")]
+		[JsonProperty("eventList")]
+		[Field("eventList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Crm.Db.Event>? EventList;
+
+		[JsonProperty("contactDate")]
+		[Field("contactDate", false, null, Int32.MaxValue)]
+		public DateTime? ContactDate;
+
+		[JsonProperty("jobTitle")]
+		[Field("jobTitle", false, null, Int32.MaxValue)]
 		public string? JobTitle;
 
-		[Field("source")]
+		[JsonProperty("estimatedBudget")]
+		[Field("estimatedBudget", false, "0", Int32.MaxValue)]
+		public decimal? EstimatedBudget;
+
+		[JsonProperty("opportunitiesList")]
+		[Field("opportunitiesList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Crm.Db.Opportunity>? OpportunitiesList;
+
+		[JsonProperty("source")]
+		[Field("source", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Source? Source;
 
-		[Field("titleSelect")]
+		[JsonProperty("titleSelect")]
+		[Field("titleSelect", false, null, Int32.MaxValue)]
 		public string? TitleSelect;
 
-		[Field("isDoNotCall")]
+		[JsonProperty("isDoNotCall")]
+		[Field("isDoNotCall", false, "False", Int32.MaxValue)]
 		public bool? IsDoNotCall;
 
-		[Field("isDoNotSendEmail")]
+		[JsonProperty("isDoNotSendEmail")]
+		[Field("isDoNotSendEmail", false, "False", Int32.MaxValue)]
 		public bool? IsDoNotSendEmail;
 
-		[Field("id")]
+		[JsonProperty("emailAddress")]
+		[Field("emailAddress", false, null, Int32.MaxValue)]
+		public Axelor.Apps.Message.Db.EmailAddress? EmailAddress;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("fax")]
+		[JsonProperty("sourceDescription")]
+		[Field("sourceDescription", false, null, Int32.MaxValue)]
+		public string? SourceDescription;
+
+		[JsonProperty("fax")]
+		[Field("fax", false, null, Int32.MaxValue)]
 		public string? Fax;
 
-		[Field("primaryCountry")]
+		[JsonProperty("primaryCountry")]
+		[Field("primaryCountry", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Country? PrimaryCountry;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("fixedPhone")]
+		[JsonProperty("fixedPhone")]
+		[Field("fixedPhone", false, null, Int32.MaxValue)]
 		public string? FixedPhone;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("firstName")]
+		[JsonProperty("firstName")]
+		[Field("firstName", false, null, Int32.MaxValue)]
 		public string? FirstName;
 
-		[Field("mobilePhone")]
+		[JsonProperty("mobilePhone")]
+		[Field("mobilePhone", false, null, Int32.MaxValue)]
 		public string? MobilePhone;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("primaryAddress")]
+		[JsonProperty("primaryAddress")]
+		[Field("primaryAddress", false, null, Int32.MaxValue)]
 		public string? PrimaryAddress;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("primaryState")]
+		[JsonProperty("primaryState")]
+		[Field("primaryState", false, null, Int32.MaxValue)]
 		public string? PrimaryState;
 
-		[Field("industrySector")]
+		[JsonProperty("industrySector")]
+		[Field("industrySector", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.IndustrySector? IndustrySector;
 
-		[Field("lostReason")]
+		[JsonProperty("lostReason")]
+		[Field("lostReason", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Crm.Db.LostReason? LostReason;
 
-		[Field("primaryPostalCode")]
+		[JsonProperty("primaryPostalCode")]
+		[Field("primaryPostalCode", false, null, Int32.MaxValue)]
 		public string? PrimaryPostalCode;
 
-		[Field("createdOn")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("primaryCity")]
+		[JsonProperty("primaryCity")]
+		[Field("primaryCity", false, null, Int32.MaxValue)]
 		public string? PrimaryCity;
 
-		[Field("webSite")]
+		[JsonProperty("webSite")]
+		[Field("webSite", false, null, Int32.MaxValue)]
 		public string? WebSite;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("department")]
+		[JsonProperty("lostReasonStr")]
+		[Field("lostReasonStr", false, null, Int32.MaxValue)]
+		public string? LostReasonStr;
+
+		[JsonProperty("department")]
+		[Field("department", false, null, Int32.MaxValue)]
 		public string? Department;
 
-		[Field("enterpriseName")]
+		[JsonProperty("enterpriseName")]
+		[Field("enterpriseName", false, null, Int32.MaxValue)]
 		public string? EnterpriseName;
 
-		[Field("isRecycled")]
+		[JsonProperty("isRecycled")]
+		[Field("isRecycled", false, "False", Int32.MaxValue)]
 		public bool? IsRecycled;
 
-		[Field("fullName")]
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("team")]
+		[JsonProperty("team")]
+		[Field("team", false, null, Int32.MaxValue)]
 		public Axelor.Team.Db.Team? Team;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", true, "1", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("importId")]
+		[JsonProperty("statusDescription")]
+		[Field("statusDescription", false, null, Int32.MaxValue)]
+		public string? StatusDescription;
+
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("partner")]
+		[JsonProperty("partner")]
+		[Field("partner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? Partner;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("referredBy")]
+		[JsonProperty("referredBy")]
+		[Field("referredBy", false, null, Int32.MaxValue)]
 		public string? ReferredBy;
 
-		[Field("user")]
+		[JsonProperty("user")]
+		[Field("user", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? User;
 
 	}

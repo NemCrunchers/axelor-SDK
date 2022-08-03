@@ -1,132 +1,231 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Hr.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.hr.db.Employee")]
 	public class Employee : AxelorModel
 	{
-		[Field("trainingSkillSet")]
+		[JsonProperty("leaveLineList")]
+		[Field("leaveLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Hr.Db.LeaveLine>? LeaveLineList;
+
+		[JsonProperty("kilometricLogList")]
+		[Field("kilometricLogList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Hr.Db.KilometricLog>? KilometricLogList;
+
+		[JsonProperty("trainingSkillSet")]
+		[Field("trainingSkillSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Talent.Db.Skill>? TrainingSkillSet;
 
-		[Field("bankDetails")]
+		[JsonProperty("bankDetails")]
+		[Field("bankDetails", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.BankDetails? BankDetails;
 
-		[Field("id")]
+		[JsonProperty("bonusCoef")]
+		[Field("bonusCoef", false, "0", Int32.MaxValue)]
+		public decimal? BonusCoef;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("companyCbDetails")]
+		[JsonProperty("companyCbDetails")]
+		[Field("companyCbDetails", false, null, Int32.MaxValue)]
 		public string? CompanyCbDetails;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("phoneAtCustomer")]
+		[JsonProperty("phoneAtCustomer")]
+		[Field("phoneAtCustomer", false, null, Int32.MaxValue)]
 		public string? PhoneAtCustomer;
 
-		[Field("emergencyContact")]
+		[JsonProperty("emergencyContact")]
+		[Field("emergencyContact", false, null, Int32.MaxValue)]
 		public string? EmergencyContact;
 
-		[Field("timesheetImputationSelect")]
+		[JsonProperty("timesheetImputationSelect")]
+		[Field("timesheetImputationSelect", false, "1", Int32.MaxValue)]
 		public int? TimesheetImputationSelect;
 
-		[Field("imposedDayEventsPlanning")]
+		[JsonProperty("imposedDayEventsPlanning")]
+		[Field("imposedDayEventsPlanning", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.EventsPlanning? ImposedDayEventsPlanning;
 
-		[Field("publicHolidayEventsPlanning")]
+		[JsonProperty("lunchVoucherAdvanceList")]
+		[Field("lunchVoucherAdvanceList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Hr.Db.LunchVoucherAdvance>? LunchVoucherAdvanceList;
+
+		[JsonProperty("publicHolidayEventsPlanning")]
+		[Field("publicHolidayEventsPlanning", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.EventsPlanning? PublicHolidayEventsPlanning;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("timesheetReminder")]
+		[JsonProperty("timesheetReminder")]
+		[Field("timesheetReminder", false, "False", Int32.MaxValue)]
 		public bool? TimesheetReminder;
 
-		[Field("mainEmploymentContract")]
+		[JsonProperty("employeeAdvanceList")]
+		[Field("employeeAdvanceList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Hr.Db.EmployeeAdvance>? EmployeeAdvanceList;
+
+		[JsonProperty("mainEmploymentContract")]
+		[Field("mainEmploymentContract", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.EmploymentContract? MainEmploymentContract;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("exportCode")]
+		[JsonProperty("employeeVehicleList")]
+		[Field("employeeVehicleList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Hr.Db.EmployeeVehicle>? EmployeeVehicleList;
+
+		[JsonProperty("exportCode")]
+		[Field("exportCode", false, null, Int32.MaxValue)]
 		public string? ExportCode;
 
-		[Field("negativeValueLeave")]
+		[JsonProperty("negativeValueLeave")]
+		[Field("negativeValueLeave", false, "False", Int32.MaxValue)]
 		public bool? NegativeValueLeave;
 
-		[Field("external")]
+		[JsonProperty("external")]
+		[Field("external", false, "False", Int32.MaxValue)]
 		public bool? External;
 
-		[Field("fixedProPhone")]
+		[JsonProperty("dateOfHire")]
+		[Field("dateOfHire", false, null, Int32.MaxValue)]
+		public DateTime? DateOfHire;
+
+		[JsonProperty("weeklyWorkHours")]
+		[Field("weeklyWorkHours", false, "0", Int32.MaxValue)]
+		public decimal? WeeklyWorkHours;
+
+		[JsonProperty("fixedProPhone")]
+		[Field("fixedProPhone", false, null, Int32.MaxValue)]
 		public string? FixedProPhone;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("experienceSkillSet")]
+		[JsonProperty("experienceSkillSet")]
+		[Field("experienceSkillSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Talent.Db.Skill>? ExperienceSkillSet;
 
-		[Field("maritalStatus")]
+		[JsonProperty("maritalStatus")]
+		[Field("maritalStatus", false, null, Int32.MaxValue)]
 		public string? MaritalStatus;
 
-		[Field("importOrigin")]
+		[JsonProperty("seniorityDate")]
+		[Field("seniorityDate", false, null, Int32.MaxValue)]
+		public DateTime? SeniorityDate;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("profitSharingBeneficiary")]
+		[JsonProperty("profitSharingBeneficiary")]
+		[Field("profitSharingBeneficiary", false, "False", Int32.MaxValue)]
 		public bool? ProfitSharingBeneficiary;
 
-		[Field("lunchVoucherFormatSelect")]
+		[JsonProperty("lunchVoucherFormatSelect")]
+		[Field("lunchVoucherFormatSelect", false, "0", Int32.MaxValue)]
 		public int? LunchVoucherFormatSelect;
 
-		[Field("socialSecurityNumber")]
+		[JsonProperty("socialSecurityNumber")]
+		[Field("socialSecurityNumber", false, null, Int32.MaxValue)]
 		public string? SocialSecurityNumber;
 
-		[Field("batchSet")]
+		[JsonProperty("batchSet")]
+		[Field("batchSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.Batch>? BatchSet;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("managerUser")]
+		[JsonProperty("managerUser")]
+		[Field("managerUser", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? ManagerUser;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("companyCbSelect")]
+		[JsonProperty("companyCbSelect")]
+		[Field("companyCbSelect", false, "1", Int32.MaxValue)]
 		public int? CompanyCbSelect;
 
-		[Field("hrManager")]
+		[JsonProperty("hrManager")]
+		[Field("hrManager", false, "False", Int32.MaxValue)]
 		public bool? HrManager;
 
-		[Field("timeLoggingPreferenceSelect")]
+		[JsonProperty("timeLoggingPreferenceSelect")]
+		[Field("timeLoggingPreferenceSelect", false, null, Int32.MaxValue)]
 		public string? TimeLoggingPreferenceSelect;
 
-		[Field("contactPartner")]
+		[JsonProperty("contactPartner")]
+		[Field("contactPartner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? ContactPartner;
 
-		[Field("product")]
+		[JsonProperty("product")]
+		[Field("product", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("skillSet")]
+		[JsonProperty("skillSet")]
+		[Field("skillSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Talent.Db.Skill>? SkillSet;
 
-		[Field("emergencyNumber")]
+		[JsonProperty("dailyWorkHours")]
+		[Field("dailyWorkHours", false, "0", Int32.MaxValue)]
+		public decimal? DailyWorkHours;
+
+		[JsonProperty("emergencyNumber")]
+		[Field("emergencyNumber", false, null, Int32.MaxValue)]
 		public string? EmergencyNumber;
 
-		[Field("mobileProPhone")]
+		[JsonProperty("mobileProPhone")]
+		[Field("mobileProPhone", false, null, Int32.MaxValue)]
 		public string? MobileProPhone;
 
-		[Field("weeklyPlanning")]
+		[JsonProperty("weeklyPlanning")]
+		[Field("weeklyPlanning", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.WeeklyPlanning? WeeklyPlanning;
 
-		[Field("importId")]
+		[JsonProperty("birthDate")]
+		[Field("birthDate", false, null, Int32.MaxValue)]
+		public DateTime? BirthDate;
+
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
+
+		[JsonProperty("employmentContractList")]
+		[Field("employmentContractList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Hr.Db.EmploymentContract>? EmploymentContractList;
+
+		[JsonProperty("hourlyRate")]
+		[Field("hourlyRate", false, "0", Int32.MaxValue)]
+		public decimal? HourlyRate;
+
+		[JsonProperty("user")]
+		[Field("user", false, null, Int32.MaxValue)]
+		public Axelor.Auth.Db.User? User;
 
 	}
 }

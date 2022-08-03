@@ -1,53 +1,78 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Hr.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.hr.db.EmployeeBonusMgt")]
 	public class EmployeeBonusMgt : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("employeeBonusType")]
+		[JsonProperty("employeeBonusType")]
+		[Field("employeeBonusType", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.EmployeeBonusType? EmployeeBonusType;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("baseAmount")]
+		[Field("baseAmount", false, "0", Int32.MaxValue)]
+		public decimal? BaseAmount;
+
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "1", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("leavePeriod")]
+		[JsonProperty("leavePeriod")]
+		[Field("leavePeriod", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Period? LeavePeriod;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("payPeriod")]
+		[JsonProperty("employeeBonusMgtLineList")]
+		[Field("employeeBonusMgtLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Hr.Db.EmployeeBonusMgtLine>? EmployeeBonusMgtLineList;
+
+		[JsonProperty("payPeriod")]
+		[Field("payPeriod", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Period? PayPeriod;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

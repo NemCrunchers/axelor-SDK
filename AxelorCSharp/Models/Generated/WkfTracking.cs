@@ -1,50 +1,78 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Studio.Db
 {
+	[Serializable]
 	[Model("com.axelor.studio.db.WkfTracking")]
 	public class WkfTracking : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("updatedOn")]
+		[JsonProperty("wkfTrackingLines")]
+		[Field("wkfTrackingLines", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Studio.Db.WkfTrackingLine>? WkfTrackingLines;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("totalTimeLines")]
+		[Field("totalTimeLines", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Studio.Db.WkfTrackingTime>? TotalTimeLines;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("recordId")]
+		[JsonProperty("recordId")]
+		[Field("recordId", true, "0", Int32.MaxValue)]
 		public long? RecordId;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("wkf")]
+		[JsonProperty("wkf")]
+		[Field("wkf", true, null, Int32.MaxValue)]
 		public Axelor.Studio.Db.Wkf? Wkf;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("recordName")]
+		[JsonProperty("recordName")]
+		[Field("recordName", false, null, Int32.MaxValue)]
 		public string? RecordName;
 
-		[Field("id")]
+		[JsonProperty("totalLines")]
+		[Field("totalLines", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Studio.Db.WkfTrackingTotal>? TotalLines;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("recordModel")]
+		[JsonProperty("recordModel")]
+		[Field("recordModel", true, null, Int32.MaxValue)]
 		public string? RecordModel;
 
 	}

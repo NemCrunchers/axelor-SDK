@@ -1,48 +1,67 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Meta.Db
 {
+	[Serializable]
 	[Model("com.axelor.meta.db.MetaSelect")]
 	public class MetaSelect : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("module")]
+		[JsonProperty("module")]
+		[Field("module", false, null, Int32.MaxValue)]
 		public string? Module;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("priority")]
+		[JsonProperty("priority")]
+		[Field("priority", true, "20", Int32.MaxValue)]
 		public int? Priority;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("xmlId")]
+		[JsonProperty("xmlId")]
+		[Field("xmlId", false, null, Int32.MaxValue)]
 		public string? XmlId;
+
+		[JsonProperty("items")]
+		[Field("items", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Meta.Db.MetaSelectItem>? Items;
 
 	}
 }

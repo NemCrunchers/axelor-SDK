@@ -1,80 +1,122 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Bankpayment.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.bankpayment.db.EbicsPartner")]
 	public class EbicsPartner : AxelorModel
 	{
-		[Field("ebicsTypeSelect")]
+		[JsonProperty("bankStatementEndDate")]
+		[Field("bankStatementEndDate", false, null, Int32.MaxValue)]
+		public DateTime? BankStatementEndDate;
+
+		[JsonProperty("boEbicsPartnerServiceList")]
+		[Field("boEbicsPartnerServiceList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Bankpayment.Db.EbicsPartnerService>? BoEbicsPartnerServiceList;
+
+		[JsonProperty("ebicsTypeSelect")]
+		[Field("ebicsTypeSelect", false, "0", Int32.MaxValue)]
 		public int? EbicsTypeSelect;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("filterReceiverBD")]
+		[JsonProperty("filterReceiverBD")]
+		[Field("filterReceiverBD", false, "False", Int32.MaxValue)]
 		public bool? FilterReceiverBD;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("bankDetailsSet")]
+		[JsonProperty("bankDetailsSet")]
+		[Field("bankDetailsSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.BankDetails>? BankDetailsSet;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("receiverBankDetailsSet")]
+		[JsonProperty("bankStatementStartDate")]
+		[Field("bankStatementStartDate", false, null, Int32.MaxValue)]
+		public DateTime? BankStatementStartDate;
+
+		[JsonProperty("receiverBankDetailsSet")]
+		[Field("receiverBankDetailsSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.BankDetails>? ReceiverBankDetailsSet;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("bankStatementLastExeDateT")]
+		[JsonProperty("bankStatementLastExeDateT")]
+		[Field("bankStatementLastExeDateT", false, null, Int32.MaxValue)]
 		public DateTime? BankStatementLastExeDateT;
 
-		[Field("usePSR")]
+		[JsonProperty("usePSR")]
+		[Field("usePSR", false, "False", Int32.MaxValue)]
 		public bool? UsePSR;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("bankStatementGetModeSelect")]
+		[JsonProperty("bankStatementGetModeSelect")]
+		[Field("bankStatementGetModeSelect", false, "1", Int32.MaxValue)]
 		public int? BankStatementGetModeSelect;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("pSRBankStatementFileFormat")]
+		[JsonProperty("pSRBankStatementFileFormat")]
+		[Field("pSRBankStatementFileFormat", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Bankpayment.Db.BankStatementFileFormat? PSRBankStatementFileFormat;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("orderTypeSelect")]
+		[JsonProperty("orderTypeSelect")]
+		[Field("orderTypeSelect", false, "0", Int32.MaxValue)]
 		public int? OrderTypeSelect;
 
-		[Field("testMode")]
+		[JsonProperty("bsEbicsPartnerServiceList")]
+		[Field("bsEbicsPartnerServiceList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Bankpayment.Db.EbicsPartnerService>? BsEbicsPartnerServiceList;
+
+		[JsonProperty("testMode")]
+		[Field("testMode", false, "False", Int32.MaxValue)]
 		public bool? TestMode;
 
-		[Field("defaultSignatoryEbicsUser")]
+		[JsonProperty("defaultSignatoryEbicsUser")]
+		[Field("defaultSignatoryEbicsUser", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Bankpayment.Db.EbicsUser? DefaultSignatoryEbicsUser;
 
-		[Field("transportEbicsUser")]
+		[JsonProperty("transportEbicsUser")]
+		[Field("transportEbicsUser", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Bankpayment.Db.EbicsUser? TransportEbicsUser;
 
-		[Field("partnerId")]
+		[JsonProperty("partnerId")]
+		[Field("partnerId", true, null, 35)]
 		public string? PartnerId;
 
-		[Field("ebicsBank")]
+		[JsonProperty("ebicsBank")]
+		[Field("ebicsBank", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Bankpayment.Db.EbicsBank? EbicsBank;
 
 	}

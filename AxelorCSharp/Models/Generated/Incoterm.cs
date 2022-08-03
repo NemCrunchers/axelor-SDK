@@ -1,80 +1,106 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Stock.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.stock.db.Incoterm")]
 	public class Incoterm : AxelorModel
 	{
-		[Field("insurance")]
+		[JsonProperty("insurance")]
+		[Field("insurance", false, "0", Int32.MaxValue)]
 		public int? Insurance;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", true, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("carriageToPortOfImport")]
+		[JsonProperty("carriageToPortOfImport")]
+		[Field("carriageToPortOfImport", false, "0", Int32.MaxValue)]
 		public int? CarriageToPortOfImport;
 
-		[Field("carriageToPortOfExport")]
+		[JsonProperty("carriageToPortOfExport")]
+		[Field("carriageToPortOfExport", false, "0", Int32.MaxValue)]
 		public int? CarriageToPortOfExport;
 
-		[Field("unloadingInPortOfImport")]
+		[JsonProperty("unloadingInPortOfImport")]
+		[Field("unloadingInPortOfImport", false, "0", Int32.MaxValue)]
 		public int? UnloadingInPortOfImport;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("carriageToPlaceOfDestination")]
+		[JsonProperty("carriageToPlaceOfDestination")]
+		[Field("carriageToPlaceOfDestination", false, "0", Int32.MaxValue)]
 		public int? CarriageToPlaceOfDestination;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("loadingOnTruckInPortOfImport")]
+		[JsonProperty("loadingOnTruckInPortOfImport")]
+		[Field("loadingOnTruckInPortOfImport", false, "0", Int32.MaxValue)]
 		public int? LoadingOnTruckInPortOfImport;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("unloadingOfTruckInPortOfExport")]
+		[JsonProperty("unloadingOfTruckInPortOfExport")]
+		[Field("unloadingOfTruckInPortOfExport", false, "0", Int32.MaxValue)]
 		public int? UnloadingOfTruckInPortOfExport;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("exportCustomsDeclaration")]
+		[JsonProperty("exportCustomsDeclaration")]
+		[Field("exportCustomsDeclaration", false, "0", Int32.MaxValue)]
 		public int? ExportCustomsDeclaration;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("importCustomsClearance")]
+		[JsonProperty("importCustomsClearance")]
+		[Field("importCustomsClearance", false, "0", Int32.MaxValue)]
 		public int? ImportCustomsClearance;
 
-		[Field("importDutiesAndTaxes")]
+		[JsonProperty("importDutiesAndTaxes")]
+		[Field("importDutiesAndTaxes", false, "0", Int32.MaxValue)]
 		public int? ImportDutiesAndTaxes;
 
-		[Field("loadingInPortOfExport")]
+		[JsonProperty("loadingInPortOfExport")]
+		[Field("loadingInPortOfExport", false, "0", Int32.MaxValue)]
 		public int? LoadingInPortOfExport;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("fullname")]
+		[JsonProperty("fullname")]
+		[Field("fullname", false, null, Int32.MaxValue)]
 		public string? Fullname;
 
 	}

@@ -1,59 +1,82 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Supplychain.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.supplychain.db.Mrp")]
 	public class Mrp : AxelorModel
 	{
-		[Field("productFamilySet")]
+		[JsonProperty("productFamilySet")]
+		[Field("productFamilySet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.ProductFamily>? ProductFamilySet;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("stockLocation")]
+		[JsonProperty("stockLocation")]
+		[Field("stockLocation", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockLocation? StockLocation;
 
-		[Field("saleOrderLineSet")]
+		[JsonProperty("endDate")]
+		[Field("endDate", false, null, Int32.MaxValue)]
+		public DateTime? EndDate;
+
+		[JsonProperty("saleOrderLineSet")]
+		[Field("saleOrderLineSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Sale.Db.SaleOrderLine>? SaleOrderLineSet;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("productSet")]
+		[JsonProperty("productSet")]
+		[Field("productSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.Product>? ProductSet;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "0", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("productCategorySet")]
+		[JsonProperty("productCategorySet")]
+		[Field("productCategorySet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.ProductCategory>? ProductCategorySet;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("mrpForecastSet")]
+		[JsonProperty("mrpForecastSet")]
+		[Field("mrpForecastSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Supplychain.Db.MrpForecast>? MrpForecastSet;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

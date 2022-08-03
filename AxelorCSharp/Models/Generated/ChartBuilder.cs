@@ -1,107 +1,146 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Studio.Db
 {
+	[Serializable]
 	[Model("com.axelor.studio.db.ChartBuilder")]
 	public class ChartBuilder : AxelorModel
 	{
-		[Field("aggregateOnTargetType")]
+		[JsonProperty("aggregateOnTargetType")]
+		[Field("aggregateOnTargetType", false, null, Int32.MaxValue)]
 		public string? AggregateOnTargetType;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("aggregateOnJson")]
+		[JsonProperty("aggregateOnJson")]
+		[Field("aggregateOnJson", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaJsonField? AggregateOnJson;
 
-		[Field("groupOn")]
+		[JsonProperty("groupOn")]
+		[Field("groupOn", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaField? GroupOn;
 
-		[Field("groupOnTargetType")]
+		[JsonProperty("groupOnTargetType")]
+		[Field("groupOnTargetType", false, null, Int32.MaxValue)]
 		public string? GroupOnTargetType;
 
-		[Field("metaViewGenerated")]
+		[JsonProperty("metaViewGenerated")]
+		[Field("metaViewGenerated", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaView? MetaViewGenerated;
 
-		[Field("title")]
+		[JsonProperty("title")]
+		[Field("title", true, null, Int32.MaxValue)]
 		public string? Title;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("groupOnJson")]
+		[JsonProperty("groupOnJson")]
+		[Field("groupOnJson", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaJsonField? GroupOnJson;
 
-		[Field("aggregateDateType")]
+		[JsonProperty("aggregateDateType")]
+		[Field("aggregateDateType", false, null, Int32.MaxValue)]
 		public string? AggregateDateType;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("groupDateType")]
+		[JsonProperty("groupDateType")]
+		[Field("groupDateType", false, null, Int32.MaxValue)]
 		public string? GroupDateType;
 
-		[Field("isJsonAggregateOn")]
+		[JsonProperty("isJsonAggregateOn")]
+		[Field("isJsonAggregateOn", false, "False", Int32.MaxValue)]
 		public bool? IsJsonAggregateOn;
 
-		[Field("aggregateOn")]
+		[JsonProperty("aggregateOn")]
+		[Field("aggregateOn", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaField? AggregateOn;
 
-		[Field("isJson")]
+		[JsonProperty("isJson")]
+		[Field("isJson", false, "False", Int32.MaxValue)]
 		public bool? IsJson;
 
-		[Field("model")]
+		[JsonProperty("model")]
+		[Field("model", false, null, Int32.MaxValue)]
 		public string? Model;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("updatedBy")]
+		[JsonProperty("filterList")]
+		[Field("filterList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Studio.Db.Filter>? FilterList;
+
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("groupOnTarget")]
+		[JsonProperty("groupOnTarget")]
+		[Field("groupOnTarget", false, null, Int32.MaxValue)]
 		public string? GroupOnTarget;
 
-		[Field("isJsonDisplayField")]
+		[JsonProperty("isJsonDisplayField")]
+		[Field("isJsonDisplayField", false, "False", Int32.MaxValue)]
 		public bool? IsJsonDisplayField;
 
-		[Field("isJsonGroupOn")]
+		[JsonProperty("isJsonGroupOn")]
+		[Field("isJsonGroupOn", false, "False", Int32.MaxValue)]
 		public bool? IsJsonGroupOn;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("aggregateOnTarget")]
+		[JsonProperty("aggregateOnTarget")]
+		[Field("aggregateOnTarget", false, null, Int32.MaxValue)]
 		public string? AggregateOnTarget;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("displayType")]
+		[JsonProperty("displayType")]
+		[Field("displayType", false, "0", Int32.MaxValue)]
 		public int? DisplayType;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("displayFieldJson")]
+		[JsonProperty("displayFieldJson")]
+		[Field("displayFieldJson", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaJsonField? DisplayFieldJson;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("chartType")]
+		[JsonProperty("chartType")]
+		[Field("chartType", false, "bar", Int32.MaxValue)]
 		public string? ChartType;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("displayField")]
+		[JsonProperty("displayField")]
+		[Field("displayField", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaField? DisplayField;
 
-		[Field("appBuilder")]
+		[JsonProperty("appBuilder")]
+		[Field("appBuilder", false, null, Int32.MaxValue)]
 		public Axelor.Studio.Db.AppBuilder? AppBuilder;
 
 	}

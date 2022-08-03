@@ -1,137 +1,198 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Crm.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.crm.db.Event")]
 	public class Event : AxelorModel
 	{
-		[Field("calendarEventUid")]
+		[JsonProperty("calendarEventUid")]
+		[Field("calendarEventUid", false, null, Int32.MaxValue)]
 		public string? CalendarEventUid;
 
-		[Field("importOrigin")]
+		[JsonProperty("eventReminderList")]
+		[Field("eventReminderList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Crm.Db.EventReminder>? EventReminderList;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("eventCategory")]
+		[JsonProperty("eventCategory")]
+		[Field("eventCategory", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Crm.Db.EventCategory? EventCategory;
 
-		[Field("parentEvent")]
+		[JsonProperty("parentEvent")]
+		[Field("parentEvent", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Crm.Db.Event? ParentEvent;
 
-		[Field("subject")]
+		[JsonProperty("subject")]
+		[Field("subject", true, null, Int32.MaxValue)]
 		public string? Subject;
 
-		[Field("recurrenceConfiguration")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("recurrenceConfiguration")]
+		[Field("recurrenceConfiguration", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Crm.Db.RecurrenceConfiguration? RecurrenceConfiguration;
 
-		[Field("typeSelect")]
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", true, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("duration")]
+		[JsonProperty("computedAttendeeList")]
+		[Field("computedAttendeeList", false, null, Int32.MaxValue)]
+		public string? ComputedAttendeeList;
+
+		[JsonProperty("duration")]
+		[Field("duration", false, "0", Int32.MaxValue)]
 		public long? Duration;
 
-		[Field("geo")]
+		[JsonProperty("geo")]
+		[Field("geo", false, null, Int32.MaxValue)]
 		public string? Geo;
 
-		[Field("allDay")]
+		[JsonProperty("allDay")]
+		[Field("allDay", false, "False", Int32.MaxValue)]
 		public bool? AllDay;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("uid")]
+		[JsonProperty("uid")]
+		[Field("uid", false, null, Int32.MaxValue)]
 		public string? Uid;
 
-		[Field("callTypeSelect")]
+		[JsonProperty("callTypeSelect")]
+		[Field("callTypeSelect", false, "0", Int32.MaxValue)]
 		public int? CallTypeSelect;
 
-		[Field("limitDateT")]
+		[JsonProperty("limitDateT")]
+		[Field("limitDateT", false, null, Int32.MaxValue)]
 		public DateTime? LimitDateT;
 
-		[Field("visibilitySelect")]
+		[JsonProperty("visibilitySelect")]
+		[Field("visibilitySelect", false, "1", Int32.MaxValue)]
 		public int? VisibilitySelect;
 
-		[Field("contactPartner")]
+		[JsonProperty("contactPartner")]
+		[Field("contactPartner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? ContactPartner;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("relatedToSelect")]
+		[JsonProperty("relatedToSelect")]
+		[Field("relatedToSelect", false, null, Int32.MaxValue)]
 		public string? RelatedToSelect;
 
-		[Field("calendar")]
+		[JsonProperty("calendar")]
+		[Field("calendar", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.ICalendar? Calendar;
 
-		[Field("relatedToSelectId")]
+		[JsonProperty("relatedToSelectId")]
+		[Field("relatedToSelectId", false, "0", Int32.MaxValue)]
 		public long? RelatedToSelectId;
 
-		[Field("subjectTeam")]
+		[JsonProperty("subjectTeam")]
+		[Field("subjectTeam", false, null, Int32.MaxValue)]
 		public string? SubjectTeam;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("isRecurrent")]
+		[JsonProperty("isRecurrent")]
+		[Field("isRecurrent", false, "False", Int32.MaxValue)]
 		public bool? IsRecurrent;
 
-		[Field("disponibilitySelect")]
+		[JsonProperty("attendees")]
+		[Field("attendees", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.ICalendarUser>? Attendees;
+
+		[JsonProperty("disponibilitySelect")]
+		[Field("disponibilitySelect", false, "1", Int32.MaxValue)]
 		public int? DisponibilitySelect;
 
-		[Field("prioritySelect")]
+		[JsonProperty("prioritySelect")]
+		[Field("prioritySelect", false, "2", Int32.MaxValue)]
 		public int? PrioritySelect;
 
-		[Field("team")]
+		[JsonProperty("team")]
+		[Field("team", false, null, Int32.MaxValue)]
 		public Axelor.Team.Db.Team? Team;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("endDateTime")]
+		[JsonProperty("endDateTime")]
+		[Field("endDateTime", true, null, Int32.MaxValue)]
 		public DateTime? EndDateTime;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("lead")]
+		[JsonProperty("lead")]
+		[Field("lead", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Crm.Db.Lead? Lead;
 
-		[Field("url")]
+		[JsonProperty("url")]
+		[Field("url", false, null, Int32.MaxValue)]
 		public string? Url;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "0", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("startDateTime")]
+		[JsonProperty("startDateTime")]
+		[Field("startDateTime", true, null, Int32.MaxValue)]
 		public DateTime? StartDateTime;
 
-		[Field("partner")]
+		[JsonProperty("partner")]
+		[Field("partner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? Partner;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("organizer")]
+		[JsonProperty("organizer")]
+		[Field("organizer", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.ICalendarUser? Organizer;
 
-		[Field("campaign")]
+		[JsonProperty("campaign")]
+		[Field("campaign", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Marketing.Db.Campaign? Campaign;
 
-		[Field("location")]
+		[JsonProperty("location")]
+		[Field("location", false, null, Int32.MaxValue)]
 		public string? Location;
 
-		[Field("user")]
+		[JsonProperty("user")]
+		[Field("user", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? User;
 
-		[Field("status")]
+		[JsonProperty("status")]
+		[Field("status", false, null, Int32.MaxValue)]
 		public string? Status;
 
 	}

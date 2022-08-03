@@ -1,62 +1,106 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Bankpayment.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.bankpayment.db.EbicsCertificate")]
 	public class EbicsCertificate : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("pemString")]
+		[Field("pemString", false, null, Int32.MaxValue)]
+		public string? PemString;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("subject")]
+		[JsonProperty("subject")]
+		[Field("subject", false, null, Int32.MaxValue)]
 		public string? Subject;
 
-		[Field("typeSelect")]
+		[JsonProperty("sha2has")]
+		[Field("sha2has", false, null, Int32.MaxValue)]
+		public string? Sha2has;
+
+		[JsonProperty("publicKeyModulus")]
+		[Field("publicKeyModulus", false, null, Int32.MaxValue)]
+		public string? PublicKeyModulus;
+
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", true, null, Int32.MaxValue)]
 		public string? TypeSelect;
 
-		[Field("batchSet")]
+		[JsonProperty("validFrom")]
+		[Field("validFrom", false, null, Int32.MaxValue)]
+		public DateTime? ValidFrom;
+
+		[JsonProperty("batchSet")]
+		[Field("batchSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.Batch>? BatchSet;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("issuer")]
+		[JsonProperty("issuer")]
+		[Field("issuer", false, null, Int32.MaxValue)]
 		public string? Issuer;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("updatedBy")]
+		[JsonProperty("publicKeyExponent")]
+		[Field("publicKeyExponent", false, null, Int32.MaxValue)]
+		public string? PublicKeyExponent;
+
+		[JsonProperty("validTo")]
+		[Field("validTo", false, null, Int32.MaxValue)]
+		public DateTime? ValidTo;
+
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("fullName")]
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("serial")]
+		[JsonProperty("serial")]
+		[Field("serial", false, null, Int32.MaxValue)]
 		public string? Serial;
 
-		[Field("ebicsBank")]
+		[JsonProperty("ebicsBank")]
+		[Field("ebicsBank", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Bankpayment.Db.EbicsBank? EbicsBank;
 
-		[Field("initLetterEditionDate")]
+		[JsonProperty("initLetterEditionDate")]
+		[Field("initLetterEditionDate", false, null, Int32.MaxValue)]
 		public DateTime? InitLetterEditionDate;
 
 	}

@@ -1,54 +1,91 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.InvoiceLineEvent")]
 	public class InvoiceLineEvent : AxelorModel
 	{
-		[Field("priceUnit")]
+		[JsonProperty("priceUnit")]
+		[Field("priceUnit", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Unit? PriceUnit;
 
-		[Field("importOrigin")]
+		[JsonProperty("amount")]
+		[Field("amount", false, "0", Int32.MaxValue)]
+		public decimal? Amount;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("product")]
+		[JsonProperty("product")]
+		[Field("product", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("articleId")]
+		[JsonProperty("endDate")]
+		[Field("endDate", false, null, Int32.MaxValue)]
+		public DateTime? EndDate;
+
+		[JsonProperty("articleId")]
+		[Field("articleId", false, null, Int32.MaxValue)]
 		public string? ArticleId;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("qtyUnit")]
+		[JsonProperty("price")]
+		[Field("price", false, "0", Int32.MaxValue)]
+		public decimal? Price;
+
+		[JsonProperty("qty")]
+		[Field("qty", false, "0", Int32.MaxValue)]
+		public decimal? Qty;
+
+		[JsonProperty("qtyUnit")]
+		[Field("qtyUnit", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Unit? QtyUnit;
 
-		[Field("summaryId")]
+		[JsonProperty("summaryId")]
+		[Field("summaryId", false, null, Int32.MaxValue)]
 		public string? SummaryId;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
+
+		[JsonProperty("startDate")]
+		[Field("startDate", false, null, Int32.MaxValue)]
+		public DateTime? StartDate;
 
 	}
 }

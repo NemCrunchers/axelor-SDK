@@ -2,6 +2,7 @@ using Axelor.SDK.Test;
 
 namespace Axelor.SDK.Test.Apps.Base.Db
 {
+    [Ignore]
     [TestClass]
     public class PartnerTest: TestModel
     {

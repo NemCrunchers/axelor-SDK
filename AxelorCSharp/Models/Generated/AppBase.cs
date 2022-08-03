@@ -1,164 +1,234 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.AppBase")]
 	public class AppBase : AxelorModel
 	{
-		[Field("hasQasValidation")]
+		[JsonProperty("hasQasValidation")]
+		[Field("hasQasValidation", false, "False", Int32.MaxValue)]
 		public bool? HasQasValidation;
 
-		[Field("dependsOnSet")]
+		[JsonProperty("dependsOnSet")]
+		[Field("dependsOnSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.App>? DependsOnSet;
 
-		[Field("initDataLoaded")]
+		[JsonProperty("initDataLoaded")]
+		[Field("initDataLoaded", false, "False", Int32.MaxValue)]
 		public bool? InitDataLoaded;
 
-		[Field("languageSelect")]
+		[JsonProperty("languageSelect")]
+		[Field("languageSelect", false, null, Int32.MaxValue)]
 		public string? LanguageSelect;
 
-		[Field("barcodeTypeConfig")]
+		[JsonProperty("barcodeTypeConfig")]
+		[Field("barcodeTypeConfig", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.BarcodeTypeConfig? BarcodeTypeConfig;
 
-		[Field("mapApiSelect")]
+		[JsonProperty("mapApiSelect")]
+		[Field("mapApiSelect", false, "1", Int32.MaxValue)]
 		public int? MapApiSelect;
 
-		[Field("passwordChangedTemplate")]
+		[JsonProperty("passwordChangedTemplate")]
+		[Field("passwordChangedTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? PasswordChangedTemplate;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("installOrder")]
+		[JsonProperty("installOrder")]
+		[Field("installOrder", false, "0", Int32.MaxValue)]
 		public int? InstallOrder;
 
-		[Field("generatePartnerSequence")]
+		[JsonProperty("generatePartnerSequence")]
+		[Field("generatePartnerSequence", false, "True", Int32.MaxValue)]
 		public bool? GeneratePartnerSequence;
 
-		[Field("image")]
+		[JsonProperty("image")]
+		[Field("image", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? Image;
 
-		[Field("enterpriseCommunication")]
+		[JsonProperty("enterpriseCommunication")]
+		[Field("enterpriseCommunication", false, "True", Int32.MaxValue)]
 		public bool? EnterpriseCommunication;
 
-		[Field("generateProductSequence")]
+		[JsonProperty("generateProductSequence")]
+		[Field("generateProductSequence", false, "False", Int32.MaxValue)]
 		public bool? GenerateProductSequence;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("qasWsdlUrl")]
+		[JsonProperty("qasWsdlUrl")]
+		[Field("qasWsdlUrl", false, null, Int32.MaxValue)]
 		public string? QasWsdlUrl;
 
-		[Field("isRolesImported")]
+		[JsonProperty("isRolesImported")]
+		[Field("isRolesImported", false, "False", Int32.MaxValue)]
 		public bool? IsRolesImported;
 
-		[Field("active")]
+		[JsonProperty("active")]
+		[Field("active", false, "False", Int32.MaxValue)]
 		public bool? Active;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("modules")]
+		[JsonProperty("modules")]
+		[Field("modules", false, null, Int32.MaxValue)]
 		public string? Modules;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, "0", Int32.MaxValue)]
 		public int? Sequence;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("activateBarCodeGeneration")]
+		[JsonProperty("activateBarCodeGeneration")]
+		[Field("activateBarCodeGeneration", false, "False", Int32.MaxValue)]
 		public bool? ActivateBarCodeGeneration;
 
-		[Field("activateSendingEmail")]
+		[JsonProperty("activateSendingEmail")]
+		[Field("activateSendingEmail", false, "True", Int32.MaxValue)]
 		public bool? ActivateSendingEmail;
 
-		[Field("demoDataLoaded")]
+		[JsonProperty("demoDataLoaded")]
+		[Field("demoDataLoaded", false, "False", Int32.MaxValue)]
 		public bool? DemoDataLoaded;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", true, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("editProductBarcodeType")]
+		[JsonProperty("editProductBarcodeType")]
+		[Field("editProductBarcodeType", false, "False", Int32.MaxValue)]
 		public bool? EditProductBarcodeType;
 
-		[Field("document")]
+		[JsonProperty("document")]
+		[Field("document", false, "True", Int32.MaxValue)]
 		public bool? Document;
 
-		[Field("currencyWsURL")]
+		[JsonProperty("currencyWsURL")]
+		[Field("currencyWsURL", false, null, Int32.MaxValue)]
 		public string? CurrencyWsURL;
 
-		[Field("createdOn")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("emailAccountByUser")]
+		[JsonProperty("emailAccountByUser")]
+		[Field("emailAccountByUser", false, "False", Int32.MaxValue)]
 		public bool? EmailAccountByUser;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("computeMethodDiscountSelect")]
+		[JsonProperty("computeMethodDiscountSelect")]
+		[Field("computeMethodDiscountSelect", false, "1", Int32.MaxValue)]
 		public int? ComputeMethodDiscountSelect;
 
-		[Field("manageMultiBanks")]
+		[JsonProperty("manageMultiBanks")]
+		[Field("manageMultiBanks", false, "False", Int32.MaxValue)]
 		public bool? ManageMultiBanks;
 
-		[Field("manageProductVariants")]
+		[JsonProperty("currencyConversionLineList")]
+		[Field("currencyConversionLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.CurrencyConversionLine>? CurrencyConversionLineList;
+
+		[JsonProperty("manageProductVariants")]
+		[Field("manageProductVariants", false, "False", Int32.MaxValue)]
 		public bool? ManageProductVariants;
 
-		[Field("today")]
+		[JsonProperty("today")]
+		[Field("today", false, null, Int32.MaxValue)]
 		public DateTime? Today;
 
-		[Field("defaultPartnerLanguage")]
+		[JsonProperty("defaultPartnerLanguage")]
+		[Field("defaultPartnerLanguage", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Language? DefaultPartnerLanguage;
 
-		[Field("enableCalendars")]
+		[JsonProperty("enableCalendars")]
+		[Field("enableCalendars", false, "True", Int32.MaxValue)]
 		public bool? EnableCalendars;
 
-		[Field("timeLoggingPreferenceSelect")]
+		[JsonProperty("timeLoggingPreferenceSelect")]
+		[Field("timeLoggingPreferenceSelect", false, "days", Int32.MaxValue)]
 		public string? TimeLoggingPreferenceSelect;
 
-		[Field("unitMinutes")]
+		[JsonProperty("unitMinutes")]
+		[Field("unitMinutes", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Unit? UnitMinutes;
 
-		[Field("nbDecimalDigitForUnitPrice")]
+		[JsonProperty("nbDecimalDigitForUnitPrice")]
+		[Field("nbDecimalDigitForUnitPrice", false, "2", 10)]
 		public int? NbDecimalDigitForUnitPrice;
 
-		[Field("googleMapsApiKey")]
+		[JsonProperty("dailyWorkHours")]
+		[Field("dailyWorkHours", false, "0", Int32.MaxValue)]
+		public decimal? DailyWorkHours;
+
+		[JsonProperty("googleMapsApiKey")]
+		[Field("googleMapsApiKey", false, null, Int32.MaxValue)]
 		public string? GoogleMapsApiKey;
 
-		[Field("teamManagement")]
+		[JsonProperty("teamManagement")]
+		[Field("teamManagement", false, "True", Int32.MaxValue)]
 		public bool? TeamManagement;
 
-		[Field("enableTradingNamesManagement")]
+		[JsonProperty("enableTradingNamesManagement")]
+		[Field("enableTradingNamesManagement", false, "False", Int32.MaxValue)]
 		public bool? EnableTradingNamesManagement;
 
-		[Field("productInAtiSelect")]
+		[JsonProperty("productInAtiSelect")]
+		[Field("productInAtiSelect", false, "1", Int32.MaxValue)]
 		public int? ProductInAtiSelect;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("defaultProjectUnit")]
+		[JsonProperty("defaultProjectUnit")]
+		[Field("defaultProjectUnit", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Unit? DefaultProjectUnit;
 
-		[Field("unitHours")]
+		[JsonProperty("unitHours")]
+		[Field("unitHours", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Unit? UnitHours;
 
-		[Field("unitDays")]
+		[JsonProperty("accessConfigList")]
+		[Field("accessConfigList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.AccessConfig>? AccessConfigList;
+
+		[JsonProperty("unitDays")]
+		[Field("unitDays", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Unit? UnitDays;
 
 	}

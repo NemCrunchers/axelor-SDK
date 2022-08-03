@@ -1,71 +1,98 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Bankpayment.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.bankpayment.db.EbicsBank")]
 	public class EbicsBank : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("fullName")]
+		[JsonProperty("ebicsCertificateList")]
+		[Field("ebicsCertificateList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Bankpayment.Db.EbicsCertificate>? EbicsCertificateList;
+
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("hostId")]
+		[JsonProperty("hostId")]
+		[Field("hostId", false, null, Int32.MaxValue)]
 		public string? HostId;
 
-		[Field("language")]
+		[JsonProperty("language")]
+		[Field("language", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Language? Language;
 
-		[Field("protocolSelect")]
+		[JsonProperty("protocolSelect")]
+		[Field("protocolSelect", false, "ssl", Int32.MaxValue)]
 		public string? ProtocolSelect;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("url")]
+		[JsonProperty("url")]
+		[Field("url", false, null, Int32.MaxValue)]
 		public string? Url;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("useX509ExtentionForAutoSignedCert")]
+		[JsonProperty("useX509ExtentionForAutoSignedCert")]
+		[Field("useX509ExtentionForAutoSignedCert", false, "True", Int32.MaxValue)]
 		public bool? UseX509ExtentionForAutoSignedCert;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("bank")]
+		[JsonProperty("bank")]
+		[Field("bank", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Bank? Bank;
 
-		[Field("emailAddress")]
+		[JsonProperty("emailAddress")]
+		[Field("emailAddress", false, null, Int32.MaxValue)]
 		public string? EmailAddress;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("fax")]
+		[JsonProperty("fax")]
+		[Field("fax", false, null, Int32.MaxValue)]
 		public string? Fax;
 
-		[Field("certValidityPeriodSelect")]
+		[JsonProperty("certValidityPeriodSelect")]
+		[Field("certValidityPeriodSelect", false, "5", Int32.MaxValue)]
 		public int? CertValidityPeriodSelect;
 
 	}

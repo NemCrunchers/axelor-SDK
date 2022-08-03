@@ -1,65 +1,106 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Exception.Db
 {
+	[Serializable]
 	[Model("com.axelor.exception.db.TraceBack")]
 	public class TraceBack : AxelorModel
 	{
-		[Field("date")]
+		[JsonProperty("date")]
+		[Field("date", true, null, Int32.MaxValue)]
 		public DateTime? Date;
 
-		[Field("categorySelect")]
+		[JsonProperty("exception")]
+		[Field("exception", true, null, Int32.MaxValue)]
+		public string? Exception;
+
+		[JsonProperty("categorySelect")]
+		[Field("categorySelect", false, "0", Int32.MaxValue)]
 		public int? CategorySelect;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("origin")]
+		[JsonProperty("origin")]
+		[Field("origin", false, null, Int32.MaxValue)]
 		public string? Origin;
 
-		[Field("typeSelect")]
+		[JsonProperty("cause")]
+		[Field("cause", false, null, Int32.MaxValue)]
+		public string? Cause;
+
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", false, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("batchId")]
+		[JsonProperty("batchId")]
+		[Field("batchId", false, "0", Int32.MaxValue)]
 		public long? BatchId;
 
-		[Field("createdOn")]
+		[JsonProperty("error")]
+		[Field("error", false, null, Int32.MaxValue)]
+		public string? Error;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("ref")]
+		[JsonProperty("ref")]
+		[Field("ref", false, null, Int32.MaxValue)]
 		public string? Ref;
 
-		[Field("internalUser")]
+		[JsonProperty("trace")]
+		[Field("trace", false, null, Int32.MaxValue)]
+		public string? Trace;
+
+		[JsonProperty("internalUser")]
+		[Field("internalUser", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? InternalUser;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("message")]
+		[Field("message", false, null, Int32.MaxValue)]
+		public string? Message;
+
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("refId")]
+		[JsonProperty("refId")]
+		[Field("refId", false, null, Int32.MaxValue)]
 		public long? RefId;
 
 	}

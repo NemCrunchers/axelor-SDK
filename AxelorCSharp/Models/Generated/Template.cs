@@ -1,65 +1,118 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Message.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.message.db.Template")]
 	public class Template : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("language")]
+		[JsonProperty("subject")]
+		[Field("subject", false, null, Int32.MaxValue)]
+		public string? Subject;
+
+		[JsonProperty("fromAdress")]
+		[Field("fromAdress", false, null, Int32.MaxValue)]
+		public string? FromAdress;
+
+		[JsonProperty("language")]
+		[Field("language", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Language? Language;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("content")]
+		[Field("content", false, null, Int32.MaxValue)]
+		public string? Content;
+
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("templateContext")]
+		[JsonProperty("toRecipients")]
+		[Field("toRecipients", false, null, Int32.MaxValue)]
+		public string? ToRecipients;
+
+		[JsonProperty("templateContext")]
+		[Field("templateContext", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.TemplateContext? TemplateContext;
 
-		[Field("mediaTypeSelect")]
+		[JsonProperty("mediaTypeSelect")]
+		[Field("mediaTypeSelect", true, "2", Int32.MaxValue)]
 		public int? MediaTypeSelect;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("updatedBy")]
+		[JsonProperty("addressBlock")]
+		[Field("addressBlock", false, null, Int32.MaxValue)]
+		public string? AddressBlock;
+
+		[JsonProperty("replyToRecipients")]
+		[Field("replyToRecipients", false, null, Int32.MaxValue)]
+		public string? ReplyToRecipients;
+
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("metaModel")]
+		[JsonProperty("metaModel")]
+		[Field("metaModel", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaModel? MetaModel;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("target")]
+		[JsonProperty("target")]
+		[Field("target", false, null, Int32.MaxValue)]
 		public string? Target;
 
-		[Field("isSystem")]
+		[JsonProperty("isSystem")]
+		[Field("isSystem", false, "False", Int32.MaxValue)]
 		public bool? IsSystem;
 
-		[Field("isDefault")]
+		[JsonProperty("isDefault")]
+		[Field("isDefault", false, "False", Int32.MaxValue)]
 		public bool? IsDefault;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("bccRecipients")]
+		[Field("bccRecipients", false, null, Int32.MaxValue)]
+		public string? BccRecipients;
+
+		[JsonProperty("ccRecipients")]
+		[Field("ccRecipients", false, null, Int32.MaxValue)]
+		public string? CcRecipients;
+
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("birtTemplate")]
+		[JsonProperty("birtTemplate")]
+		[Field("birtTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.BirtTemplate? BirtTemplate;
 
 	}

@@ -1,86 +1,126 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.ICalendarEvent")]
 	public class ICalendarEvent : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("subject")]
+		[JsonProperty("subject")]
+		[Field("subject", true, null, Int32.MaxValue)]
 		public string? Subject;
 
-		[Field("typeSelect")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", true, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("geo")]
+		[JsonProperty("computedAttendeeList")]
+		[Field("computedAttendeeList", false, null, Int32.MaxValue)]
+		public string? ComputedAttendeeList;
+
+		[JsonProperty("geo")]
+		[Field("geo", false, null, Int32.MaxValue)]
 		public string? Geo;
 
-		[Field("allDay")]
+		[JsonProperty("allDay")]
+		[Field("allDay", false, "False", Int32.MaxValue)]
 		public bool? AllDay;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("uid")]
+		[JsonProperty("uid")]
+		[Field("uid", false, null, Int32.MaxValue)]
 		public string? Uid;
 
-		[Field("visibilitySelect")]
+		[JsonProperty("visibilitySelect")]
+		[Field("visibilitySelect", false, "1", Int32.MaxValue)]
 		public int? VisibilitySelect;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("calendar")]
+		[JsonProperty("calendar")]
+		[Field("calendar", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.ICalendar? Calendar;
 
-		[Field("subjectTeam")]
+		[JsonProperty("subjectTeam")]
+		[Field("subjectTeam", false, null, Int32.MaxValue)]
 		public string? SubjectTeam;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("disponibilitySelect")]
+		[JsonProperty("attendees")]
+		[Field("attendees", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.ICalendarUser>? Attendees;
+
+		[JsonProperty("disponibilitySelect")]
+		[Field("disponibilitySelect", false, "1", Int32.MaxValue)]
 		public int? DisponibilitySelect;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("endDateTime")]
+		[JsonProperty("endDateTime")]
+		[Field("endDateTime", true, null, Int32.MaxValue)]
 		public DateTime? EndDateTime;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("url")]
+		[JsonProperty("url")]
+		[Field("url", false, null, Int32.MaxValue)]
 		public string? Url;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("startDateTime")]
+		[JsonProperty("startDateTime")]
+		[Field("startDateTime", true, null, Int32.MaxValue)]
 		public DateTime? StartDateTime;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("organizer")]
+		[JsonProperty("organizer")]
+		[Field("organizer", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.ICalendarUser? Organizer;
 
-		[Field("location")]
+		[JsonProperty("location")]
+		[Field("location", false, null, Int32.MaxValue)]
 		public string? Location;
 
-		[Field("user")]
+		[JsonProperty("user")]
+		[Field("user", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? User;
 
-		[Field("status")]
+		[JsonProperty("status")]
+		[Field("status", false, null, Int32.MaxValue)]
 		public string? Status;
 
 	}

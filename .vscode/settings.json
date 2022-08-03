@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
         "Axelor"
-    ]
+    ],
+    "dotnet-test-explorer.testProjectPath":"Axelor.SDK.Test"
 }

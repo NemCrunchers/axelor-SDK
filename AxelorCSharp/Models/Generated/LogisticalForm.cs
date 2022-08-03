@@ -1,71 +1,122 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Stock.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.stock.db.LogisticalForm")]
 	public class LogisticalForm : AxelorModel
 	{
-		[Field("deliveryNumberSeq")]
+		[JsonProperty("deliveryNumberSeq")]
+		[Field("deliveryNumberSeq", false, null, Int32.MaxValue)]
 		public string? DeliveryNumberSeq;
 
-		[Field("importOrigin")]
+		[JsonProperty("totalVolume")]
+		[Field("totalVolume", false, "0", Int32.MaxValue)]
+		public decimal? TotalVolume;
+
+		[JsonProperty("logisticalFormLineList")]
+		[Field("logisticalFormLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Stock.Db.LogisticalFormLine>? LogisticalFormLineList;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("stockLocation")]
+		[JsonProperty("stockLocation")]
+		[Field("stockLocation", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockLocation? StockLocation;
 
-		[Field("carrierPartner")]
+		[JsonProperty("carrierPartner")]
+		[Field("carrierPartner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? CarrierPartner;
 
-		[Field("forwarderPartner")]
+		[JsonProperty("totalGrossMass")]
+		[Field("totalGrossMass", false, "0", Int32.MaxValue)]
+		public decimal? TotalGrossMass;
+
+		[JsonProperty("forwarderPartner")]
+		[Field("forwarderPartner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? ForwarderPartner;
 
-		[Field("createdOn")]
+		[JsonProperty("internalDeliveryComment")]
+		[Field("internalDeliveryComment", false, null, Int32.MaxValue)]
+		public string? InternalDeliveryComment;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("deliverToCustomerPartner")]
+		[JsonProperty("deliverToCustomerPartner")]
+		[Field("deliverToCustomerPartner", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? DeliverToCustomerPartner;
 
-		[Field("tracking")]
+		[JsonProperty("tracking")]
+		[Field("tracking", false, null, Int32.MaxValue)]
 		public string? Tracking;
 
-		[Field("customerAccountNumberToCarrier")]
+		[JsonProperty("customerAccountNumberToCarrier")]
+		[Field("customerAccountNumberToCarrier", false, null, Int32.MaxValue)]
 		public string? CustomerAccountNumberToCarrier;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("collectionDate")]
+		[Field("collectionDate", true, null, Int32.MaxValue)]
+		public DateTime? CollectionDate;
+
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("totalNetMass")]
+		[Field("totalNetMass", false, "0", Int32.MaxValue)]
+		public decimal? TotalNetMass;
+
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "1", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("incoterm")]
+		[JsonProperty("externalDeliveryComment")]
+		[Field("externalDeliveryComment", false, null, Int32.MaxValue)]
+		public string? ExternalDeliveryComment;
+
+		[JsonProperty("incoterm")]
+		[Field("incoterm", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.Incoterm? Incoterm;
 
-		[Field("accountSelectionToCarrierSelect")]
+		[JsonProperty("accountSelectionToCarrierSelect")]
+		[Field("accountSelectionToCarrierSelect", false, "1", Int32.MaxValue)]
 		public int? AccountSelectionToCarrierSelect;
 
 	}

@@ -1,59 +1,106 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Stock.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.stock.db.StockLocationLine")]
 	public class StockLocationLine : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("lastInventoryDateT")]
+		[JsonProperty("lastInventoryDateT")]
+		[Field("lastInventoryDateT", false, null, Int32.MaxValue)]
 		public DateTime? LastInventoryDateT;
 
-		[Field("stockLocation")]
+		[JsonProperty("stockLocation")]
+		[Field("stockLocation", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockLocation? StockLocation;
 
-		[Field("createdOn")]
+		[JsonProperty("avgPrice")]
+		[Field("avgPrice", false, "0", Int32.MaxValue)]
+		public decimal? AvgPrice;
+
+		[JsonProperty("lastInventoryRealQty")]
+		[Field("lastInventoryRealQty", false, "0", Int32.MaxValue)]
+		public decimal? LastInventoryRealQty;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("id")]
+		[JsonProperty("requestedReservedQty")]
+		[Field("requestedReservedQty", false, "0", Int32.MaxValue)]
+		public decimal? RequestedReservedQty;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("trackingNumber")]
+		[JsonProperty("trackingNumber")]
+		[Field("trackingNumber", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.TrackingNumber? TrackingNumber;
 
-		[Field("product")]
+		[JsonProperty("lastFutureStockMoveDate")]
+		[Field("lastFutureStockMoveDate", false, null, Int32.MaxValue)]
+		public DateTime? LastFutureStockMoveDate;
+
+		[JsonProperty("product")]
+		[Field("product", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("rack")]
+		[JsonProperty("rack")]
+		[Field("rack", false, null, Int32.MaxValue)]
 		public string? Rack;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("updatedOn")]
+		[JsonProperty("reservedQty")]
+		[Field("reservedQty", false, "0", Int32.MaxValue)]
+		public decimal? ReservedQty;
+
+		[JsonProperty("currentQty")]
+		[Field("currentQty", false, "0", Int32.MaxValue)]
+		public decimal? CurrentQty;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("futureQty")]
+		[Field("futureQty", false, "0", Int32.MaxValue)]
+		public decimal? FutureQty;
+
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("unit")]
+		[JsonProperty("unit")]
+		[Field("unit", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Unit? Unit;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("detailsStockLocation")]
+		[JsonProperty("detailsStockLocation")]
+		[Field("detailsStockLocation", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockLocation? DetailsStockLocation;
 
 	}

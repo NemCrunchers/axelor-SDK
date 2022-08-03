@@ -1,83 +1,138 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Hr.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.hr.db.ExpenseLine")]
 	public class ExpenseLine : AxelorModel
 	{
-		[Field("toInvoice")]
+		[JsonProperty("toInvoice")]
+		[Field("toInvoice", false, "False", Int32.MaxValue)]
 		public bool? ToInvoice;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("project")]
+		[JsonProperty("distance")]
+		[Field("distance", false, "0", Int32.MaxValue)]
+		public decimal? Distance;
+
+		[JsonProperty("project")]
+		[Field("project", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Project.Db.Project? Project;
 
-		[Field("createdOn")]
+		[JsonProperty("analyticMoveLineList")]
+		[Field("analyticMoveLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Account.Db.AnalyticMoveLine>? AnalyticMoveLineList;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("kilometricExpense")]
+		[JsonProperty("kilometricExpense")]
+		[Field("kilometricExpense", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.Expense? KilometricExpense;
 
-		[Field("archived")]
+		[JsonProperty("totalTax")]
+		[Field("totalTax", false, "0", Int32.MaxValue)]
+		public decimal? TotalTax;
+
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("justificationMetaFile")]
+		[JsonProperty("justificationMetaFile")]
+		[Field("justificationMetaFile", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? JustificationMetaFile;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("generalExpense")]
+		[JsonProperty("generalExpense")]
+		[Field("generalExpense", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.Expense? GeneralExpense;
 
-		[Field("updatedBy")]
+		[JsonProperty("comments")]
+		[Field("comments", false, null, Int32.MaxValue)]
+		public string? Comments;
+
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("invoiced")]
+		[JsonProperty("invoiced")]
+		[Field("invoiced", false, "False", Int32.MaxValue)]
 		public bool? Invoiced;
 
-		[Field("toCity")]
+		[JsonProperty("toCity")]
+		[Field("toCity", false, null, Int32.MaxValue)]
 		public string? ToCity;
 
-		[Field("fullName")]
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("expense")]
+		[JsonProperty("expense")]
+		[Field("expense", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.Expense? Expense;
 
-		[Field("version")]
+		[JsonProperty("untaxedAmount")]
+		[Field("untaxedAmount", false, "0", Int32.MaxValue)]
+		public decimal? UntaxedAmount;
+
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("importId")]
+		[JsonProperty("expenseDate")]
+		[Field("expenseDate", true, null, Int32.MaxValue)]
+		public DateTime? ExpenseDate;
+
+		[JsonProperty("totalAmount")]
+		[Field("totalAmount", true, "0", Int32.MaxValue)]
+		public decimal? TotalAmount;
+
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("analyticDistributionTemplate")]
+		[JsonProperty("analyticDistributionTemplate")]
+		[Field("analyticDistributionTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.AnalyticDistributionTemplate? AnalyticDistributionTemplate;
 
-		[Field("fromCity")]
+		[JsonProperty("fromCity")]
+		[Field("fromCity", false, null, Int32.MaxValue)]
 		public string? FromCity;
 
-		[Field("kilometricAllowParam")]
+		[JsonProperty("kilometricAllowParam")]
+		[Field("kilometricAllowParam", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.KilometricAllowParam? KilometricAllowParam;
 
-		[Field("kilometricTypeSelect")]
+		[JsonProperty("kilometricTypeSelect")]
+		[Field("kilometricTypeSelect", false, "0", Int32.MaxValue)]
 		public int? KilometricTypeSelect;
 
-		[Field("user")]
+		[JsonProperty("user")]
+		[Field("user", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? User;
 
-		[Field("expenseProduct")]
+		[JsonProperty("expenseProduct")]
+		[Field("expenseProduct", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? ExpenseProduct;
 
 	}

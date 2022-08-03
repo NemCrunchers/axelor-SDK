@@ -1,117 +1,175 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Bankpayment.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.bankpayment.db.BankOrder")]
 	public class BankOrder : AxelorModel
 	{
-		[Field("nbOfLines")]
+		[JsonProperty("nbOfLines")]
+		[Field("nbOfLines", false, "0", Int32.MaxValue)]
 		public int? NbOfLines;
 
-		[Field("importOrigin")]
+		[JsonProperty("bankOrderDate")]
+		[Field("bankOrderDate", false, null, Int32.MaxValue)]
+		public DateTime? BankOrderDate;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("senderBankDetails")]
+		[JsonProperty("senderBankDetails")]
+		[Field("senderBankDetails", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.BankDetails? SenderBankDetails;
 
-		[Field("confirmationDateTime")]
+		[JsonProperty("confirmationDateTime")]
+		[Field("confirmationDateTime", false, null, Int32.MaxValue)]
 		public DateTime? ConfirmationDateTime;
 
-		[Field("senderCompany")]
+		[JsonProperty("senderCompany")]
+		[Field("senderCompany", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? SenderCompany;
 
-		[Field("fileGenerationDateTime")]
+		[JsonProperty("fileGenerationDateTime")]
+		[Field("fileGenerationDateTime", false, null, Int32.MaxValue)]
 		public DateTime? FileGenerationDateTime;
 
-		[Field("signatoryEbicsUser")]
+		[JsonProperty("signatoryEbicsUser")]
+		[Field("signatoryEbicsUser", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Bankpayment.Db.EbicsUser? SignatoryEbicsUser;
 
-		[Field("sendingDateTime")]
+		[JsonProperty("sendingDateTime")]
+		[Field("sendingDateTime", false, null, Int32.MaxValue)]
 		public DateTime? SendingDateTime;
 
-		[Field("partnerTypeSelect")]
+		[JsonProperty("partnerTypeSelect")]
+		[Field("partnerTypeSelect", true, "0", Int32.MaxValue)]
 		public int? PartnerTypeSelect;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("bankOrderLineList")]
+		[Field("bankOrderLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Bankpayment.Db.BankOrderLine>? BankOrderLineList;
+
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("signedMetaFile")]
+		[JsonProperty("signedMetaFile")]
+		[Field("signedMetaFile", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? SignedMetaFile;
 
-		[Field("isMultiCurrency")]
+		[JsonProperty("isMultiCurrency")]
+		[Field("isMultiCurrency", false, "False", Int32.MaxValue)]
 		public bool? IsMultiCurrency;
 
-		[Field("companyCurrency")]
+		[JsonProperty("companyCurrency")]
+		[Field("companyCurrency", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Currency? CompanyCurrency;
 
-		[Field("validationDateTime")]
+		[JsonProperty("validationDateTime")]
+		[Field("validationDateTime", false, null, Int32.MaxValue)]
 		public DateTime? ValidationDateTime;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("signatoryUser")]
+		[JsonProperty("signatoryUser")]
+		[Field("signatoryUser", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? SignatoryUser;
 
-		[Field("bankOrderCurrency")]
+		[JsonProperty("bankOrderCurrency")]
+		[Field("bankOrderCurrency", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Currency? BankOrderCurrency;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("paymentMode")]
+		[JsonProperty("paymentMode")]
+		[Field("paymentMode", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.PaymentMode? PaymentMode;
 
-		[Field("batch")]
+		[JsonProperty("batch")]
+		[Field("batch", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Batch? Batch;
 
-		[Field("senderReference")]
+		[JsonProperty("senderReference")]
+		[Field("senderReference", false, null, Int32.MaxValue)]
 		public string? SenderReference;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("rejectStatusSelect")]
+		[JsonProperty("rejectStatusSelect")]
+		[Field("rejectStatusSelect", false, "0", Int32.MaxValue)]
 		public int? RejectStatusSelect;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("bankOrderFileFormat")]
+		[JsonProperty("bankOrderFileFormat")]
+		[Field("bankOrderFileFormat", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Bankpayment.Db.BankOrderFileFormat? BankOrderFileFormat;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "1", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("senderLabel")]
+		[JsonProperty("arithmeticTotal")]
+		[Field("arithmeticTotal", false, "0", Int32.MaxValue)]
+		public decimal? ArithmeticTotal;
+
+		[JsonProperty("senderLabel")]
+		[Field("senderLabel", false, null, Int32.MaxValue)]
 		public string? SenderLabel;
 
-		[Field("bankOrderSeq")]
+		[JsonProperty("bankOrderSeq")]
+		[Field("bankOrderSeq", false, null, Int32.MaxValue)]
 		public string? BankOrderSeq;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("generatedMetaFile")]
+		[JsonProperty("generatedMetaFile")]
+		[Field("generatedMetaFile", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? GeneratedMetaFile;
 
-		[Field("orderTypeSelect")]
+		[JsonProperty("orderTypeSelect")]
+		[Field("orderTypeSelect", false, "0", Int32.MaxValue)]
 		public int? OrderTypeSelect;
 
-		[Field("testMode")]
+		[JsonProperty("testMode")]
+		[Field("testMode", false, "False", Int32.MaxValue)]
 		public bool? TestMode;
 
-		[Field("isMultiDate")]
+		[JsonProperty("bankOrderTotalAmount")]
+		[Field("bankOrderTotalAmount", false, "0", Int32.MaxValue)]
+		public decimal? BankOrderTotalAmount;
+
+		[JsonProperty("isMultiDate")]
+		[Field("isMultiDate", false, "False", Int32.MaxValue)]
 		public bool? IsMultiDate;
+
+		[JsonProperty("companyCurrencyTotalAmount")]
+		[Field("companyCurrencyTotalAmount", false, "0", Int32.MaxValue)]
+		public decimal? CompanyCurrencyTotalAmount;
 
 	}
 }

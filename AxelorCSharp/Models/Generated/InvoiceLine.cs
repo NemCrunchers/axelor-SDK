@@ -1,122 +1,226 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.InvoiceLine")]
 	public class InvoiceLine : AxelorModel
 	{
-		[Field("outgoingStockMove")]
+		[JsonProperty("oldQty")]
+		[Field("oldQty", false, "0", Int32.MaxValue)]
+		public decimal? OldQty;
+
+		[JsonProperty("companyExTaxTotal")]
+		[Field("companyExTaxTotal", false, "0", Int32.MaxValue)]
+		public decimal? CompanyExTaxTotal;
+
+		[JsonProperty("outgoingStockMove")]
+		[Field("outgoingStockMove", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockMove? OutgoingStockMove;
 
-		[Field("project")]
+		[JsonProperty("discountAmount")]
+		[Field("discountAmount", false, "0", Int32.MaxValue)]
+		public decimal? DiscountAmount;
+
+		[JsonProperty("project")]
+		[Field("project", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Project.Db.Project? Project;
 
-		[Field("typeSelect")]
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", false, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("productName")]
+		[JsonProperty("productName")]
+		[Field("productName", false, null, Int32.MaxValue)]
 		public string? ProductName;
 
-		[Field("fixedAssets")]
+		[JsonProperty("price")]
+		[Field("price", false, "0", Int32.MaxValue)]
+		public decimal? Price;
+
+		[JsonProperty("fixedAssets")]
+		[Field("fixedAssets", false, "False", Int32.MaxValue)]
 		public bool? FixedAssets;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("budget")]
+		[JsonProperty("budget")]
+		[Field("budget", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Budget? Budget;
 
-		[Field("updatedBy")]
+		[JsonProperty("inTaxTotal")]
+		[Field("inTaxTotal", false, "0", Int32.MaxValue)]
+		public decimal? InTaxTotal;
+
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("taxLine")]
+		[JsonProperty("budgetDistributionList")]
+		[Field("budgetDistributionList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Account.Db.BudgetDistribution>? BudgetDistributionList;
+
+		[JsonProperty("taxLine")]
+		[Field("taxLine", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.TaxLine? TaxLine;
 
-		[Field("updatedOn")]
+		[JsonProperty("inTaxPrice")]
+		[Field("inTaxPrice", false, "0", Int32.MaxValue)]
+		public decimal? InTaxPrice;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("purchaseOrderLine")]
+		[JsonProperty("purchaseOrderLine")]
+		[Field("purchaseOrderLine", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Purchase.Db.PurchaseOrderLine? PurchaseOrderLine;
 
-		[Field("taxCode")]
+		[JsonProperty("taxCode")]
+		[Field("taxCode", false, null, Int32.MaxValue)]
 		public string? TaxCode;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, "0", Int32.MaxValue)]
 		public int? Sequence;
 
-		[Field("unit")]
+		[JsonProperty("taxRate")]
+		[Field("taxRate", false, "0", Int32.MaxValue)]
+		public decimal? TaxRate;
+
+		[JsonProperty("unit")]
+		[Field("unit", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Unit? Unit;
 
-		[Field("packPriceSelect")]
+		[JsonProperty("packPriceSelect")]
+		[Field("packPriceSelect", false, "0", Int32.MaxValue)]
 		public int? PackPriceSelect;
 
-		[Field("name")]
+		[JsonProperty("qty")]
+		[Field("qty", false, "0", Int32.MaxValue)]
+		public decimal? Qty;
+
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("contractLine")]
+		[JsonProperty("subLineList")]
+		[Field("subLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Account.Db.InvoiceLine>? SubLineList;
+
+		[JsonProperty("contractLine")]
+		[Field("contractLine", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Contract.Db.ContractLine? ContractLine;
 
-		[Field("taxEquiv")]
+		[JsonProperty("taxEquiv")]
+		[Field("taxEquiv", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.TaxEquiv? TaxEquiv;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("isSubLine")]
+		[JsonProperty("isSubLine")]
+		[Field("isSubLine", false, "False", Int32.MaxValue)]
 		public bool? IsSubLine;
 
-		[Field("createdOn")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("analyticMoveLineList")]
+		[Field("analyticMoveLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Account.Db.AnalyticMoveLine>? AnalyticMoveLineList;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("discountTypeSelect")]
+		[JsonProperty("discountTypeSelect")]
+		[Field("discountTypeSelect", false, "3", Int32.MaxValue)]
 		public int? DiscountTypeSelect;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("parentLine")]
+		[JsonProperty("parentLine")]
+		[Field("parentLine", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.InvoiceLine? ParentLine;
 
-		[Field("incomingStockMove")]
+		[JsonProperty("incomingStockMove")]
+		[Field("incomingStockMove", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockMove? IncomingStockMove;
 
-		[Field("saleOrder")]
+		[JsonProperty("saleOrder")]
+		[Field("saleOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Sale.Db.SaleOrder? SaleOrder;
 
-		[Field("product")]
+		[JsonProperty("product")]
+		[Field("product", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("saleOrderLine")]
+		[JsonProperty("saleOrderLine")]
+		[Field("saleOrderLine", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Sale.Db.SaleOrderLine? SaleOrderLine;
 
-		[Field("importId")]
+		[JsonProperty("totalPack")]
+		[Field("totalPack", false, "0", Int32.MaxValue)]
+		public decimal? TotalPack;
+
+		[JsonProperty("exTaxTotal")]
+		[Field("exTaxTotal", false, "0", Int32.MaxValue)]
+		public decimal? ExTaxTotal;
+
+		[JsonProperty("companyInTaxTotal")]
+		[Field("companyInTaxTotal", false, "0", Int32.MaxValue)]
+		public decimal? CompanyInTaxTotal;
+
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("productCode")]
+		[JsonProperty("productCode")]
+		[Field("productCode", false, null, Int32.MaxValue)]
 		public string? ProductCode;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("purchaseOrder")]
+		[JsonProperty("priceDiscounted")]
+		[Field("priceDiscounted", false, "0", Int32.MaxValue)]
+		public decimal? PriceDiscounted;
+
+		[JsonProperty("purchaseOrder")]
+		[Field("purchaseOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Purchase.Db.PurchaseOrder? PurchaseOrder;
 
-		[Field("invoice")]
+		[JsonProperty("invoice")]
+		[Field("invoice", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Invoice? Invoice;
 
-		[Field("analyticDistributionTemplate")]
+		[JsonProperty("analyticDistributionTemplate")]
+		[Field("analyticDistributionTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.AnalyticDistributionTemplate? AnalyticDistributionTemplate;
 
-		[Field("fixedAssetCategory")]
+		[JsonProperty("fixedAssetCategory")]
+		[Field("fixedAssetCategory", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.FixedAssetCategory? FixedAssetCategory;
 
-		[Field("account")]
+		[JsonProperty("account")]
+		[Field("account", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? Account;
 
 	}

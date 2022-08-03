@@ -1,96 +1,147 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Studio.Db
 {
+	[Serializable]
 	[Model("com.axelor.studio.db.ActionBuilder")]
 	public class ActionBuilder : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("assignValueTo")]
+		[JsonProperty("assignValueTo")]
+		[Field("assignValueTo", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaField? AssignValueTo;
 
-		[Field("openRecord")]
+		[JsonProperty("openRecord")]
+		[Field("openRecord", false, "False", Int32.MaxValue)]
 		public bool? OpenRecord;
 
-		[Field("domainCondition")]
+		[JsonProperty("domainCondition")]
+		[Field("domainCondition", false, null, Int32.MaxValue)]
 		public string? DomainCondition;
 
-		[Field("typeSelect")]
+		[JsonProperty("scriptText")]
+		[Field("scriptText", false, null, Int32.MaxValue)]
+		public string? ScriptText;
+
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", false, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("title")]
+		[JsonProperty("title")]
+		[Field("title", false, null, Int32.MaxValue)]
 		public string? Title;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("isJson")]
+		[JsonProperty("isJson")]
+		[Field("isJson", false, "False", Int32.MaxValue)]
 		public bool? IsJson;
 
-		[Field("model")]
+		[JsonProperty("model")]
+		[Field("model", false, null, Int32.MaxValue)]
 		public string? Model;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("displayMsg")]
+		[JsonProperty("lines")]
+		[Field("lines", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Studio.Db.ActionBuilderLine>? Lines;
+
+		[JsonProperty("viewParams")]
+		[Field("viewParams", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Studio.Db.ActionBuilderLine>? ViewParams;
+
+		[JsonProperty("displayMsg")]
+		[Field("displayMsg", false, null, Int32.MaxValue)]
 		public string? DisplayMsg;
 
-		[Field("firstGroupBy")]
+		[JsonProperty("firstGroupBy")]
+		[Field("firstGroupBy", false, null, Int32.MaxValue)]
 		public string? FirstGroupBy;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("emailSendOptionSelect")]
+		[JsonProperty("emailSendOptionSelect")]
+		[Field("emailSendOptionSelect", false, "0", Int32.MaxValue)]
 		public int? EmailSendOptionSelect;
 
-		[Field("emailTemplate")]
+		[JsonProperty("emailTemplate")]
+		[Field("emailTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? EmailTemplate;
 
-		[Field("menuAction")]
+		[JsonProperty("menuAction")]
+		[Field("menuAction", false, "False", Int32.MaxValue)]
 		public bool? MenuAction;
 
-		[Field("targetModel")]
+		[JsonProperty("targetModel")]
+		[Field("targetModel", false, null, Int32.MaxValue)]
 		public string? TargetModel;
 
-		[Field("metaModule")]
+		[JsonProperty("filters")]
+		[Field("filters", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Studio.Db.Filter>? Filters;
+
+		[JsonProperty("metaModule")]
+		[Field("metaModule", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaModule? MetaModule;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("secondGroupBy")]
+		[JsonProperty("secondGroupBy")]
+		[Field("secondGroupBy", false, null, Int32.MaxValue)]
 		public string? SecondGroupBy;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("scriptType")]
+		[JsonProperty("scriptType")]
+		[Field("scriptType", false, "0", Int32.MaxValue)]
 		public int? ScriptType;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("appBuilder")]
+		[JsonProperty("appBuilder")]
+		[Field("appBuilder", false, null, Int32.MaxValue)]
 		public Axelor.Studio.Db.AppBuilder? AppBuilder;
 
-		[Field("transactional")]
+		[JsonProperty("transactional")]
+		[Field("transactional", false, "False", Int32.MaxValue)]
 		public bool? Transactional;
+
+		[JsonProperty("actionBuilderViews")]
+		[Field("actionBuilderViews", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Studio.Db.ActionBuilderView>? ActionBuilderViews;
 
 	}
 }

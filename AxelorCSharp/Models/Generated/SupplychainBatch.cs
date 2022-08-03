@@ -1,77 +1,122 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Supplychain.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.supplychain.db.SupplychainBatch")]
 	public class SupplychainBatch : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("reverseMoveDate")]
+		[Field("reverseMoveDate", false, null, Int32.MaxValue)]
+		public DateTime? ReverseMoveDate;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", false, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("invoiceOrdersTypeSelect")]
+		[JsonProperty("invoiceOrdersTypeSelect")]
+		[Field("invoiceOrdersTypeSelect", false, "1", Int32.MaxValue)]
 		public int? InvoiceOrdersTypeSelect;
 
-		[Field("accountingCutOffTypeSelect")]
+		[JsonProperty("accountingCutOffTypeSelect")]
+		[Field("accountingCutOffTypeSelect", false, "0", Int32.MaxValue)]
 		public int? AccountingCutOffTypeSelect;
 
-		[Field("createdOn")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("salespersonOrBuyerSet")]
+		[JsonProperty("salespersonOrBuyerSet")]
+		[Field("salespersonOrBuyerSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Auth.Db.User>? SalespersonOrBuyerSet;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("ati")]
+		[JsonProperty("ati")]
+		[Field("ati", false, "False", Int32.MaxValue)]
 		public bool? Ati;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("moveDescription")]
+		[JsonProperty("moveDescription")]
+		[Field("moveDescription", false, null, Int32.MaxValue)]
 		public string? MoveDescription;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("deliveryOrReceiptState")]
+		[JsonProperty("batchList")]
+		[Field("batchList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.Batch>? BatchList;
+
+		[JsonProperty("deliveryOrReceiptState")]
+		[Field("deliveryOrReceiptState", false, null, Int32.MaxValue)]
 		public string? DeliveryOrReceiptState;
 
-		[Field("actionSelect")]
+		[JsonProperty("actionSelect")]
+		[Field("actionSelect", true, "1", Int32.MaxValue)]
 		public int? ActionSelect;
 
-		[Field("updatedBy")]
+		[JsonProperty("moveDate")]
+		[Field("moveDate", false, null, Int32.MaxValue)]
+		public DateTime? MoveDate;
+
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("recoveredTax")]
+		[JsonProperty("recoveredTax")]
+		[Field("recoveredTax", false, "False", Int32.MaxValue)]
 		public bool? RecoveredTax;
 
-		[Field("team")]
+		[JsonProperty("team")]
+		[Field("team", false, null, Int32.MaxValue)]
 		public Axelor.Team.Db.Team? Team;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "3", Int32.MaxValue)]
 		public string? StatusSelect;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("includeNotStockManagedProduct")]
+		[JsonProperty("orderUpToDate")]
+		[Field("orderUpToDate", false, null, Int32.MaxValue)]
+		public DateTime? OrderUpToDate;
+
+		[JsonProperty("includeNotStockManagedProduct")]
+		[Field("includeNotStockManagedProduct", false, "False", Int32.MaxValue)]
 		public bool? IncludeNotStockManagedProduct;
 
 	}

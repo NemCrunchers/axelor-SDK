@@ -1,83 +1,122 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Talent.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.talent.db.JobPosition")]
 	public class JobPosition : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("contractType")]
+		[JsonProperty("contractType")]
+		[Field("contractType", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.EmploymentContractType? ContractType;
 
-		[Field("jobTitle")]
+		[JsonProperty("jobTitle")]
+		[Field("jobTitle", true, null, Int32.MaxValue)]
 		public string? JobTitle;
 
-		[Field("employee")]
+		[JsonProperty("employee")]
+		[Field("employee", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.Employee? Employee;
 
-		[Field("salary")]
+		[JsonProperty("salary")]
+		[Field("salary", false, null, Int32.MaxValue)]
 		public string? Salary;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("nbPeopleHired")]
+		[JsonProperty("nbPeopleHired")]
+		[Field("nbPeopleHired", false, "0", Int32.MaxValue)]
 		public int? NbPeopleHired;
 
-		[Field("updatedBy")]
+		[JsonProperty("publicationDate")]
+		[Field("publicationDate", false, null, Int32.MaxValue)]
+		public DateTime? PublicationDate;
+
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("mailAccount")]
+		[JsonProperty("mailAccount")]
+		[Field("mailAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.EmailAccount? MailAccount;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("jobReference")]
+		[JsonProperty("jobReference")]
+		[Field("jobReference", false, null, Int32.MaxValue)]
 		public string? JobReference;
 
-		[Field("positionStatusSelect")]
+		[JsonProperty("positionStatusSelect")]
+		[Field("positionStatusSelect", false, null, Int32.MaxValue)]
 		public string? PositionStatusSelect;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "0", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("nbOpenJob")]
+		[JsonProperty("nbOpenJob")]
+		[Field("nbOpenJob", false, "0", Int32.MaxValue)]
 		public int? NbOpenJob;
 
-		[Field("companyDepartment")]
+		[JsonProperty("companyDepartment")]
+		[Field("companyDepartment", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.CompanyDepartment? CompanyDepartment;
 
-		[Field("profileWanted")]
+		[JsonProperty("profileWanted")]
+		[Field("profileWanted", false, null, Int32.MaxValue)]
 		public string? ProfileWanted;
 
-		[Field("location")]
+		[JsonProperty("jobDescription")]
+		[Field("jobDescription", false, null, Int32.MaxValue)]
+		public string? JobDescription;
+
+		[JsonProperty("location")]
+		[Field("location", false, null, Int32.MaxValue)]
 		public string? Location;
 
-		[Field("experienceSelect")]
+		[JsonProperty("startingDate")]
+		[Field("startingDate", false, null, Int32.MaxValue)]
+		public DateTime? StartingDate;
+
+		[JsonProperty("experienceSelect")]
+		[Field("experienceSelect", false, "0", Int32.MaxValue)]
 		public int? ExperienceSelect;
 
 	}

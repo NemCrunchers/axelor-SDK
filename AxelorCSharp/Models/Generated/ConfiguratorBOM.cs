@@ -1,101 +1,142 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Production.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.production.db.ConfiguratorBOM")]
 	public class ConfiguratorBOM : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("defProductFromConfigurator")]
+		[JsonProperty("defProductFromConfigurator")]
+		[Field("defProductFromConfigurator", false, "True", Int32.MaxValue)]
 		public bool? DefProductFromConfigurator;
 
-		[Field("unitFormula")]
+		[JsonProperty("unitFormula")]
+		[Field("unitFormula", false, null, Int32.MaxValue)]
 		public string? UnitFormula;
 
-		[Field("createdOn")]
+		[JsonProperty("configuratorBomList")]
+		[Field("configuratorBomList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Production.Db.ConfiguratorBOM>? ConfiguratorBomList;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("configuratorProdProcess")]
+		[JsonProperty("configuratorProdProcess")]
+		[Field("configuratorProdProcess", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.ConfiguratorProdProcess? ConfiguratorProdProcess;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("parentConfiguratorBOM")]
+		[JsonProperty("parentConfiguratorBOM")]
+		[Field("parentConfiguratorBOM", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.ConfiguratorBOM? ParentConfiguratorBOM;
 
-		[Field("productFormula")]
+		[JsonProperty("productFormula")]
+		[Field("productFormula", false, null, Int32.MaxValue)]
 		public string? ProductFormula;
 
-		[Field("useCondition")]
+		[JsonProperty("useCondition")]
+		[Field("useCondition", false, null, Int32.MaxValue)]
 		public string? UseCondition;
 
-		[Field("defUnitAsFormula")]
+		[JsonProperty("defUnitAsFormula")]
+		[Field("defUnitAsFormula", false, "False", Int32.MaxValue)]
 		public bool? DefUnitAsFormula;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("defNameAsFormula")]
+		[JsonProperty("defNameAsFormula")]
+		[Field("defNameAsFormula", false, "False", Int32.MaxValue)]
 		public bool? DefNameAsFormula;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("product")]
+		[JsonProperty("product")]
+		[Field("product", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("qtyFormula")]
+		[JsonProperty("qtyFormula")]
+		[Field("qtyFormula", false, null, Int32.MaxValue)]
 		public string? QtyFormula;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("prodProcessFormula")]
+		[JsonProperty("prodProcessFormula")]
+		[Field("prodProcessFormula", false, null, Int32.MaxValue)]
 		public string? ProdProcessFormula;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("nameFormula")]
+		[JsonProperty("nameFormula")]
+		[Field("nameFormula", false, null, Int32.MaxValue)]
 		public string? NameFormula;
 
-		[Field("prodProcess")]
+		[JsonProperty("prodProcess")]
+		[Field("prodProcess", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.ProdProcess? ProdProcess;
 
-		[Field("unit")]
+		[JsonProperty("unit")]
+		[Field("unit", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Unit? Unit;
 
-		[Field("defProdProcessAsFormula")]
+		[JsonProperty("defProdProcessAsFormula")]
+		[Field("defProdProcessAsFormula", false, "False", Int32.MaxValue)]
 		public bool? DefProdProcessAsFormula;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("defQtyAsFormula")]
+		[JsonProperty("defQtyAsFormula")]
+		[Field("defQtyAsFormula", false, "False", Int32.MaxValue)]
 		public bool? DefQtyAsFormula;
 
-		[Field("name")]
+		[JsonProperty("qty")]
+		[Field("qty", false, "0", Int32.MaxValue)]
+		public decimal? Qty;
+
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("defProductAsFormula")]
+		[JsonProperty("defProductAsFormula")]
+		[Field("defProductAsFormula", false, "False", Int32.MaxValue)]
 		public bool? DefProductAsFormula;
 
-		[Field("billOfMaterialId")]
+		[JsonProperty("billOfMaterialId")]
+		[Field("billOfMaterialId", false, "0", Int32.MaxValue)]
 		public long? BillOfMaterialId;
 
-		[Field("defProdProcessAsConfigurator")]
+		[JsonProperty("defProdProcessAsConfigurator")]
+		[Field("defProdProcessAsConfigurator", false, "False", Int32.MaxValue)]
 		public bool? DefProdProcessAsConfigurator;
 
 	}

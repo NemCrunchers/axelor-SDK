@@ -1,59 +1,94 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.DebtRecoveryHistory")]
 	public class DebtRecoveryHistory : AxelorModel
 	{
-		[Field("setToIrrecoverableOK")]
+		[JsonProperty("setToIrrecoverableOK")]
+		[Field("setToIrrecoverableOK", false, "False", Int32.MaxValue)]
 		public bool? SetToIrrecoverableOK;
 
-		[Field("importOrigin")]
+		[JsonProperty("balanceDueDebtRecovery")]
+		[Field("balanceDueDebtRecovery", false, "0", Int32.MaxValue)]
+		public decimal? BalanceDueDebtRecovery;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("userDebtRecovery")]
+		[JsonProperty("userDebtRecovery")]
+		[Field("userDebtRecovery", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UserDebtRecovery;
 
-		[Field("updatedOn")]
+		[JsonProperty("balanceDue")]
+		[Field("balanceDue", false, "0", Int32.MaxValue)]
+		public decimal? BalanceDue;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("debtRecoveryDate")]
+		[Field("debtRecoveryDate", false, null, Int32.MaxValue)]
+		public DateTime? DebtRecoveryDate;
+
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("unknownAddressOK")]
+		[JsonProperty("unknownAddressOK")]
+		[Field("unknownAddressOK", false, "False", Int32.MaxValue)]
 		public bool? UnknownAddressOK;
 
-		[Field("debtRecoveryMethod")]
+		[JsonProperty("debtRecoveryMethod")]
+		[Field("debtRecoveryMethod", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.DebtRecoveryMethod? DebtRecoveryMethod;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("debtRecoveryMethodLine")]
+		[JsonProperty("referenceDate")]
+		[Field("referenceDate", false, null, Int32.MaxValue)]
+		public DateTime? ReferenceDate;
+
+		[JsonProperty("debtRecoveryMethodLine")]
+		[Field("debtRecoveryMethodLine", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.DebtRecoveryMethodLine? DebtRecoveryMethodLine;
 
-		[Field("debtRecovery")]
+		[JsonProperty("debtRecovery")]
+		[Field("debtRecovery", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.DebtRecovery? DebtRecovery;
 
 	}

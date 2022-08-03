@@ -1,77 +1,106 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Studio.Db
 {
+	[Serializable]
 	[Model("com.axelor.studio.db.ActionBuilderLine")]
 	public class ActionBuilderLine : AxelorModel
 	{
-		[Field("parent")]
+		[JsonProperty("parent")]
+		[Field("parent", false, null, Int32.MaxValue)]
 		public Axelor.Studio.Db.ActionBuilderLine? Parent;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("actionBuilder")]
+		[JsonProperty("actionBuilder")]
+		[Field("actionBuilder", false, null, Int32.MaxValue)]
 		public Axelor.Studio.Db.ActionBuilder? ActionBuilder;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("dummy")]
+		[JsonProperty("dummy")]
+		[Field("dummy", false, "False", Int32.MaxValue)]
 		public bool? Dummy;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("validationTypeSelect")]
+		[JsonProperty("validationTypeSelect")]
+		[Field("validationTypeSelect", false, null, Int32.MaxValue)]
 		public string? ValidationTypeSelect;
 
-		[Field("value")]
+		[JsonProperty("value")]
+		[Field("value", false, null, Int32.MaxValue)]
 		public string? Value;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("validationMsg")]
+		[JsonProperty("validationMsg")]
+		[Field("validationMsg", false, null, Int32.MaxValue)]
 		public string? ValidationMsg;
 
-		[Field("conditionText")]
+		[JsonProperty("subLines")]
+		[Field("subLines", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Studio.Db.ActionBuilderLine>? SubLines;
+
+		[JsonProperty("conditionText")]
+		[Field("conditionText", false, null, Int32.MaxValue)]
 		public string? ConditionText;
 
-		[Field("metaField")]
+		[JsonProperty("metaField")]
+		[Field("metaField", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaField? MetaField;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("valueField")]
+		[JsonProperty("valueField")]
+		[Field("valueField", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaField? ValueField;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("valueJson")]
+		[JsonProperty("valueJson")]
+		[Field("valueJson", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaJsonField? ValueJson;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("filter")]
+		[JsonProperty("filter")]
+		[Field("filter", false, null, Int32.MaxValue)]
 		public string? Filter;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("metaJsonField")]
+		[JsonProperty("metaJsonField")]
+		[Field("metaJsonField", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaJsonField? MetaJsonField;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
 	}

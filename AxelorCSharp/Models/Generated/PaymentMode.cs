@@ -1,77 +1,106 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.PaymentMode")]
 	public class PaymentMode : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", true, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("generateBankOrder")]
+		[JsonProperty("generateBankOrder")]
+		[Field("generateBankOrder", false, "False", Int32.MaxValue)]
 		public bool? GenerateBankOrder;
 
-		[Field("typeSelect")]
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", false, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("accountManagementList")]
+		[Field("accountManagementList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Account.Db.AccountManagement>? AccountManagementList;
+
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("consoBankOrderLinePerPartner")]
+		[JsonProperty("consoBankOrderLinePerPartner")]
+		[Field("consoBankOrderLinePerPartner", false, "False", Int32.MaxValue)]
 		public bool? ConsoBankOrderLinePerPartner;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("bankOrderExportFolderPath")]
+		[JsonProperty("bankOrderExportFolderPath")]
+		[Field("bankOrderExportFolderPath", false, null, Int32.MaxValue)]
 		public string? BankOrderExportFolderPath;
 
-		[Field("inOutSelect")]
+		[JsonProperty("inOutSelect")]
+		[Field("inOutSelect", false, "0", Int32.MaxValue)]
 		public int? InOutSelect;
 
-		[Field("validatePaymentByDepositSlipPublication")]
+		[JsonProperty("validatePaymentByDepositSlipPublication")]
+		[Field("validatePaymentByDepositSlipPublication", false, "False", Int32.MaxValue)]
 		public bool? ValidatePaymentByDepositSlipPublication;
 
-		[Field("automaticTransmission")]
+		[JsonProperty("automaticTransmission")]
+		[Field("automaticTransmission", false, "False", Int32.MaxValue)]
 		public bool? AutomaticTransmission;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("autoConfirmBankOrder")]
+		[JsonProperty("autoConfirmBankOrder")]
+		[Field("autoConfirmBankOrder", false, "False", Int32.MaxValue)]
 		public bool? AutoConfirmBankOrder;
 
-		[Field("generateMoveAutoFromBankOrder")]
+		[JsonProperty("generateMoveAutoFromBankOrder")]
+		[Field("generateMoveAutoFromBankOrder", false, "False", Int32.MaxValue)]
 		public bool? GenerateMoveAutoFromBankOrder;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("bankOrderFileFormat")]
+		[JsonProperty("bankOrderFileFormat")]
+		[Field("bankOrderFileFormat", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Bankpayment.Db.BankOrderFileFormat? BankOrderFileFormat;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("orderTypeSelect")]
+		[JsonProperty("orderTypeSelect")]
+		[Field("orderTypeSelect", false, "0", Int32.MaxValue)]
 		public int? OrderTypeSelect;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
 	}

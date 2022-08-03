@@ -1,44 +1,62 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Meta.Db
 {
+	[Serializable]
 	[Model("com.axelor.meta.db.MetaPermission")]
 	public class MetaPermission : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("active")]
+		[JsonProperty("active")]
+		[Field("active", false, "True", Int32.MaxValue)]
 		public bool? Active;
 
-		[Field("updatedOn")]
+		[JsonProperty("rules")]
+		[Field("rules", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Meta.Db.MetaPermissionRule>? Rules;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("object")]
+		[JsonProperty("object")]
+		[Field("object", true, null, Int32.MaxValue)]
 		public string? Object;
 
 	}

@@ -1,50 +1,82 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Production.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.production.db.CostSheet")]
 	public class CostSheet : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("manufOrderProducedRatio")]
+		[Field("manufOrderProducedRatio", false, "0", Int32.MaxValue)]
+		public decimal? ManufOrderProducedRatio;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("billOfMaterial")]
+		[JsonProperty("billOfMaterial")]
+		[Field("billOfMaterial", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.BillOfMaterial? BillOfMaterial;
 
-		[Field("manufOrder")]
+		[JsonProperty("costPrice")]
+		[Field("costPrice", false, "0", Int32.MaxValue)]
+		public decimal? CostPrice;
+
+		[JsonProperty("costSheetLineList")]
+		[Field("costSheetLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Production.Db.CostSheetLine>? CostSheetLineList;
+
+		[JsonProperty("manufOrder")]
+		[Field("manufOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.ManufOrder? ManufOrder;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("calculationDate")]
+		[Field("calculationDate", false, null, Int32.MaxValue)]
+		public DateTime? CalculationDate;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("calculationTypeSelect")]
+		[JsonProperty("calculationTypeSelect")]
+		[Field("calculationTypeSelect", false, "0", Int32.MaxValue)]
 		public int? CalculationTypeSelect;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("currency")]
+		[JsonProperty("currency")]
+		[Field("currency", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Currency? Currency;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

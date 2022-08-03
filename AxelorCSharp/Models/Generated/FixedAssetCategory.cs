@@ -1,74 +1,102 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.FixedAssetCategory")]
 	public class FixedAssetCategory : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("periodicityInMonth")]
+		[JsonProperty("periodicityInMonth")]
+		[Field("periodicityInMonth", false, "12", Int32.MaxValue)]
 		public int? PeriodicityInMonth;
 
-		[Field("chargeAccount")]
+		[JsonProperty("chargeAccount")]
+		[Field("chargeAccount", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? ChargeAccount;
 
-		[Field("isProrataTemporis")]
+		[JsonProperty("isProrataTemporis")]
+		[Field("isProrataTemporis", false, "False", Int32.MaxValue)]
 		public bool? IsProrataTemporis;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("durationInMonth")]
+		[JsonProperty("degressiveCoef")]
+		[Field("degressiveCoef", false, "0", Int32.MaxValue)]
+		public decimal? DegressiveCoef;
+
+		[JsonProperty("durationInMonth")]
+		[Field("durationInMonth", false, "0", Int32.MaxValue)]
 		public int? DurationInMonth;
 
-		[Field("fixedAssetType")]
+		[JsonProperty("fixedAssetType")]
+		[Field("fixedAssetType", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.FixedAssetType? FixedAssetType;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("journal")]
+		[JsonProperty("journal")]
+		[Field("journal", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Journal? Journal;
 
-		[Field("computationMethodSelect")]
+		[JsonProperty("computationMethodSelect")]
+		[Field("computationMethodSelect", false, null, Int32.MaxValue)]
 		public string? ComputationMethodSelect;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("isValidateFixedAsset")]
+		[JsonProperty("isValidateFixedAsset")]
+		[Field("isValidateFixedAsset", false, "False", Int32.MaxValue)]
 		public bool? IsValidateFixedAsset;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("numberOfDepreciation")]
+		[JsonProperty("numberOfDepreciation")]
+		[Field("numberOfDepreciation", false, "1", Int32.MaxValue)]
 		public int? NumberOfDepreciation;
 
-		[Field("depreciationAccount")]
+		[JsonProperty("depreciationAccount")]
+		[Field("depreciationAccount", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? DepreciationAccount;
 
 	}

@@ -1,62 +1,82 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Supplychain.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.supplychain.db.MrpLineType")]
 	public class MrpLineType : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", false, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("elementSelect")]
+		[JsonProperty("elementSelect")]
+		[Field("elementSelect", false, "0", Int32.MaxValue)]
 		public int? ElementSelect;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("typeSelect")]
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", false, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("label")]
+		[JsonProperty("label")]
+		[Field("label", false, null, Int32.MaxValue)]
 		public string? Label;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, null, Int32.MaxValue)]
 		public string? StatusSelect;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, "0", Int32.MaxValue)]
 		public int? Sequence;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("includeElementWithoutDate")]
+		[JsonProperty("includeElementWithoutDate")]
+		[Field("includeElementWithoutDate", false, "False", Int32.MaxValue)]
 		public bool? IncludeElementWithoutDate;
 
 	}

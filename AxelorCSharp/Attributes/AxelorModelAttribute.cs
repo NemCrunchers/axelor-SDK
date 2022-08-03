@@ -30,13 +30,31 @@ namespace Axelor.SDK
     public class FieldAttribute : Attribute
     {
         private string field;
-        public FieldAttribute(string field)
+        private bool required;
+        private string defaultValue;
+        private int maxSize;
+        public FieldAttribute(string field, bool required=false, string defaultValue = null, int maxSize = Int32.MaxValue)
         {
             this.field = field;
+            this.required = required;
+            this.defaultValue = defaultValue;
+            this.maxSize = maxSize;
         }
         public string FieldName
         {
             get { return field; }
+        }
+        public bool Required
+        {
+            get { return required; }
+        }
+        public string DefaultValue
+        {
+            get { return defaultValue; }
+        }
+        public int MaxSize
+        {
+            get { return maxSize; }
         }
     }
 }

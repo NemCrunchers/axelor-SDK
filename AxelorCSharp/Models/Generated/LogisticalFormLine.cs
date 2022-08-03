@@ -1,59 +1,90 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Stock.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.stock.db.LogisticalFormLine")]
 	public class LogisticalFormLine : AxelorModel
 	{
-		[Field("parcelPalletNumber")]
+		[JsonProperty("grossMass")]
+		[Field("grossMass", false, null, Int32.MaxValue)]
+		public decimal? GrossMass;
+
+		[JsonProperty("parcelPalletNumber")]
+		[Field("parcelPalletNumber", false, null, Int32.MaxValue)]
 		public int? ParcelPalletNumber;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("logisticalForm")]
+		[JsonProperty("logisticalForm")]
+		[Field("logisticalForm", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.LogisticalForm? LogisticalForm;
 
-		[Field("typeSelect")]
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", true, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, "0", Int32.MaxValue)]
 		public int? Sequence;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("stockMoveLine")]
+		[JsonProperty("qty")]
+		[Field("qty", false, null, Int32.MaxValue)]
+		public decimal? Qty;
+
+		[JsonProperty("stockMoveLine")]
+		[Field("stockMoveLine", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockMoveLine? StockMoveLine;
 
-		[Field("id")]
+		[JsonProperty("unitNetMass")]
+		[Field("unitNetMass", false, null, Int32.MaxValue)]
+		public decimal? UnitNetMass;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("dimensions")]
+		[JsonProperty("dimensions")]
+		[Field("dimensions", false, null, Int32.MaxValue)]
 		public string? Dimensions;
 
-		[Field("saleOrder")]
+		[JsonProperty("saleOrder")]
+		[Field("saleOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Sale.Db.SaleOrder? SaleOrder;
 
 	}

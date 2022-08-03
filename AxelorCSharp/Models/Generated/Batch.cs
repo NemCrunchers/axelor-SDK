@@ -1,95 +1,130 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.Batch")]
 	public class Batch : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("anomaly")]
+		[JsonProperty("anomaly")]
+		[Field("anomaly", false, "0", Int32.MaxValue)]
 		public int? Anomaly;
 
-		[Field("supplychainBatch")]
+		[JsonProperty("supplychainBatch")]
+		[Field("supplychainBatch", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Supplychain.Db.SupplychainBatch? SupplychainBatch;
 
-		[Field("endDate")]
+		[JsonProperty("endDate")]
+		[Field("endDate", false, null, Int32.MaxValue)]
 		public DateTime? EndDate;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("alarmEngineBatch")]
+		[JsonProperty("alarmEngineBatch")]
+		[Field("alarmEngineBatch", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.AlarmEngineBatch? AlarmEngineBatch;
 
-		[Field("duration")]
+		[JsonProperty("duration")]
+		[Field("duration", false, "0", Int32.MaxValue)]
 		public long? Duration;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("crmBatch")]
+		[JsonProperty("crmBatch")]
+		[Field("crmBatch", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Crm.Db.CrmBatch? CrmBatch;
 
-		[Field("productionBatch")]
+		[JsonProperty("productionBatch")]
+		[Field("productionBatch", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.ProductionBatch? ProductionBatch;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("contractBatch")]
+		[JsonProperty("contractBatch")]
+		[Field("contractBatch", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Contract.Db.ContractBatch? ContractBatch;
 
-		[Field("updatedBy")]
+		[JsonProperty("comments")]
+		[Field("comments", false, null, Int32.MaxValue)]
+		public string? Comments;
+
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("bankOrder")]
+		[JsonProperty("bankOrder")]
+		[Field("bankOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Bankpayment.Db.BankOrder? BankOrder;
 
-		[Field("bankPaymentBatch")]
+		[JsonProperty("bankPaymentBatch")]
+		[Field("bankPaymentBatch", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Bankpayment.Db.BankPaymentBatch? BankPaymentBatch;
 
-		[Field("accountingBatch")]
+		[JsonProperty("accountingBatch")]
+		[Field("accountingBatch", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.AccountingBatch? AccountingBatch;
 
-		[Field("saleBatch")]
+		[JsonProperty("saleBatch")]
+		[Field("saleBatch", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Sale.Db.SaleBatch? SaleBatch;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("done")]
+		[JsonProperty("done")]
+		[Field("done", false, "0", Int32.MaxValue)]
 		public int? Done;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("hrBatch")]
+		[JsonProperty("hrBatch")]
+		[Field("hrBatch", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.HrBatch? HrBatch;
 
-		[Field("baseBatch")]
+		[JsonProperty("baseBatch")]
+		[Field("baseBatch", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.BaseBatch? BaseBatch;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("invoiceBatch")]
+		[JsonProperty("invoiceBatch")]
+		[Field("invoiceBatch", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.InvoiceBatch? InvoiceBatch;
 
-		[Field("mailBatch")]
+		[JsonProperty("mailBatch")]
+		[Field("mailBatch", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.MailBatch? MailBatch;
 
-		[Field("metaFile")]
+		[JsonProperty("metaFile")]
+		[Field("metaFile", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? MetaFile;
 
-		[Field("startDate")]
+		[JsonProperty("startDate")]
+		[Field("startDate", false, null, Int32.MaxValue)]
 		public DateTime? StartDate;
 
 	}

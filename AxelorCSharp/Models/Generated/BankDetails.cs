@@ -1,86 +1,118 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.BankDetails")]
 	public class BankDetails : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", false, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("accountNbr")]
+		[JsonProperty("accountNbr")]
+		[Field("accountNbr", false, null, 255)]
 		public string? AccountNbr;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("bank")]
+		[JsonProperty("bank")]
+		[Field("bank", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Bank? Bank;
 
-		[Field("ownerName")]
+		[JsonProperty("ownerName")]
+		[Field("ownerName", false, null, 255)]
 		public string? OwnerName;
 
-		[Field("bbanKey")]
+		[JsonProperty("bbanKey")]
+		[Field("bbanKey", false, null, 255)]
 		public string? BbanKey;
 
-		[Field("currency")]
+		[JsonProperty("currency")]
+		[Field("currency", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Currency? Currency;
 
-		[Field("id")]
+		[JsonProperty("specificNoteOnInvoice")]
+		[Field("specificNoteOnInvoice", false, null, Int32.MaxValue)]
+		public string? SpecificNoteOnInvoice;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("bankCode")]
+		[JsonProperty("bankCode")]
+		[Field("bankCode", false, null, 255)]
 		public string? BankCode;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("ibanBic")]
+		[JsonProperty("ibanBic")]
+		[Field("ibanBic", false, null, 255)]
 		public string? IbanBic;
 
-		[Field("active")]
+		[JsonProperty("active")]
+		[Field("active", false, "True", Int32.MaxValue)]
 		public bool? Active;
 
-		[Field("fullName")]
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("label")]
+		[JsonProperty("label")]
+		[Field("label", false, null, Int32.MaxValue)]
 		public string? Label;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("bankAddress")]
+		[JsonProperty("bankAddress")]
+		[Field("bankAddress", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.BankAddress? BankAddress;
 
-		[Field("sortCode")]
+		[JsonProperty("sortCode")]
+		[Field("sortCode", false, null, 255)]
 		public string? SortCode;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("isDefault")]
+		[JsonProperty("isDefault")]
+		[Field("isDefault", false, "False", Int32.MaxValue)]
 		public bool? IsDefault;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("partner")]
+		[JsonProperty("partner")]
+		[Field("partner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? Partner;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("iban")]
+		[JsonProperty("iban")]
+		[Field("iban", true, null, Int32.MaxValue)]
 		public string? Iban;
 
 	}

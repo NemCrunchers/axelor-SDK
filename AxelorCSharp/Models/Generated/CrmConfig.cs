@@ -1,59 +1,82 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Crm.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.crm.db.CrmConfig")]
 	public class CrmConfig : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("meetingTemplate")]
+		[JsonProperty("meetingTemplate")]
+		[Field("meetingTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? MeetingTemplate;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("sendMail")]
+		[JsonProperty("sendMail")]
+		[Field("sendMail", false, "False", Int32.MaxValue)]
 		public bool? SendMail;
 
-		[Field("taskTemplate")]
+		[JsonProperty("taskTemplate")]
+		[Field("taskTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? TaskTemplate;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("callTemplate")]
+		[JsonProperty("callTemplate")]
+		[Field("callTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? CallTemplate;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("meetingGuestDeletedTemplate")]
+		[JsonProperty("meetingGuestDeletedTemplate")]
+		[Field("meetingGuestDeletedTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? MeetingGuestDeletedTemplate;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("meetingGuestAddedTemplate")]
+		[JsonProperty("meetingGuestAddedTemplate")]
+		[Field("meetingGuestAddedTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? MeetingGuestAddedTemplate;
 
-		[Field("id")]
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
+		public Axelor.Apps.Base.Db.Company? Company;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("meetingDateChangeTemplate")]
+		[JsonProperty("meetingDateChangeTemplate")]
+		[Field("meetingDateChangeTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? MeetingDateChangeTemplate;
 
 	}

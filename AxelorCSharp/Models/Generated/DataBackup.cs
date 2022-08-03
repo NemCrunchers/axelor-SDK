@@ -1,56 +1,74 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.DataBackup")]
 	public class DataBackup : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("fetchLimit")]
+		[JsonProperty("fetchLimit")]
+		[Field("fetchLimit", false, "0", Int32.MaxValue)]
 		public int? FetchLimit;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "0", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("backupMetaFile")]
+		[JsonProperty("backupMetaFile")]
+		[Field("backupMetaFile", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? BackupMetaFile;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("logMetaFile")]
+		[JsonProperty("logMetaFile")]
+		[Field("logMetaFile", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? LogMetaFile;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("backupDate")]
+		[JsonProperty("backupDate")]
+		[Field("backupDate", false, null, Int32.MaxValue)]
 		public DateTime? BackupDate;
 
-		[Field("restoreDate")]
+		[JsonProperty("restoreDate")]
+		[Field("restoreDate", false, null, Int32.MaxValue)]
 		public DateTime? RestoreDate;
 
 	}

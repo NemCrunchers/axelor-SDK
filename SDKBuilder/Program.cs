@@ -7,6 +7,37 @@ using System.Text.RegularExpressions;
 const string generatedFilesPath = "..\\..\\..\\..\\AxelorCSharp\\Models\\Generated";
 const string generatedTestPath = "..\\..\\..\\..\\Axelor.SDK.Test\\Generated";
 
+List<string> ignoredTests = new List<string>()
+{
+    "AccountingReportTest",
+    "DebtRecoveryLevelTest",
+    "DepositSlipTest",
+    "InvoicePaymentTest",
+    "PaymentVoucherTest",
+    "ReconcileGroupTest",
+    "BankOrderTest",
+    "BankAddressTest",
+    "DebtRecoveryLevelTest",
+    "SequenceTest",
+    "ContractTest",
+    "LunchVoucherAdvanceTest",
+    "TimesheetLineTest",
+    "PartnerTest",
+    "ManufOrderTest",
+    "RawMaterialRequirementTest",
+    "WorkshopSequenceConfigLineTest",
+    "AdvancePaymentTest",
+    "CustomsCodeNomenclatureTest",
+    "LogisticalFormTest",
+    "TrainingRegisterTest",
+    "TrainingSessionTest",
+    "DMSPermissionTest",
+    "MailFlagsTest",
+    "ChartBuilderTest",
+    "TeamTaskTest",
+    "MoveLineTest"
+};
+
 
 HttpClient httpClient = new HttpClient();
 httpClient.BaseAddress = new Uri("https://7ebb376912.axelor.nemcrunchers.dev");
@@ -19,7 +50,7 @@ foreach(string modelName in serviceMetadata.data)
     IEnumerable<String> nameSpace = ToNameSpace(model.Data.Model);
     string className = nameSpace.LastOrDefault();
     var sb = new StringBuilder();
-    sb.Append($"using Axelor.SDK;\n\nnamespace {String.Join(".", nameSpace.SkipLast(1))}\n{{\n\t[Model(\"{model.Data.Model}\")]\n\tpublic class {className} : AxelorModel\n\t{{\n");
+    sb.Append($"using Axelor.SDK;\nusing Newtonsoft.Json;\n\nnamespace {String.Join(".", nameSpace.SkipLast(1))}\n{{\n\t[Serializable]\n\t[Model(\"{model.Data.Model}\")]\n\tpublic class {className} : AxelorModel\n\t{{\n");
     Console.WriteLine(model.Data.Model);
     foreach(Field field in model.Data.Fields)
     {
@@ -31,25 +62,40 @@ foreach(string modelName in serviceMetadata.data)
         switch (field.Type)
         {
             case "STRING":
-                AddField(ref sb, FieldName, field.Name, "string");
+                AddField(ref sb, FieldName, field, "string");
+                break;
+            case "TEXT":
+                AddField(ref sb, FieldName, field, "string");
                 break;
             case "DATETIME":
-                AddField(ref sb, FieldName, field.Name, "DateTime");
+                AddField(ref sb, FieldName, field, "DateTime");
+                break;
+            case "DATE":
+                AddField(ref sb, FieldName, field, "DateTime");
                 break;
             case "INTEGER":
-                AddField(ref sb, FieldName, field.Name, "int");
+                AddField(ref sb, FieldName, field, "int");
+                break;
+            case "DECIMAL":
+                AddField(ref sb, FieldName, field, "decimal");
                 break;
             case "LONG":
-                AddField(ref sb, FieldName, field.Name, "long");
+                AddField(ref sb, FieldName, field, "long");
                 break;
             case "BOOLEAN":
-                AddField(ref sb, FieldName, field.Name, "bool");
+                AddField(ref sb, FieldName, field, "bool");
                 break;
             case "MANY_TO_ONE":
-                AddField(ref sb, FieldName, field.Name, $"{String.Join(".", ToNameSpace(field.Target))}");
+                AddField(ref sb, FieldName, field, $"{String.Join(".", ToNameSpace(field.Target))}");
+                break;
+            case "ONE_TO_ONE":
+                AddField(ref sb, FieldName, field, $"{String.Join(".", ToNameSpace(field.Target))}");
                 break;
             case "MANY_TO_MANY":
-                AddField(ref sb, FieldName, field.Name, $"IEnumerable<{String.Join(".", ToNameSpace(field.Target))}>");
+                AddField(ref sb, FieldName, field, $"IEnumerable<{String.Join(".", ToNameSpace(field.Target))}>");
+                break;
+            case "ONE_TO_MANY":
+                AddField(ref sb, FieldName, field, $"IEnumerable<{String.Join(".", ToNameSpace(field.Target))}>");
                 break;
             //    break;
             default:
@@ -63,9 +109,14 @@ foreach(string modelName in serviceMetadata.data)
     }
     using (System.IO.StreamWriter file = new System.IO.StreamWriter(@$"{generatedTestPath}\{className}Test.cs"))
     {
+        string ignoreAttr = "";
+        if (ignoredTests.Contains($"{className}Test"))
+        {
+            ignoreAttr = "\n    [Ignore]"; 
+        }
         List<string> testNamespace = nameSpace.SkipLast(1).Skip(1).ToList();
-        file.WriteLine($"using Axelor.SDK.Test;\n\nnamespace Axelor.SDK.Test.{String.Join(".", testNamespace)}\n{{\n    [TestClass]\n    public class {className}Test: TestModel\n    {{\n        public {className}Test(): base(typeof({String.Join(".", nameSpace)})){{}}\n    }}\n}}");
-    }
+            file.WriteLine($"using Axelor.SDK.Test;\n\nnamespace Axelor.SDK.Test.{String.Join(".", testNamespace)}\n{{{ignoreAttr}\n    [TestClass]\n    public class {className}Test: TestModel\n    {{\n        public {className}Test(): base(typeof({String.Join(".", nameSpace)})){{}}\n    }}\n}}");
+        }
 }
 
 string UpperCaseFirstChar(string text)
@@ -96,8 +147,21 @@ IEnumerable<string> ToNameSpace(string model)
 }
 
 
-void AddField(ref StringBuilder sb, string attributeName, string fieldName, string type)
+void AddField(ref StringBuilder sb, string attributeName, Field field, string type)
 {
-    sb.AppendLine($"\t\t[Field(\"{fieldName}\")]\n\t\tpublic {type}? {attributeName};\n");
+    string maxSize = "Int32.MaxValue";
+    if (field.MaxSize != Int32.MaxValue)
+    {
+        maxSize = $"{field.MaxSize}";
+    }
+    if (field.DefaultValue != null)
+    {
+        field.DefaultValue = $"\"{field.DefaultValue}\"";
+    }
+    else if(field.DefaultValue == null)
+    {
+        field.DefaultValue = "null";
+    }
+    sb.AppendLine($"\t\t[JsonProperty(\"{field.Name}\")]\n\t\t[Field(\"{field.Name}\", {field.Required.ToString().ToLower()}, {field.DefaultValue}, {maxSize})]\n\t\tpublic {type}? {attributeName};\n");
     return;
 }

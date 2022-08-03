@@ -1,56 +1,94 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Cash.Management.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.cash.management.db.ForecastGenerator")]
 	public class ForecastGenerator : AxelorModel
 	{
-		[Field("forecastReason")]
+		[JsonProperty("amount")]
+		[Field("amount", false, "0", Int32.MaxValue)]
+		public decimal? Amount;
+
+		[JsonProperty("forecastReason")]
+		[Field("forecastReason", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Cash.Management.Db.ForecastReason? ForecastReason;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("comments")]
+		[Field("comments", false, null, Int32.MaxValue)]
+		public string? Comments;
+
+		[JsonProperty("forecastList")]
+		[Field("forecastList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Cash.Management.Db.Forecast>? ForecastList;
+
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("typeSelect")]
+		[JsonProperty("toDate")]
+		[Field("toDate", true, null, Int32.MaxValue)]
+		public DateTime? ToDate;
+
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", true, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("periodicitySelect")]
+		[JsonProperty("periodicitySelect")]
+		[Field("periodicitySelect", false, "1", Int32.MaxValue)]
 		public int? PeriodicitySelect;
 
-		[Field("realizedSelect")]
+		[JsonProperty("realizedSelect")]
+		[Field("realizedSelect", false, "2", Int32.MaxValue)]
 		public int? RealizedSelect;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("fromDate")]
+		[Field("fromDate", true, null, Int32.MaxValue)]
+		public DateTime? FromDate;
+
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("bankDetails")]
+		[JsonProperty("bankDetails")]
+		[Field("bankDetails", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.BankDetails? BankDetails;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

@@ -1,47 +1,74 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Purchase.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.purchase.db.PurchaseOrderLineTax")]
 	public class PurchaseOrderLineTax : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("inTaxTotal")]
+		[Field("inTaxTotal", false, "0", Int32.MaxValue)]
+		public decimal? InTaxTotal;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("taxLine")]
+		[JsonProperty("taxLine")]
+		[Field("taxLine", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.TaxLine? TaxLine;
 
-		[Field("updatedOn")]
+		[JsonProperty("taxTotal")]
+		[Field("taxTotal", false, "0", Int32.MaxValue)]
+		public decimal? TaxTotal;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("reverseCharged")]
+		[JsonProperty("reverseCharged")]
+		[Field("reverseCharged", false, "False", Int32.MaxValue)]
 		public bool? ReverseCharged;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("exTaxBase")]
+		[Field("exTaxBase", false, "0", Int32.MaxValue)]
+		public decimal? ExTaxBase;
+
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("purchaseOrder")]
+		[JsonProperty("purchaseOrder")]
+		[Field("purchaseOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Purchase.Db.PurchaseOrder? PurchaseOrder;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

@@ -1,59 +1,78 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.CalendarManagement")]
 	public class CalendarManagement : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("team")]
+		[JsonProperty("team")]
+		[Field("team", false, null, Int32.MaxValue)]
 		public Axelor.Team.Db.Team? Team;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("allCalendars")]
+		[JsonProperty("allCalendars")]
+		[Field("allCalendars", false, "False", Int32.MaxValue)]
 		public bool? AllCalendars;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("erpCalendars")]
+		[JsonProperty("erpCalendars")]
+		[Field("erpCalendars", false, "False", Int32.MaxValue)]
 		public bool? ErpCalendars;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("icalCalendars")]
+		[JsonProperty("icalCalendars")]
+		[Field("icalCalendars", false, "False", Int32.MaxValue)]
 		public bool? IcalCalendars;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("calendarSet")]
+		[JsonProperty("calendarSet")]
+		[Field("calendarSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.ICalendar>? CalendarSet;
 
-		[Field("user")]
+		[JsonProperty("user")]
+		[Field("user", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? User;
 
-		[Field("parentUser")]
+		[JsonProperty("parentUser")]
+		[Field("parentUser", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? ParentUser;
 
 	}

@@ -1,56 +1,82 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Talent.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.talent.db.Appraisal")]
 	public class Appraisal : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("reviewerEmployee")]
+		[JsonProperty("reviewerEmployee")]
+		[Field("reviewerEmployee", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.Employee? ReviewerEmployee;
 
-		[Field("appraisalType")]
+		[JsonProperty("toDate")]
+		[Field("toDate", false, null, Int32.MaxValue)]
+		public DateTime? ToDate;
+
+		[JsonProperty("appraisalType")]
+		[Field("appraisalType", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Talent.Db.AppraisalType? AppraisalType;
 
-		[Field("updatedOn")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("employee")]
+		[JsonProperty("employee")]
+		[Field("employee", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.Employee? Employee;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "0", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("isTemplate")]
+		[JsonProperty("isTemplate")]
+		[Field("isTemplate", false, "False", Int32.MaxValue)]
 		public bool? IsTemplate;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

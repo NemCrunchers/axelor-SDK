@@ -1,80 +1,106 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.CfonbConfig")]
 	public class CfonbConfig : AxelorModel
 	{
-		[Field("transferOperationCodeExportCFONB")]
+		[JsonProperty("transferOperationCodeExportCFONB")]
+		[Field("transferOperationCodeExportCFONB", false, "02", Int32.MaxValue)]
 		public string? TransferOperationCodeExportCFONB;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", false, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("directDebitOperationCodeExportCFONB")]
+		[JsonProperty("directDebitOperationCodeExportCFONB")]
+		[Field("directDebitOperationCodeExportCFONB", false, "08", Int32.MaxValue)]
 		public string? DirectDebitOperationCodeExportCFONB;
 
-		[Field("senderNumExportCFONB")]
+		[JsonProperty("senderNumExportCFONB")]
+		[Field("senderNumExportCFONB", false, null, Int32.MaxValue)]
 		public string? SenderNumExportCFONB;
 
-		[Field("directDebitOperationCodeImportCFONB")]
+		[JsonProperty("directDebitOperationCodeImportCFONB")]
+		[Field("directDebitOperationCodeImportCFONB", false, "81", Int32.MaxValue)]
 		public string? DirectDebitOperationCodeImportCFONB;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("senderRecordCodeExportCFONB")]
+		[JsonProperty("senderRecordCodeExportCFONB")]
+		[Field("senderRecordCodeExportCFONB", false, "03", Int32.MaxValue)]
 		public string? SenderRecordCodeExportCFONB;
 
-		[Field("totalRecordCodeExportCFONB")]
+		[JsonProperty("totalRecordCodeExportCFONB")]
+		[Field("totalRecordCodeExportCFONB", false, "08", Int32.MaxValue)]
 		public string? TotalRecordCodeExportCFONB;
 
-		[Field("endingRecordCodeImportCFONB")]
+		[JsonProperty("endingRecordCodeImportCFONB")]
+		[Field("endingRecordCodeImportCFONB", false, "39", Int32.MaxValue)]
 		public string? EndingRecordCodeImportCFONB;
 
-		[Field("detailRecordCodeImportCFONB")]
+		[JsonProperty("detailRecordCodeImportCFONB")]
+		[Field("detailRecordCodeImportCFONB", false, "34", Int32.MaxValue)]
 		public string? DetailRecordCodeImportCFONB;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("transferOperationCodeImportCFONB")]
+		[JsonProperty("transferOperationCodeImportCFONB")]
+		[Field("transferOperationCodeImportCFONB", false, "21", Int32.MaxValue)]
 		public string? TransferOperationCodeImportCFONB;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("headerRecordCodeImportCFONB")]
+		[JsonProperty("headerRecordCodeImportCFONB")]
+		[Field("headerRecordCodeImportCFONB", false, "31", Int32.MaxValue)]
 		public string? HeaderRecordCodeImportCFONB;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("recipientRecordCodeExportCFONB")]
+		[JsonProperty("recipientRecordCodeExportCFONB")]
+		[Field("recipientRecordCodeExportCFONB", false, "06", Int32.MaxValue)]
 		public string? RecipientRecordCodeExportCFONB;
 
-		[Field("senderNameCodeExportCFONB")]
+		[JsonProperty("senderNameCodeExportCFONB")]
+		[Field("senderNameCodeExportCFONB", false, null, Int32.MaxValue)]
 		public string? SenderNameCodeExportCFONB;
 
 	}

@@ -1,65 +1,90 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.InterbankCodeLine")]
 	public class InterbankCodeLine : AxelorModel
 	{
-		[Field("lcrBorOk")]
+		[JsonProperty("lcrBorOk")]
+		[Field("lcrBorOk", false, "False", Int32.MaxValue)]
 		public bool? LcrBorOk;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", true, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("technicalRejectOk")]
+		[JsonProperty("technicalRejectOk")]
+		[Field("technicalRejectOk", false, "False", Int32.MaxValue)]
 		public bool? TechnicalRejectOk;
 
-		[Field("interbankCode")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("interbankCode")]
+		[Field("interbankCode", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.InterbankCode? InterbankCode;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("directDebitSepaOk")]
+		[JsonProperty("directDebitSepaOk")]
+		[Field("directDebitSepaOk", false, "False", Int32.MaxValue)]
 		public bool? DirectDebitSepaOk;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("directDebitAndTipCfonbOk")]
+		[JsonProperty("directDebitAndTipCfonbOk")]
+		[Field("directDebitAndTipCfonbOk", false, "False", Int32.MaxValue)]
 		public bool? DirectDebitAndTipCfonbOk;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("chequeOk")]
+		[JsonProperty("chequeOk")]
+		[Field("chequeOk", false, "False", Int32.MaxValue)]
 		public bool? ChequeOk;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("transferCfonbOk")]
+		[JsonProperty("transferCfonbOk")]
+		[Field("transferCfonbOk", false, "False", Int32.MaxValue)]
 		public bool? TransferCfonbOk;
 
 	}

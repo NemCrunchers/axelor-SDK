@@ -1,59 +1,78 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.AdvancedExportLine")]
 	public class AdvancedExportLine : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("currentDomain")]
+		[JsonProperty("currentDomain")]
+		[Field("currentDomain", false, null, Int32.MaxValue)]
 		public string? CurrentDomain;
 
-		[Field("orderBy")]
+		[JsonProperty("orderBy")]
+		[Field("orderBy", false, "False", Int32.MaxValue)]
 		public bool? OrderBy;
 
-		[Field("metaField")]
+		[JsonProperty("metaField")]
+		[Field("metaField", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaField? MetaField;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("title")]
+		[JsonProperty("title")]
+		[Field("title", false, null, Int32.MaxValue)]
 		public string? Title;
 
-		[Field("advancedExport")]
+		[JsonProperty("advancedExport")]
+		[Field("advancedExport", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.AdvancedExport? AdvancedExport;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, "0", Int32.MaxValue)]
 		public int? Sequence;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("targetField")]
+		[JsonProperty("targetField")]
+		[Field("targetField", false, null, Int32.MaxValue)]
 		public string? TargetField;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

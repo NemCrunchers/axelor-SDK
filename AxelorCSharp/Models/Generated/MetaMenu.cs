@@ -1,107 +1,142 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Meta.Db
 {
+	[Serializable]
 	[Model("com.axelor.meta.db.MetaMenu")]
 	public class MetaMenu : AxelorModel
 	{
-		[Field("parent")]
+		[JsonProperty("parent")]
+		[Field("parent", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaMenu? Parent;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("moduleToCheck")]
+		[JsonProperty("moduleToCheck")]
+		[Field("moduleToCheck", false, null, Int32.MaxValue)]
 		public string? ModuleToCheck;
 
-		[Field("hidden")]
+		[JsonProperty("hidden")]
+		[Field("hidden", false, "False", Int32.MaxValue)]
 		public bool? Hidden;
 
-		[Field("roles")]
+		[JsonProperty("roles")]
+		[Field("roles", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Auth.Db.Role>? Roles;
 
-		[Field("icon")]
+		[JsonProperty("icon")]
+		[Field("icon", false, null, Int32.MaxValue)]
 		public string? Icon;
 
-		[Field("link")]
+		[JsonProperty("link")]
+		[Field("link", false, null, Int32.MaxValue)]
 		public string? Link;
 
-		[Field("title")]
+		[JsonProperty("title")]
+		[Field("title", true, null, Int32.MaxValue)]
 		public string? Title;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("top")]
+		[JsonProperty("top")]
+		[Field("top", false, "False", Int32.MaxValue)]
 		public bool? Top;
 
-		[Field("action")]
+		[JsonProperty("action")]
+		[Field("action", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaAction? Action;
 
-		[Field("conditionToCheck")]
+		[JsonProperty("conditionToCheck")]
+		[Field("conditionToCheck", false, null, 1024)]
 		public string? ConditionToCheck;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("tag")]
+		[JsonProperty("tag")]
+		[Field("tag", false, null, Int32.MaxValue)]
 		public string? Tag;
 
-		[Field("xmlId")]
+		[JsonProperty("xmlId")]
+		[Field("xmlId", false, null, Int32.MaxValue)]
 		public string? XmlId;
 
-		[Field("iconBackground")]
+		[JsonProperty("iconBackground")]
+		[Field("iconBackground", false, null, Int32.MaxValue)]
 		public string? IconBackground;
 
-		[Field("order")]
+		[JsonProperty("order")]
+		[Field("order", false, "0", Int32.MaxValue)]
 		public int? Order;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("tagGet")]
+		[JsonProperty("tagGet")]
+		[Field("tagGet", false, null, Int32.MaxValue)]
 		public string? TagGet;
 
-		[Field("module")]
+		[JsonProperty("module")]
+		[Field("module", false, null, Int32.MaxValue)]
 		public string? Module;
 
-		[Field("tagStyle")]
+		[JsonProperty("tagStyle")]
+		[Field("tagStyle", false, null, Int32.MaxValue)]
 		public string? TagStyle;
 
-		[Field("mobile")]
+		[JsonProperty("mobile")]
+		[Field("mobile", false, "False", Int32.MaxValue)]
 		public bool? Mobile;
 
-		[Field("groups")]
+		[JsonProperty("groups")]
+		[Field("groups", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Auth.Db.Group>? Groups;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("priority")]
+		[JsonProperty("priority")]
+		[Field("priority", false, "0", Int32.MaxValue)]
 		public int? Priority;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("left")]
+		[JsonProperty("left")]
+		[Field("left", false, "True", Int32.MaxValue)]
 		public bool? Left;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("tagCount")]
+		[JsonProperty("tagCount")]
+		[Field("tagCount", false, "False", Int32.MaxValue)]
 		public bool? TagCount;
 
-		[Field("user")]
+		[JsonProperty("user")]
+		[Field("user", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? User;
 
 	}

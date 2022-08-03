@@ -1,71 +1,106 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.MoveTemplateLine")]
 	public class MoveTemplateLine : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("hasPartnerToDebit")]
+		[JsonProperty("hasPartnerToDebit")]
+		[Field("hasPartnerToDebit", false, "False", Int32.MaxValue)]
 		public bool? HasPartnerToDebit;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("hasPartnerToCredit")]
+		[JsonProperty("hasPartnerToCredit")]
+		[Field("hasPartnerToCredit", false, "False", Int32.MaxValue)]
 		public bool? HasPartnerToCredit;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("moveTemplate")]
+		[JsonProperty("moveTemplate")]
+		[Field("moveTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.MoveTemplate? MoveTemplate;
 
-		[Field("id")]
+		[JsonProperty("percentage")]
+		[Field("percentage", false, "0", 100)]
+		public decimal? Percentage;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("product")]
+		[JsonProperty("credit")]
+		[Field("credit", false, "0", Int32.MaxValue)]
+		public decimal? Credit;
+
+		[JsonProperty("debit")]
+		[Field("debit", false, "0", Int32.MaxValue)]
+		public decimal? Debit;
+
+		[JsonProperty("product")]
+		[Field("product", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("isValid")]
+		[JsonProperty("isValid")]
+		[Field("isValid", false, "False", Int32.MaxValue)]
 		public bool? IsValid;
 
-		[Field("tax")]
+		[JsonProperty("tax")]
+		[Field("tax", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Tax? Tax;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("partner")]
+		[JsonProperty("partner")]
+		[Field("partner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? Partner;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("debitCreditSelect")]
+		[JsonProperty("debitCreditSelect")]
+		[Field("debitCreditSelect", false, null, Int32.MaxValue)]
 		public string? DebitCreditSelect;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("analyticDistributionTemplate")]
+		[JsonProperty("analyticDistributionTemplate")]
+		[Field("analyticDistributionTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.AnalyticDistributionTemplate? AnalyticDistributionTemplate;
 
-		[Field("account")]
+		[JsonProperty("account")]
+		[Field("account", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? Account;
 
 	}

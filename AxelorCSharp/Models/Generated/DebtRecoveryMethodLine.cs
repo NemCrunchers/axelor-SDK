@@ -1,56 +1,82 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.DebtRecoveryMethodLine")]
 	public class DebtRecoveryMethodLine : AxelorModel
 	{
-		[Field("debtRecoveryLevel")]
+		[JsonProperty("debtRecoveryLevel")]
+		[Field("debtRecoveryLevel", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.DebtRecoveryLevel? DebtRecoveryLevel;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("debtRecoveryLevelLabel")]
+		[JsonProperty("debtRecoveryLevelLabel")]
+		[Field("debtRecoveryLevelLabel", false, null, Int32.MaxValue)]
 		public string? DebtRecoveryLevelLabel;
 
-		[Field("updatedOn")]
+		[JsonProperty("minThreshold")]
+		[Field("minThreshold", false, "0", Int32.MaxValue)]
+		public decimal? MinThreshold;
+
+		[JsonProperty("printingMessage")]
+		[Field("printingMessage", false, null, Int32.MaxValue)]
+		public string? PrintingMessage;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("debtRecoveryMethod")]
+		[JsonProperty("debtRecoveryMethod")]
+		[Field("debtRecoveryMethod", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.DebtRecoveryMethod? DebtRecoveryMethod;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("standardDeadline")]
+		[JsonProperty("standardDeadline")]
+		[Field("standardDeadline", false, "0", Int32.MaxValue)]
 		public int? StandardDeadline;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("messageTemplateSet")]
+		[JsonProperty("messageTemplateSet")]
+		[Field("messageTemplateSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Message.Db.Template>? MessageTemplateSet;
 
-		[Field("manualValidationOk")]
+		[JsonProperty("manualValidationOk")]
+		[Field("manualValidationOk", false, "False", Int32.MaxValue)]
 		public bool? ManualValidationOk;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

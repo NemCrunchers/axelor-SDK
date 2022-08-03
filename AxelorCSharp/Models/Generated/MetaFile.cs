@@ -1,50 +1,70 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Meta.Db
 {
+	[Serializable]
 	[Model("com.axelor.meta.db.MetaFile")]
 	public class MetaFile : AxelorModel
 	{
-		[Field("fileName")]
+		[JsonProperty("fileName")]
+		[Field("fileName", true, null, Int32.MaxValue)]
 		public string? FileName;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("filePath")]
+		[JsonProperty("filePath")]
+		[Field("filePath", true, null, Int32.MaxValue)]
 		public string? FilePath;
 
-		[Field("updatedOn")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("fileSize")]
+		[JsonProperty("fileSize")]
+		[Field("fileSize", false, "0", Int32.MaxValue)]
 		public long? FileSize;
 
-		[Field("sizeText")]
+		[JsonProperty("sizeText")]
+		[Field("sizeText", false, null, Int32.MaxValue)]
 		public string? SizeText;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("fileType")]
+		[JsonProperty("fileType")]
+		[Field("fileType", false, null, Int32.MaxValue)]
 		public string? FileType;
 
 	}

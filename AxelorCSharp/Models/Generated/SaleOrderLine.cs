@@ -1,113 +1,262 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Sale.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.sale.db.SaleOrderLine")]
 	public class SaleOrderLine : AxelorModel
 	{
-		[Field("toInvoice")]
+		[JsonProperty("deliveredQty")]
+		[Field("deliveredQty", false, "0", Int32.MaxValue)]
+		public decimal? DeliveredQty;
+
+		[JsonProperty("toInvoice")]
+		[Field("toInvoice", false, "False", Int32.MaxValue)]
 		public bool? ToInvoice;
 
-		[Field("project")]
+		[JsonProperty("oldQty")]
+		[Field("oldQty", false, "0", Int32.MaxValue)]
+		public decimal? OldQty;
+
+		[JsonProperty("companyExTaxTotal")]
+		[Field("companyExTaxTotal", false, "0", Int32.MaxValue)]
+		public decimal? CompanyExTaxTotal;
+
+		[JsonProperty("discountAmount")]
+		[Field("discountAmount", false, "0", Int32.MaxValue)]
+		public decimal? DiscountAmount;
+
+		[JsonProperty("estimatedDelivDate")]
+		[Field("estimatedDelivDate", false, null, Int32.MaxValue)]
+		public DateTime? EstimatedDelivDate;
+
+		[JsonProperty("project")]
+		[Field("project", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Project.Db.Project? Project;
 
-		[Field("typeSelect")]
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", false, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("productName")]
+		[JsonProperty("productName")]
+		[Field("productName", true, null, Int32.MaxValue)]
 		public string? ProductName;
 
-		[Field("supplierPartner")]
+		[JsonProperty("invoicingDate")]
+		[Field("invoicingDate", false, null, Int32.MaxValue)]
+		public DateTime? InvoicingDate;
+
+		[JsonProperty("supplierPartner")]
+		[Field("supplierPartner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? SupplierPartner;
 
-		[Field("id")]
+		[JsonProperty("price")]
+		[Field("price", false, "0", Int32.MaxValue)]
+		public decimal? Price;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("updatedBy")]
+		[JsonProperty("inTaxTotal")]
+		[Field("inTaxTotal", false, "0", Int32.MaxValue)]
+		public decimal? InTaxTotal;
+
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("invoiced")]
+		[JsonProperty("invoiced")]
+		[Field("invoiced", false, "False", Int32.MaxValue)]
 		public bool? Invoiced;
 
-		[Field("taxLine")]
+		[JsonProperty("taxLine")]
+		[Field("taxLine", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.TaxLine? TaxLine;
 
-		[Field("billOfMaterial")]
+		[JsonProperty("billOfMaterial")]
+		[Field("billOfMaterial", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.BillOfMaterial? BillOfMaterial;
 
-		[Field("updatedOn")]
+		[JsonProperty("subTotalGrossMargin")]
+		[Field("subTotalGrossMargin", false, "0", Int32.MaxValue)]
+		public decimal? SubTotalGrossMargin;
+
+		[JsonProperty("inTaxPrice")]
+		[Field("inTaxPrice", false, "0", Int32.MaxValue)]
+		public decimal? InTaxPrice;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("companyCostTotal")]
+		[Field("companyCostTotal", false, "0", Int32.MaxValue)]
+		public decimal? CompanyCostTotal;
+
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("desiredDelivDate")]
+		[Field("desiredDelivDate", false, null, Int32.MaxValue)]
+		public DateTime? DesiredDelivDate;
+
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("isToPrintLineSubTotal")]
+		[JsonProperty("isToPrintLineSubTotal")]
+		[Field("isToPrintLineSubTotal", false, "False", Int32.MaxValue)]
 		public bool? IsToPrintLineSubTotal;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, "0", Int32.MaxValue)]
 		public int? Sequence;
 
-		[Field("unit")]
+		[JsonProperty("unit")]
+		[Field("unit", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Unit? Unit;
 
-		[Field("packPriceSelect")]
+		[JsonProperty("packPriceSelect")]
+		[Field("packPriceSelect", false, "0", Int32.MaxValue)]
 		public int? PackPriceSelect;
 
-		[Field("isInvoiceControlled")]
+		[JsonProperty("qty")]
+		[Field("qty", false, "1", Int32.MaxValue)]
+		public decimal? Qty;
+
+		[JsonProperty("subLineList")]
+		[Field("subLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Sale.Db.SaleOrderLine>? SubLineList;
+
+		[JsonProperty("isInvoiceControlled")]
+		[Field("isInvoiceControlled", false, "False", Int32.MaxValue)]
 		public bool? IsInvoiceControlled;
 
-		[Field("taxEquiv")]
+		[JsonProperty("taxEquiv")]
+		[Field("taxEquiv", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.TaxEquiv? TaxEquiv;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("isSubLine")]
+		[JsonProperty("isSubLine")]
+		[Field("isSubLine", false, "False", Int32.MaxValue)]
 		public bool? IsSubLine;
 
-		[Field("createdOn")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("analyticMoveLineList")]
+		[Field("analyticMoveLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Account.Db.AnalyticMoveLine>? AnalyticMoveLineList;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("discountTypeSelect")]
+		[JsonProperty("discountTypeSelect")]
+		[Field("discountTypeSelect", false, "3", Int32.MaxValue)]
 		public int? DiscountTypeSelect;
 
-		[Field("archived")]
+		[JsonProperty("subTotalCostPrice")]
+		[Field("subTotalCostPrice", false, "0", Int32.MaxValue)]
+		public decimal? SubTotalCostPrice;
+
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("parentLine")]
+		[JsonProperty("requestedReservedQty")]
+		[Field("requestedReservedQty", false, "0", Int32.MaxValue)]
+		public decimal? RequestedReservedQty;
+
+		[JsonProperty("parentLine")]
+		[Field("parentLine", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Sale.Db.SaleOrderLine? ParentLine;
 
-		[Field("saleOrder")]
+		[JsonProperty("saleOrder")]
+		[Field("saleOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Sale.Db.SaleOrder? SaleOrder;
 
-		[Field("product")]
+		[JsonProperty("companyCostPrice")]
+		[Field("companyCostPrice", false, "0", Int32.MaxValue)]
+		public decimal? CompanyCostPrice;
+
+		[JsonProperty("product")]
+		[Field("product", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("saleSupplySelect")]
+		[JsonProperty("subTotalMarkup")]
+		[Field("subTotalMarkup", false, "0", Int32.MaxValue)]
+		public decimal? SubTotalMarkup;
+
+		[JsonProperty("saleSupplySelect")]
+		[Field("saleSupplySelect", false, "0", Int32.MaxValue)]
 		public int? SaleSupplySelect;
 
-		[Field("fullName")]
+		[JsonProperty("pickingOrderInfo")]
+		[Field("pickingOrderInfo", false, null, Int32.MaxValue)]
+		public string? PickingOrderInfo;
+
+		[JsonProperty("reservedQty")]
+		[Field("reservedQty", false, "0", Int32.MaxValue)]
+		public decimal? ReservedQty;
+
+		[JsonProperty("totalPack")]
+		[Field("totalPack", false, "0", Int32.MaxValue)]
+		public decimal? TotalPack;
+
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("standardDelay")]
+		[JsonProperty("subMarginRate")]
+		[Field("subMarginRate", false, "0", Int32.MaxValue)]
+		public decimal? SubMarginRate;
+
+		[JsonProperty("exTaxTotal")]
+		[Field("exTaxTotal", false, "0", Int32.MaxValue)]
+		public decimal? ExTaxTotal;
+
+		[JsonProperty("standardDelay")]
+		[Field("standardDelay", false, "0", Int32.MaxValue)]
 		public int? StandardDelay;
 
-		[Field("importId")]
+		[JsonProperty("companyInTaxTotal")]
+		[Field("companyInTaxTotal", false, "0", Int32.MaxValue)]
+		public decimal? CompanyInTaxTotal;
+
+		[JsonProperty("amountInvoiced")]
+		[Field("amountInvoiced", false, "0", Int32.MaxValue)]
+		public decimal? AmountInvoiced;
+
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("deliveryState")]
+		[JsonProperty("priceDiscounted")]
+		[Field("priceDiscounted", false, "0", Int32.MaxValue)]
+		public decimal? PriceDiscounted;
+
+		[JsonProperty("deliveryState")]
+		[Field("deliveryState", false, "0", Int32.MaxValue)]
 		public int? DeliveryState;
 
-		[Field("progress")]
+		[JsonProperty("progress")]
+		[Field("progress", false, "0", Int32.MaxValue)]
 		public int? Progress;
 
-		[Field("analyticDistributionTemplate")]
+		[JsonProperty("analyticDistributionTemplate")]
+		[Field("analyticDistributionTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.AnalyticDistributionTemplate? AnalyticDistributionTemplate;
 
 	}

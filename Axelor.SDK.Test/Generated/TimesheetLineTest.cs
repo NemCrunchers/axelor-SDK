@@ -2,6 +2,7 @@ using Axelor.SDK.Test;
 
 namespace Axelor.SDK.Test.Apps.Hr.Db
 {
+    [Ignore]
     [TestClass]
     public class TimesheetLineTest: TestModel
     {

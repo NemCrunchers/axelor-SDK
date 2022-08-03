@@ -1,59 +1,90 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Purchase.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.purchase.db.PurchaseConfig")]
 	public class PurchaseConfig : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("priceDisplay")]
+		[JsonProperty("priceRequest")]
+		[Field("priceRequest", false, null, Int32.MaxValue)]
+		public string? PriceRequest;
+
+		[JsonProperty("priceDisplay")]
+		[Field("priceDisplay", false, "False", Int32.MaxValue)]
 		public bool? PriceDisplay;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("displayBuyerOnPrinting")]
+		[JsonProperty("displayBuyerOnPrinting")]
+		[Field("displayBuyerOnPrinting", false, "False", Int32.MaxValue)]
 		public bool? DisplayBuyerOnPrinting;
 
-		[Field("displayProductDetailOnPrinting")]
+		[JsonProperty("displayProductDetailOnPrinting")]
+		[Field("displayProductDetailOnPrinting", false, "False", Int32.MaxValue)]
 		public bool? DisplayProductDetailOnPrinting;
 
-		[Field("displayProductCodeOnPrinting")]
+		[JsonProperty("displayProductCodeOnPrinting")]
+		[Field("displayProductCodeOnPrinting", false, "False", Int32.MaxValue)]
 		public bool? DisplayProductCodeOnPrinting;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("purchaseOrderInAtiSelect")]
+		[JsonProperty("purchaseOrderInAtiSelect")]
+		[Field("purchaseOrderInAtiSelect", false, "1", Int32.MaxValue)]
 		public int? PurchaseOrderInAtiSelect;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("displayTaxDetailOnPrinting")]
+		[JsonProperty("displayTaxDetailOnPrinting")]
+		[Field("displayTaxDetailOnPrinting", false, "False", Int32.MaxValue)]
 		public bool? DisplayTaxDetailOnPrinting;
 
-		[Field("id")]
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
+		public Axelor.Apps.Base.Db.Company? Company;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("displaySupplierCodeOnPrinting")]
+		[JsonProperty("purchaseOrderSupplierBox")]
+		[Field("purchaseOrderSupplierBox", false, null, Int32.MaxValue)]
+		public string? PurchaseOrderSupplierBox;
+
+		[JsonProperty("displaySupplierCodeOnPrinting")]
+		[Field("displaySupplierCodeOnPrinting", false, "False", Int32.MaxValue)]
 		public bool? DisplaySupplierCodeOnPrinting;
 
 	}

@@ -1,104 +1,150 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.AppAccount")]
 	public class AppAccount : AxelorModel
 	{
-		[Field("chequeInterbankCode")]
+		[JsonProperty("chequeInterbankCode")]
+		[Field("chequeInterbankCode", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.InterbankCode? ChequeInterbankCode;
 
-		[Field("manageAdvancePaymentInvoice")]
+		[JsonProperty("manageAdvancePaymentInvoice")]
+		[Field("manageAdvancePaymentInvoice", false, "True", Int32.MaxValue)]
 		public bool? ManageAdvancePaymentInvoice;
 
-		[Field("partnerBalConfigSelect")]
+		[JsonProperty("partnerBalConfigSelect")]
+		[Field("partnerBalConfigSelect", false, "1", Int32.MaxValue)]
 		public int? PartnerBalConfigSelect;
 
-		[Field("demoDataLoaded")]
+		[JsonProperty("demoDataLoaded")]
+		[Field("demoDataLoaded", false, "False", Int32.MaxValue)]
 		public bool? DemoDataLoaded;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", true, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("manageAnalyticAccounting")]
+		[JsonProperty("manageAnalyticAccounting")]
+		[Field("manageAnalyticAccounting", false, "False", Int32.MaxValue)]
 		public bool? ManageAnalyticAccounting;
 
-		[Field("dependsOnSet")]
+		[JsonProperty("dependsOnSet")]
+		[Field("dependsOnSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.App>? DependsOnSet;
 
-		[Field("paymentVouchersOnInvoice")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("paymentVouchersOnInvoice")]
+		[Field("paymentVouchersOnInvoice", false, "False", Int32.MaxValue)]
 		public bool? PaymentVouchersOnInvoice;
 
-		[Field("createdOn")]
+		[JsonProperty("payerQualityConfigLineList")]
+		[Field("payerQualityConfigLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Account.Db.PayerQualityConfigLine>? PayerQualityConfigLineList;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("initDataLoaded")]
+		[JsonProperty("initDataLoaded")]
+		[Field("initDataLoaded", false, "False", Int32.MaxValue)]
 		public bool? InitDataLoaded;
 
-		[Field("analyticDistributionTypeSelect")]
+		[JsonProperty("analyticDistributionTypeSelect")]
+		[Field("analyticDistributionTypeSelect", false, "1", Int32.MaxValue)]
 		public int? AnalyticDistributionTypeSelect;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("languageSelect")]
+		[JsonProperty("languageSelect")]
+		[Field("languageSelect", false, null, Int32.MaxValue)]
 		public string? LanguageSelect;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("installOrder")]
+		[JsonProperty("installOrder")]
+		[Field("installOrder", false, "0", Int32.MaxValue)]
 		public int? InstallOrder;
 
-		[Field("image")]
+		[JsonProperty("image")]
+		[Field("image", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? Image;
 
-		[Field("printReportOnVentilation")]
+		[JsonProperty("printReportOnVentilation")]
+		[Field("printReportOnVentilation", false, "True", Int32.MaxValue)]
 		public bool? PrintReportOnVentilation;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("isRolesImported")]
+		[JsonProperty("isRolesImported")]
+		[Field("isRolesImported", false, "False", Int32.MaxValue)]
 		public bool? IsRolesImported;
 
-		[Field("active")]
+		[JsonProperty("active")]
+		[Field("active", false, "False", Int32.MaxValue)]
 		public bool? Active;
 
-		[Field("manageFactors")]
+		[JsonProperty("manageFactors")]
+		[Field("manageFactors", false, "False", Int32.MaxValue)]
 		public bool? ManageFactors;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("modules")]
+		[JsonProperty("modules")]
+		[Field("modules", false, null, Int32.MaxValue)]
 		public string? Modules;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, "0", Int32.MaxValue)]
 		public int? Sequence;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("transferAndDirectDebitInterbankCode")]
+		[JsonProperty("transferAndDirectDebitInterbankCode")]
+		[Field("transferAndDirectDebitInterbankCode", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.InterbankCode? TransferAndDirectDebitInterbankCode;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("manageCustomerCredit")]
+		[JsonProperty("accessConfigList")]
+		[Field("accessConfigList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.AccessConfig>? AccessConfigList;
+
+		[JsonProperty("manageCustomerCredit")]
+		[Field("manageCustomerCredit", false, "False", Int32.MaxValue)]
 		public bool? ManageCustomerCredit;
 
 	}

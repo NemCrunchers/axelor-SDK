@@ -1,71 +1,94 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Studio.Db
 {
+	[Serializable]
 	[Model("com.axelor.studio.db.WkfNode")]
 	public class WkfNode : AxelorModel
 	{
-		[Field("incoming")]
+		[JsonProperty("incoming")]
+		[Field("incoming", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Studio.Db.WkfTransition>? Incoming;
 
-		[Field("outgoing")]
+		[JsonProperty("outgoing")]
+		[Field("outgoing", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Studio.Db.WkfTransition>? Outgoing;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("metaField")]
+		[JsonProperty("metaField")]
+		[Field("metaField", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaField? MetaField;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("nodeType")]
+		[JsonProperty("nodeType")]
+		[Field("nodeType", false, "1", Int32.MaxValue)]
 		public int? NodeType;
 
-		[Field("title")]
+		[JsonProperty("title")]
+		[Field("title", true, null, Int32.MaxValue)]
 		public string? Title;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, "0", Int32.MaxValue)]
 		public int? Sequence;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("wkf")]
+		[JsonProperty("wkf")]
+		[Field("wkf", false, null, Int32.MaxValue)]
 		public Axelor.Studio.Db.Wkf? Wkf;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("xmlId")]
+		[JsonProperty("xmlId")]
+		[Field("xmlId", false, null, Int32.MaxValue)]
 		public string? XmlId;
 
-		[Field("roleSet")]
+		[JsonProperty("roleSet")]
+		[Field("roleSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Auth.Db.Role>? RoleSet;
 
-		[Field("metaActionSet")]
+		[JsonProperty("metaActionSet")]
+		[Field("metaActionSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Meta.Db.MetaAction>? MetaActionSet;
 
 	}

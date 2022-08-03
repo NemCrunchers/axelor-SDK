@@ -1,110 +1,154 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Bankpayment.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.bankpayment.db.BankOrderFileFormat")]
 	public class BankOrderFileFormat : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("createdOn")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("displayPaymentModeSelect")]
+		[JsonProperty("bankOrderFileFormatCountryList")]
+		[Field("bankOrderFileFormatCountryList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Bankpayment.Db.BankOrderFileFormatCountry>? BankOrderFileFormatCountryList;
+
+		[JsonProperty("displayPaymentModeSelect")]
+		[Field("displayPaymentModeSelect", false, "False", Int32.MaxValue)]
 		public bool? DisplayPaymentModeSelect;
 
-		[Field("feesImputationModeSelect")]
+		[JsonProperty("feesImputationModeSelect")]
+		[Field("feesImputationModeSelect", false, "0", Int32.MaxValue)]
 		public int? FeesImputationModeSelect;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("displayFurtherInformations")]
+		[JsonProperty("displayFurtherInformations")]
+		[Field("displayFurtherInformations", false, "False", Int32.MaxValue)]
 		public bool? DisplayFurtherInformations;
 
-		[Field("allowOrderCurrDiffFromBankDetails")]
+		[JsonProperty("allowOrderCurrDiffFromBankDetails")]
+		[Field("allowOrderCurrDiffFromBankDetails", false, "False", Int32.MaxValue)]
 		public bool? AllowOrderCurrDiffFromBankDetails;
 
-		[Field("receiverCountry")]
+		[JsonProperty("receiverCountry")]
+		[Field("receiverCountry", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Country? ReceiverCountry;
 
-		[Field("isMultiCurrency")]
+		[JsonProperty("isMultiCurrency")]
+		[Field("isMultiCurrency", false, "False", Int32.MaxValue)]
 		public bool? IsMultiCurrency;
 
-		[Field("qualifyingOfDate")]
+		[JsonProperty("qualifyingOfDate")]
+		[Field("qualifyingOfDate", false, null, Int32.MaxValue)]
 		public string? QualifyingOfDate;
 
-		[Field("bankDetailsTypeSelect")]
+		[JsonProperty("bankDetailsTypeSelect")]
+		[Field("bankDetailsTypeSelect", false, null, Int32.MaxValue)]
 		public string? BankDetailsTypeSelect;
 
-		[Field("fileGenerationSupported")]
+		[JsonProperty("fileGenerationSupported")]
+		[Field("fileGenerationSupported", false, "False", Int32.MaxValue)]
 		public bool? FileGenerationSupported;
 
-		[Field("displayBankOrderEconomicReason")]
+		[JsonProperty("displayBankOrderEconomicReason")]
+		[Field("displayBankOrderEconomicReason", false, "False", Int32.MaxValue)]
 		public bool? DisplayBankOrderEconomicReason;
 
-		[Field("currency")]
+		[JsonProperty("currency")]
+		[Field("currency", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Currency? Currency;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("displayReceiverCountry")]
+		[JsonProperty("displayReceiverCountry")]
+		[Field("displayReceiverCountry", false, "False", Int32.MaxValue)]
 		public bool? DisplayReceiverCountry;
 
-		[Field("bankOrderEconomicReason")]
+		[JsonProperty("bankOrderEconomicReason")]
+		[Field("bankOrderEconomicReason", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Bankpayment.Db.BankOrderEconomicReason? BankOrderEconomicReason;
 
-		[Field("displayAdditionnalInformations")]
+		[JsonProperty("displayAdditionnalInformations")]
+		[Field("displayAdditionnalInformations", false, "False", Int32.MaxValue)]
 		public bool? DisplayAdditionnalInformations;
 
-		[Field("qualifyingOfAmountSelect")]
+		[JsonProperty("qualifyingOfAmountSelect")]
+		[Field("qualifyingOfAmountSelect", false, "T", Int32.MaxValue)]
 		public string? QualifyingOfAmountSelect;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("ibanOnly")]
+		[JsonProperty("ibanOnly")]
+		[Field("ibanOnly", false, "False", Int32.MaxValue)]
 		public bool? IbanOnly;
 
-		[Field("orderDebitTypeSelect")]
+		[JsonProperty("orderDebitTypeSelect")]
+		[Field("orderDebitTypeSelect", false, null, Int32.MaxValue)]
 		public int? OrderDebitTypeSelect;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("paymentModeSelect")]
+		[JsonProperty("paymentModeSelect")]
+		[Field("paymentModeSelect", false, "0", Int32.MaxValue)]
 		public int? PaymentModeSelect;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("displayFeesImputationModeSelect")]
+		[JsonProperty("displayFeesImputationModeSelect")]
+		[Field("displayFeesImputationModeSelect", false, "False", Int32.MaxValue)]
 		public bool? DisplayFeesImputationModeSelect;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("orderTypeSelect")]
+		[JsonProperty("orderTypeSelect")]
+		[Field("orderTypeSelect", false, "0", Int32.MaxValue)]
 		public int? OrderTypeSelect;
 
-		[Field("isMultiDate")]
+		[JsonProperty("isMultiDate")]
+		[Field("isMultiDate", false, "False", Int32.MaxValue)]
 		public bool? IsMultiDate;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("displayReceiverAddress")]
+		[JsonProperty("displayReceiverAddress")]
+		[Field("displayReceiverAddress", false, "False", Int32.MaxValue)]
 		public bool? DisplayReceiverAddress;
 
-		[Field("orderFileFormatSelect")]
+		[JsonProperty("orderFileFormatSelect")]
+		[Field("orderFileFormatSelect", false, null, Int32.MaxValue)]
 		public string? OrderFileFormatSelect;
 
 	}

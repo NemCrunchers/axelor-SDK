@@ -1,62 +1,90 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.Umr")]
 	public class Umr : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("debtorAddress")]
+		[JsonProperty("debtorAddress")]
+		[Field("debtorAddress", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Address? DebtorAddress;
 
-		[Field("activeBankDetails")]
+		[JsonProperty("activeBankDetails")]
+		[Field("activeBankDetails", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.BankDetails? ActiveBankDetails;
 
-		[Field("umrNumber")]
+		[JsonProperty("umrNumber")]
+		[Field("umrNumber", false, null, Int32.MaxValue)]
 		public string? UmrNumber;
 
-		[Field("debtorName")]
+		[JsonProperty("debtorName")]
+		[Field("debtorName", false, null, Int32.MaxValue)]
 		public string? DebtorName;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("creationDate")]
+		[Field("creationDate", false, null, Int32.MaxValue)]
+		public DateTime? CreationDate;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("partner")]
+		[JsonProperty("partner")]
+		[Field("partner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? Partner;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("isUpdating")]
+		[JsonProperty("mandateSignatureDate")]
+		[Field("mandateSignatureDate", false, null, Int32.MaxValue)]
+		public DateTime? MandateSignatureDate;
+
+		[JsonProperty("isUpdating")]
+		[Field("isUpdating", false, "False", Int32.MaxValue)]
 		public bool? IsUpdating;
 
-		[Field("lastNumberIbanBic")]
+		[JsonProperty("lastNumberIbanBic")]
+		[Field("lastNumberIbanBic", false, null, Int32.MaxValue)]
 		public string? LastNumberIbanBic;
 
-		[Field("mandateSignatureCity")]
+		[JsonProperty("mandateSignatureCity")]
+		[Field("mandateSignatureCity", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.City? MandateSignatureCity;
 
 	}

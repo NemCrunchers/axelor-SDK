@@ -1,56 +1,90 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Businessproject.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.businessproject.db.ProductTaskTemplate")]
 	public class ProductTaskTemplate : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("taskTemplateList")]
+		[Field("taskTemplateList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Project.Db.TaskTemplate>? TaskTemplateList;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("product")]
+		[JsonProperty("product")]
+		[Field("product", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("parentTaskTemplate")]
+		[JsonProperty("parentTaskTemplate")]
+		[Field("parentTaskTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Project.Db.TaskTemplate? ParentTaskTemplate;
 
-		[Field("team")]
+		[JsonProperty("team")]
+		[Field("team", false, null, Int32.MaxValue)]
 		public Axelor.Team.Db.Team? Team;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("totalPlannedHrs")]
+		[Field("totalPlannedHrs", false, "0", Int32.MaxValue)]
+		public decimal? TotalPlannedHrs;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("assignedTo")]
+		[JsonProperty("assignedTo")]
+		[Field("assignedTo", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? AssignedTo;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("isUniqueTaskForMultipleQuantity")]
+		[JsonProperty("isUniqueTaskForMultipleQuantity")]
+		[Field("isUniqueTaskForMultipleQuantity", false, "False", Int32.MaxValue)]
 		public bool? IsUniqueTaskForMultipleQuantity;
 
-		[Field("archived")]
+		[JsonProperty("delayToStart")]
+		[Field("delayToStart", false, "0", Int32.MaxValue)]
+		public decimal? DelayToStart;
+
+		[JsonProperty("duration")]
+		[Field("duration", false, "0", Int32.MaxValue)]
+		public decimal? Duration;
+
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

@@ -1,77 +1,114 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Stock.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.stock.db.TrackingNumberConfiguration")]
 	public class TrackingNumberConfiguration : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("hasSaleAutoSelectTrackingNbr")]
+		[JsonProperty("hasSaleAutoSelectTrackingNbr")]
+		[Field("hasSaleAutoSelectTrackingNbr", false, "False", Int32.MaxValue)]
 		public bool? HasSaleAutoSelectTrackingNbr;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("isPurchaseTrackingManaged")]
+		[JsonProperty("isPurchaseTrackingManaged")]
+		[Field("isPurchaseTrackingManaged", false, "False", Int32.MaxValue)]
 		public bool? IsPurchaseTrackingManaged;
 
-		[Field("generateSaleAutoTrackingNbr")]
+		[JsonProperty("generateSaleAutoTrackingNbr")]
+		[Field("generateSaleAutoTrackingNbr", false, "False", Int32.MaxValue)]
 		public bool? GenerateSaleAutoTrackingNbr;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("fullName")]
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("isSaleTrackingManaged")]
+		[JsonProperty("isSaleTrackingManaged")]
+		[Field("isSaleTrackingManaged", false, "False", Int32.MaxValue)]
 		public bool? IsSaleTrackingManaged;
 
-		[Field("generateProductionAutoTrackingNbr")]
+		[JsonProperty("generateProductionAutoTrackingNbr")]
+		[Field("generateProductionAutoTrackingNbr", false, "False", Int32.MaxValue)]
 		public bool? GenerateProductionAutoTrackingNbr;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("hasProductAutoSelectTrackingNbr")]
+		[JsonProperty("hasProductAutoSelectTrackingNbr")]
+		[Field("hasProductAutoSelectTrackingNbr", false, "False", Int32.MaxValue)]
 		public bool? HasProductAutoSelectTrackingNbr;
 
-		[Field("attrs")]
+		[JsonProperty("purchaseQtyByTracking")]
+		[Field("purchaseQtyByTracking", false, "0", Int32.MaxValue)]
+		public decimal? PurchaseQtyByTracking;
+
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("sequence")]
+		[JsonProperty("saleQtyByTracking")]
+		[Field("saleQtyByTracking", false, "0", Int32.MaxValue)]
+		public decimal? SaleQtyByTracking;
+
+		[JsonProperty("sequence")]
+		[Field("sequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? Sequence;
 
-		[Field("generatePurchaseAutoTrackingNbr")]
+		[JsonProperty("generatePurchaseAutoTrackingNbr")]
+		[Field("generatePurchaseAutoTrackingNbr", false, "False", Int32.MaxValue)]
 		public bool? GeneratePurchaseAutoTrackingNbr;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("productionQtyByTracking")]
+		[Field("productionQtyByTracking", false, "0", Int32.MaxValue)]
+		public decimal? ProductionQtyByTracking;
+
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("productAutoTrackingNbrOrderSelect")]
+		[JsonProperty("productAutoTrackingNbrOrderSelect")]
+		[Field("productAutoTrackingNbrOrderSelect", false, "0", Int32.MaxValue)]
 		public int? ProductAutoTrackingNbrOrderSelect;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("saleAutoTrackingNbrOrderSelect")]
+		[JsonProperty("saleAutoTrackingNbrOrderSelect")]
+		[Field("saleAutoTrackingNbrOrderSelect", false, "0", Int32.MaxValue)]
 		public int? SaleAutoTrackingNbrOrderSelect;
 
-		[Field("isProductionTrackingManaged")]
+		[JsonProperty("isProductionTrackingManaged")]
+		[Field("isProductionTrackingManaged", false, "False", Int32.MaxValue)]
 		public bool? IsProductionTrackingManaged;
 
 	}

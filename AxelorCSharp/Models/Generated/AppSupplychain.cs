@@ -1,153 +1,211 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.AppSupplychain")]
 	public class AppSupplychain : AxelorModel
 	{
-		[Field("allowTimetableInvoicing")]
+		[JsonProperty("allowTimetableInvoicing")]
+		[Field("allowTimetableInvoicing", false, "False", Int32.MaxValue)]
 		public bool? AllowTimetableInvoicing;
 
-		[Field("dependsOnSet")]
+		[JsonProperty("dependsOnSet")]
+		[Field("dependsOnSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.App>? DependsOnSet;
 
-		[Field("allowSusbcriptionSaleOrder")]
+		[JsonProperty("allowSusbcriptionSaleOrder")]
+		[Field("allowSusbcriptionSaleOrder", false, "False", Int32.MaxValue)]
 		public bool? AllowSusbcriptionSaleOrder;
 
-		[Field("generateInvoiceFromPurchaseOrder")]
+		[JsonProperty("generateInvoiceFromPurchaseOrder")]
+		[Field("generateInvoiceFromPurchaseOrder", false, "False", Int32.MaxValue)]
 		public bool? GenerateInvoiceFromPurchaseOrder;
 
-		[Field("initDataLoaded")]
+		[JsonProperty("initDataLoaded")]
+		[Field("initDataLoaded", false, "False", Int32.MaxValue)]
 		public bool? InitDataLoaded;
 
-		[Field("cancelReasonOnChangingSaleOrder")]
+		[JsonProperty("cancelReasonOnChangingSaleOrder")]
+		[Field("cancelReasonOnChangingSaleOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.CancelReason? CancelReasonOnChangingSaleOrder;
 
-		[Field("languageSelect")]
+		[JsonProperty("languageSelect")]
+		[Field("languageSelect", false, null, Int32.MaxValue)]
 		public string? LanguageSelect;
 
-		[Field("allowFinishManuallyPurchaseOrder")]
+		[JsonProperty("allowFinishManuallyPurchaseOrder")]
+		[Field("allowFinishManuallyPurchaseOrder", false, "False", Int32.MaxValue)]
 		public bool? AllowFinishManuallyPurchaseOrder;
 
-		[Field("manageStockReservation")]
+		[JsonProperty("manageStockReservation")]
+		[Field("manageStockReservation", false, "False", Int32.MaxValue)]
 		public bool? ManageStockReservation;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("installOrder")]
+		[JsonProperty("installOrder")]
+		[Field("installOrder", false, "0", Int32.MaxValue)]
 		public int? InstallOrder;
 
-		[Field("customerStockMoveGenerationAuto")]
+		[JsonProperty("customerStockMoveGenerationAuto")]
+		[Field("customerStockMoveGenerationAuto", false, "False", Int32.MaxValue)]
 		public bool? CustomerStockMoveGenerationAuto;
 
-		[Field("image")]
+		[JsonProperty("image")]
+		[Field("image", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? Image;
 
-		[Field("generateInvoiceFromStockMove")]
+		[JsonProperty("generateInvoiceFromStockMove")]
+		[Field("generateInvoiceFromStockMove", false, "False", Int32.MaxValue)]
 		public bool? GenerateInvoiceFromStockMove;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("isRolesImported")]
+		[JsonProperty("isRolesImported")]
+		[Field("isRolesImported", false, "False", Int32.MaxValue)]
 		public bool? IsRolesImported;
 
-		[Field("active")]
+		[JsonProperty("active")]
+		[Field("active", false, "False", Int32.MaxValue)]
 		public bool? Active;
 
-		[Field("supplStockMoveMgtOnPO")]
+		[JsonProperty("supplStockMoveMgtOnPO")]
+		[Field("supplStockMoveMgtOnPO", false, "False", Int32.MaxValue)]
 		public bool? SupplStockMoveMgtOnPO;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("intercoFromSale")]
+		[JsonProperty("intercoFromSale")]
+		[Field("intercoFromSale", false, "False", Int32.MaxValue)]
 		public bool? IntercoFromSale;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("modules")]
+		[JsonProperty("modules")]
+		[Field("modules", false, null, Int32.MaxValue)]
 		public string? Modules;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, "0", Int32.MaxValue)]
 		public int? Sequence;
 
-		[Field("intercoSaleOrderCreateFinalized")]
+		[JsonProperty("intercoSaleOrderCreateFinalized")]
+		[Field("intercoSaleOrderCreateFinalized", false, "False", Int32.MaxValue)]
 		public bool? IntercoSaleOrderCreateFinalized;
 
-		[Field("terminatePurchaseOrderOnReceipt")]
+		[JsonProperty("terminatePurchaseOrderOnReceipt")]
+		[Field("terminatePurchaseOrderOnReceipt", false, "False", Int32.MaxValue)]
 		public bool? TerminatePurchaseOrderOnReceipt;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("intercoFromPurchase")]
+		[JsonProperty("intercoFromPurchase")]
+		[Field("intercoFromPurchase", false, "False", Int32.MaxValue)]
 		public bool? IntercoFromPurchase;
 
-		[Field("intercoSaleCreatingStatusSelect")]
+		[JsonProperty("intercoSaleCreatingStatusSelect")]
+		[Field("intercoSaleCreatingStatusSelect", false, "0", Int32.MaxValue)]
 		public int? IntercoSaleCreatingStatusSelect;
 
-		[Field("intercoInvoiceCreateValidated")]
+		[JsonProperty("intercoInvoiceCreateValidated")]
+		[Field("intercoInvoiceCreateValidated", false, "False", Int32.MaxValue)]
 		public bool? IntercoInvoiceCreateValidated;
 
-		[Field("demoDataLoaded")]
+		[JsonProperty("demoDataLoaded")]
+		[Field("demoDataLoaded", false, "False", Int32.MaxValue)]
 		public bool? DemoDataLoaded;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", true, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("createdOn")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("intercoPurchaseCreatingStatusSelect")]
+		[JsonProperty("intercoPurchaseCreatingStatusSelect")]
+		[Field("intercoPurchaseCreatingStatusSelect", false, "0", Int32.MaxValue)]
 		public int? IntercoPurchaseCreatingStatusSelect;
 
-		[Field("allowCompleteManuallySaleOrder")]
+		[JsonProperty("allowCompleteManuallySaleOrder")]
+		[Field("allowCompleteManuallySaleOrder", false, "False", Int32.MaxValue)]
 		public bool? AllowCompleteManuallySaleOrder;
 
-		[Field("intercoPurchaseOrderCreateRequested")]
+		[JsonProperty("intercoPurchaseOrderCreateRequested")]
+		[Field("intercoPurchaseOrderCreateRequested", false, "False", Int32.MaxValue)]
 		public bool? IntercoPurchaseOrderCreateRequested;
 
-		[Field("checkSaleStocks")]
+		[JsonProperty("checkSaleStocks")]
+		[Field("checkSaleStocks", false, "False", Int32.MaxValue)]
 		public bool? CheckSaleStocks;
 
-		[Field("terminateSaleOrderOnDelivery")]
+		[JsonProperty("terminateSaleOrderOnDelivery")]
+		[Field("terminateSaleOrderOnDelivery", false, "False", Int32.MaxValue)]
 		public bool? TerminateSaleOrderOnDelivery;
 
-		[Field("generateInvoiceFromSaleOrder")]
+		[JsonProperty("generateInvoiceFromSaleOrder")]
+		[Field("generateInvoiceFromSaleOrder", false, "False", Int32.MaxValue)]
 		public bool? GenerateInvoiceFromSaleOrder;
 
-		[Field("custStockMoveMgtOnSO")]
+		[JsonProperty("custStockMoveMgtOnSO")]
+		[Field("custStockMoveMgtOnSO", false, "False", Int32.MaxValue)]
 		public bool? CustStockMoveMgtOnSO;
 
-		[Field("purchaseOrderGenerationAuto")]
+		[JsonProperty("purchaseOrderGenerationAuto")]
+		[Field("purchaseOrderGenerationAuto", false, "False", Int32.MaxValue)]
 		public bool? PurchaseOrderGenerationAuto;
 
-		[Field("intercoFromInvoice")]
+		[JsonProperty("intercoFromInvoice")]
+		[Field("intercoFromInvoice", false, "False", Int32.MaxValue)]
 		public bool? IntercoFromInvoice;
 
-		[Field("supplierStockMoveGenerationAuto")]
+		[JsonProperty("supplierStockMoveGenerationAuto")]
+		[Field("supplierStockMoveGenerationAuto", false, "False", Int32.MaxValue)]
 		public bool? SupplierStockMoveGenerationAuto;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("manageInvoicedAmountByLine")]
+		[JsonProperty("manageInvoicedAmountByLine")]
+		[Field("manageInvoicedAmountByLine", false, "False", Int32.MaxValue)]
 		public bool? ManageInvoicedAmountByLine;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
+
+		[JsonProperty("accessConfigList")]
+		[Field("accessConfigList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.AccessConfig>? AccessConfigList;
 
 	}
 }

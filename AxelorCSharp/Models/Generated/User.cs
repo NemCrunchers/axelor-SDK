@@ -1,128 +1,190 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Auth.Db
 {
+	[Serializable]
 	[Model("com.axelor.auth.db.User")]
 	public class User : AxelorModel
 	{
-		[Field("useSignatureForStock")]
+		[JsonProperty("useSignatureForStock")]
+		[Field("useSignatureForStock", false, "False", Int32.MaxValue)]
 		public bool? UseSignatureForStock;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", true, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("roles")]
+		[JsonProperty("roles")]
+		[Field("roles", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Auth.Db.Role>? Roles;
 
-		[Field("singleTab")]
+		[JsonProperty("singleTab")]
+		[Field("singleTab", false, "False", Int32.MaxValue)]
 		public bool? SingleTab;
 
-		[Field("language")]
+		[JsonProperty("language")]
+		[Field("language", false, null, Int32.MaxValue)]
 		public string? Language;
 
-		[Field("sendEmailUponPasswordChange")]
+		[JsonProperty("sendEmailUponPasswordChange")]
+		[Field("sendEmailUponPasswordChange", false, "False", Int32.MaxValue)]
 		public bool? SendEmailUponPasswordChange;
 
-		[Field("activeCompany")]
+		[JsonProperty("employee")]
+		[Field("employee", false, null, Int32.MaxValue)]
+		public Axelor.Apps.Hr.Db.Employee? Employee;
+
+		[JsonProperty("activeCompany")]
+		[Field("activeCompany", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? ActiveCompany;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("iCalendar")]
+		[JsonProperty("iCalendar")]
+		[Field("iCalendar", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.ICalendar? ICalendar;
 
-		[Field("workshopStockLocation")]
+		[JsonProperty("workshopStockLocation")]
+		[Field("workshopStockLocation", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockLocation? WorkshopStockLocation;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("noHelp")]
+		[JsonProperty("noHelp")]
+		[Field("noHelp", false, "False", Int32.MaxValue)]
 		public bool? NoHelp;
 
-		[Field("password")]
+		[JsonProperty("password")]
+		[Field("password", true, null, Int32.MaxValue)]
 		public string? Password;
 
-		[Field("blocked")]
+		[JsonProperty("blocked")]
+		[Field("blocked", false, "False", Int32.MaxValue)]
 		public bool? Blocked;
 
-		[Field("permissions")]
+		[JsonProperty("permissions")]
+		[Field("permissions", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Auth.Db.Permission>? Permissions;
 
-		[Field("activeTeam")]
+		[JsonProperty("activeTeam")]
+		[Field("activeTeam", false, null, Int32.MaxValue)]
 		public Axelor.Team.Db.Team? ActiveTeam;
 
-		[Field("today")]
+		[JsonProperty("emailAccountList")]
+		[Field("emailAccountList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Message.Db.EmailAccount>? EmailAccountList;
+
+		[JsonProperty("today")]
+		[Field("today", false, null, Int32.MaxValue)]
 		public DateTime? Today;
 
-		[Field("theme")]
+		[JsonProperty("activateOn")]
+		[Field("activateOn", false, null, Int32.MaxValue)]
+		public DateTime? ActivateOn;
+
+		[JsonProperty("calendarManagementList")]
+		[Field("calendarManagementList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.CalendarManagement>? CalendarManagementList;
+
+		[JsonProperty("expiresOn")]
+		[Field("expiresOn", false, null, Int32.MaxValue)]
+		public DateTime? ExpiresOn;
+
+		[JsonProperty("theme")]
+		[Field("theme", false, null, Int32.MaxValue)]
 		public string? Theme;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("companySet")]
+		[JsonProperty("companySet")]
+		[Field("companySet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.Company>? CompanySet;
 
-		[Field("email")]
+		[JsonProperty("email")]
+		[Field("email", false, null, Int32.MaxValue)]
 		public string? Email;
 
-		[Field("followedMetaModelSet")]
+		[JsonProperty("followedMetaModelSet")]
+		[Field("followedMetaModelSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Meta.Db.MetaModel>? FollowedMetaModelSet;
 
-		[Field("group")]
+		[JsonProperty("group")]
+		[Field("group", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.Group? Group;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("metaPermissions")]
+		[JsonProperty("metaPermissions")]
+		[Field("metaPermissions", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Meta.Db.MetaPermission>? MetaPermissions;
 
-		[Field("fullName")]
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("followersCalUserSet")]
+		[JsonProperty("followersCalUserSet")]
+		[Field("followersCalUserSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Auth.Db.User>? FollowersCalUserSet;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("receiveEmails")]
+		[JsonProperty("receiveEmails")]
+		[Field("receiveEmails", false, "True", Int32.MaxValue)]
 		public bool? ReceiveEmails;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("appPermissions")]
+		[JsonProperty("appPermissions")]
+		[Field("appPermissions", false, null, Int32.MaxValue)]
 		public string? AppPermissions;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("teamSet")]
+		[JsonProperty("teamSet")]
+		[Field("teamSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Team.Db.Team>? TeamSet;
 
-		[Field("partner")]
+		[JsonProperty("partner")]
+		[Field("partner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? Partner;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("electronicSignature")]
+		[JsonProperty("electronicSignature")]
+		[Field("electronicSignature", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? ElectronicSignature;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("useSignatureForQuotations")]
+		[JsonProperty("useSignatureForQuotations")]
+		[Field("useSignatureForQuotations", false, "False", Int32.MaxValue)]
 		public bool? UseSignatureForQuotations;
 
-		[Field("homeAction")]
+		[JsonProperty("homeAction")]
+		[Field("homeAction", false, null, Int32.MaxValue)]
 		public string? HomeAction;
 
 	}

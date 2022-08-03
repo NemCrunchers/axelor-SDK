@@ -1,65 +1,86 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Studio.Db
 {
+	[Serializable]
 	[Model("com.axelor.studio.db.DashletBuilder")]
 	public class DashletBuilder : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("dashboardBuilder")]
+		[JsonProperty("dashboardBuilder")]
+		[Field("dashboardBuilder", false, null, Int32.MaxValue)]
 		public Axelor.Studio.Db.DashboardBuilder? DashboardBuilder;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("metaView")]
+		[JsonProperty("metaView")]
+		[Field("metaView", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaView? MetaView;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("colspan")]
+		[JsonProperty("colspan")]
+		[Field("colspan", false, "0", Int32.MaxValue)]
 		public int? Colspan;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, "0", Int32.MaxValue)]
 		public int? Sequence;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("viewType")]
+		[JsonProperty("viewType")]
+		[Field("viewType", false, null, Int32.MaxValue)]
 		public string? ViewType;
 
-		[Field("action")]
+		[JsonProperty("action")]
+		[Field("action", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaAction? Action;
 
-		[Field("paginationLimit")]
+		[JsonProperty("paginationLimit")]
+		[Field("paginationLimit", false, "0", Int32.MaxValue)]
 		public int? PaginationLimit;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("appBuilder")]
+		[JsonProperty("appBuilder")]
+		[Field("appBuilder", false, null, Int32.MaxValue)]
 		public Axelor.Studio.Db.AppBuilder? AppBuilder;
 
 	}

@@ -2,6 +2,7 @@ using Axelor.SDK.Test;
 
 namespace Axelor.SDK.Test.Apps.Bankpayment.Db
 {
+    [Ignore]
     [TestClass]
     public class BankOrderTest: TestModel
     {

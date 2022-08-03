@@ -1,92 +1,162 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Hr.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.hr.db.EmploymentContract")]
 	public class EmploymentContract : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("contractType")]
+		[JsonProperty("monthlyGlobalCost")]
+		[Field("monthlyGlobalCost", false, "0", Int32.MaxValue)]
+		public decimal? MonthlyGlobalCost;
+
+		[JsonProperty("endDate")]
+		[Field("endDate", false, null, Int32.MaxValue)]
+		public DateTime? EndDate;
+
+		[JsonProperty("contractType")]
+		[Field("contractType", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.EmploymentContractType? ContractType;
 
-		[Field("employmentContractVersion")]
+		[JsonProperty("employmentContractVersion")]
+		[Field("employmentContractVersion", false, "0", Int32.MaxValue)]
 		public int? EmploymentContractVersion;
 
-		[Field("otherCostsEmployeeSet")]
+		[JsonProperty("otherCostsEmployeeSet")]
+		[Field("otherCostsEmployeeSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Hr.Db.OtherCostsEmployee>? OtherCostsEmployeeSet;
 
-		[Field("employee")]
+		[JsonProperty("employee")]
+		[Field("employee", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.Employee? Employee;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("employmentContractTemplate")]
+		[JsonProperty("employmentContractTemplate")]
+		[Field("employmentContractTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.EmploymentContractTemplate? EmploymentContractTemplate;
 
-		[Field("duration")]
+		[JsonProperty("hoursDistribution")]
+		[Field("hoursDistribution", false, null, Int32.MaxValue)]
+		public string? HoursDistribution;
+
+		[JsonProperty("duration")]
+		[Field("duration", false, null, Int32.MaxValue)]
 		public string? Duration;
 
-		[Field("endContractDetails")]
+		[JsonProperty("endContractDetails")]
+		[Field("endContractDetails", false, null, Int32.MaxValue)]
 		public string? EndContractDetails;
 
-		[Field("endOfContractReason")]
+		[JsonProperty("endOfContractReason")]
+		[Field("endOfContractReason", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.EndOfContractReason? EndOfContractReason;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("amendmentTypeSelect")]
+		[JsonProperty("minMonthlyRemuneration")]
+		[Field("minMonthlyRemuneration", false, "0", Int32.MaxValue)]
+		public decimal? MinMonthlyRemuneration;
+
+		[JsonProperty("amendmentTypeSelect")]
+		[Field("amendmentTypeSelect", false, "0", Int32.MaxValue)]
 		public int? AmendmentTypeSelect;
 
-		[Field("id")]
+		[JsonProperty("annualGrossSalary")]
+		[Field("annualGrossSalary", false, "0", Int32.MaxValue)]
+		public decimal? AnnualGrossSalary;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("executiveStatusSelect")]
+		[JsonProperty("executiveStatusSelect")]
+		[Field("executiveStatusSelect", false, "0", Int32.MaxValue)]
 		public int? ExecutiveStatusSelect;
 
-		[Field("trialPeriodDuration")]
+		[JsonProperty("weeklyDuration")]
+		[Field("weeklyDuration", false, "0", Int32.MaxValue)]
+		public decimal? WeeklyDuration;
+
+		[JsonProperty("amendmentDate")]
+		[Field("amendmentDate", false, null, Int32.MaxValue)]
+		public DateTime? AmendmentDate;
+
+		[JsonProperty("trialPeriodDuration")]
+		[Field("trialPeriodDuration", false, null, Int32.MaxValue)]
 		public string? TrialPeriodDuration;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("payCompany")]
+		[JsonProperty("hourlyGrossSalary")]
+		[Field("hourlyGrossSalary", false, "0", Int32.MaxValue)]
+		public decimal? HourlyGrossSalary;
+
+		[JsonProperty("payCompany")]
+		[Field("payCompany", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? PayCompany;
 
-		[Field("fullName")]
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("employment")]
+		[JsonProperty("employment")]
+		[Field("employment", false, null, Int32.MaxValue)]
 		public string? Employment;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("signatureDate")]
+		[Field("signatureDate", false, null, Int32.MaxValue)]
+		public DateTime? SignatureDate;
+
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("coefficient")]
+		[JsonProperty("coefficient")]
+		[Field("coefficient", false, null, Int32.MaxValue)]
 		public string? Coefficient;
 
-		[Field("companyDepartment")]
+		[JsonProperty("companyDepartment")]
+		[Field("companyDepartment", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.CompanyDepartment? CompanyDepartment;
 
-		[Field("position")]
+		[JsonProperty("position")]
+		[Field("position", false, null, Int32.MaxValue)]
 		public string? Position;
 
-		[Field("status")]
+		[JsonProperty("startDate")]
+		[Field("startDate", false, null, Int32.MaxValue)]
+		public DateTime? StartDate;
+
+		[JsonProperty("status")]
+		[Field("status", false, "0", Int32.MaxValue)]
 		public int? Status;
 
 	}

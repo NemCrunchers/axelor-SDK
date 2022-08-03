@@ -1,143 +1,198 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.AppProduction")]
 	public class AppProduction : AxelorModel
 	{
-		[Field("finishMoMessageTemplate")]
+		[JsonProperty("finishMoMessageTemplate")]
+		[Field("finishMoMessageTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? FinishMoMessageTemplate;
 
-		[Field("demoDataLoaded")]
+		[JsonProperty("demoDataLoaded")]
+		[Field("demoDataLoaded", false, "False", Int32.MaxValue)]
 		public bool? DemoDataLoaded;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", true, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("dependsOnSet")]
+		[JsonProperty("dependsOnSet")]
+		[Field("dependsOnSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.App>? DependsOnSet;
 
-		[Field("autoPlanManufOrderFromSO")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("autoPlanManufOrderFromSO")]
+		[Field("autoPlanManufOrderFromSO", false, "False", Int32.MaxValue)]
 		public bool? AutoPlanManufOrderFromSO;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("nbDecimalDigitForBomQty")]
+		[JsonProperty("nbDecimalDigitForBomQty")]
+		[Field("nbDecimalDigitForBomQty", false, "2", 10)]
 		public int? NbDecimalDigitForBomQty;
 
-		[Field("initDataLoaded")]
+		[JsonProperty("initDataLoaded")]
+		[Field("initDataLoaded", false, "False", Int32.MaxValue)]
 		public bool? InitDataLoaded;
 
-		[Field("manageBusinessProduction")]
+		[JsonProperty("manageBusinessProduction")]
+		[Field("manageBusinessProduction", false, "False", Int32.MaxValue)]
 		public bool? ManageBusinessProduction;
 
-		[Field("productionOrderGenerationAuto")]
+		[JsonProperty("productionOrderGenerationAuto")]
+		[Field("productionOrderGenerationAuto", false, "False", Int32.MaxValue)]
 		public bool? ProductionOrderGenerationAuto;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("subtractProdResidualOnCostSheet")]
+		[JsonProperty("subtractProdResidualOnCostSheet")]
+		[Field("subtractProdResidualOnCostSheet", false, "False", Int32.MaxValue)]
 		public bool? SubtractProdResidualOnCostSheet;
 
-		[Field("printPlannedDateOnManufOrder")]
+		[JsonProperty("printPlannedDateOnManufOrder")]
+		[Field("printPlannedDateOnManufOrder", false, "True", Int32.MaxValue)]
 		public bool? PrintPlannedDateOnManufOrder;
 
-		[Field("finishMoAutomaticEmail")]
+		[JsonProperty("finishMoAutomaticEmail")]
+		[Field("finishMoAutomaticEmail", false, "False", Int32.MaxValue)]
 		public bool? FinishMoAutomaticEmail;
 
-		[Field("languageSelect")]
+		[JsonProperty("languageSelect")]
+		[Field("languageSelect", false, null, Int32.MaxValue)]
 		public string? LanguageSelect;
 
-		[Field("manageWorkshop")]
+		[JsonProperty("manageWorkshop")]
+		[Field("manageWorkshop", false, "False", Int32.MaxValue)]
 		public bool? ManageWorkshop;
 
-		[Field("barcodeTypeConfig")]
+		[JsonProperty("barcodeTypeConfig")]
+		[Field("barcodeTypeConfig", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.BarcodeTypeConfig? BarcodeTypeConfig;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("installOrder")]
+		[JsonProperty("installOrder")]
+		[Field("installOrder", false, "0", Int32.MaxValue)]
 		public int? InstallOrder;
 
-		[Field("workCenterProduct")]
+		[JsonProperty("workCenterProduct")]
+		[Field("workCenterProduct", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? WorkCenterProduct;
 
-		[Field("image")]
+		[JsonProperty("image")]
+		[Field("image", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? Image;
 
-		[Field("enableTimesheetOnManufOrder")]
+		[JsonProperty("enableTimesheetOnManufOrder")]
+		[Field("enableTimesheetOnManufOrder", false, "False", Int32.MaxValue)]
 		public bool? EnableTimesheetOnManufOrder;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("workCenterCostSheetGroup")]
+		[JsonProperty("workCenterCostSheetGroup")]
+		[Field("workCenterCostSheetGroup", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.CostSheetGroup? WorkCenterCostSheetGroup;
 
-		[Field("isRolesImported")]
+		[JsonProperty("isRolesImported")]
+		[Field("isRolesImported", false, "False", Int32.MaxValue)]
 		public bool? IsRolesImported;
 
-		[Field("active")]
+		[JsonProperty("active")]
+		[Field("active", false, "False", Int32.MaxValue)]
 		public bool? Active;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("manageBillOfMaterialVersion")]
+		[JsonProperty("manageBillOfMaterialVersion")]
+		[Field("manageBillOfMaterialVersion", false, "False", Int32.MaxValue)]
 		public bool? ManageBillOfMaterialVersion;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("modules")]
+		[JsonProperty("modules")]
+		[Field("modules", false, null, Int32.MaxValue)]
 		public string? Modules;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("productCostSheetGroup")]
+		[JsonProperty("productCostSheetGroup")]
+		[Field("productCostSheetGroup", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.CostSheetGroup? ProductCostSheetGroup;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, "0", Int32.MaxValue)]
 		public int? Sequence;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("manageResidualProductOnBom")]
+		[JsonProperty("manageResidualProductOnBom")]
+		[Field("manageResidualProductOnBom", false, "False", Int32.MaxValue)]
 		public bool? ManageResidualProductOnBom;
 
-		[Field("prodOrderMgtOnSO")]
+		[JsonProperty("prodOrderMgtOnSO")]
+		[Field("prodOrderMgtOnSO", false, "False", Int32.MaxValue)]
 		public bool? ProdOrderMgtOnSO;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("manageProdProcessVersion")]
+		[JsonProperty("manageProdProcessVersion")]
+		[Field("manageProdProcessVersion", false, "False", Int32.MaxValue)]
 		public bool? ManageProdProcessVersion;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("partFinishMoMessageTemplate")]
+		[JsonProperty("partFinishMoMessageTemplate")]
+		[Field("partFinishMoMessageTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? PartFinishMoMessageTemplate;
 
-		[Field("cycleUnit")]
+		[JsonProperty("accessConfigList")]
+		[Field("accessConfigList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.AccessConfig>? AccessConfigList;
+
+		[JsonProperty("cycleUnit")]
+		[Field("cycleUnit", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Unit? CycleUnit;
 
-		[Field("enableConfigurator")]
+		[JsonProperty("enableConfigurator")]
+		[Field("enableConfigurator", false, "False", Int32.MaxValue)]
 		public bool? EnableConfigurator;
 
-		[Field("partFinishMoAutomaticEmail")]
+		[JsonProperty("partFinishMoAutomaticEmail")]
+		[Field("partFinishMoAutomaticEmail", false, "False", Int32.MaxValue)]
 		public bool? PartFinishMoAutomaticEmail;
 
-		[Field("oneProdOrderPerSO")]
+		[JsonProperty("oneProdOrderPerSO")]
+		[Field("oneProdOrderPerSO", false, "True", Int32.MaxValue)]
 		public bool? OneProdOrderPerSO;
 
 	}

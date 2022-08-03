@@ -11,5 +11,6 @@ namespace Axelor.SDK.Exceptions
     class AxelorRequestException : System.Exception
     {
         public AxelorRequestException() { }
+        public AxelorRequestException(string message) : base(message) { }
     }
 }

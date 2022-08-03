@@ -1,78 +1,115 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Quality.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.quality.db.QualityAlert")]
 	public class QualityAlert : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("correctiveActions")]
+		[JsonProperty("endDate")]
+		[Field("endDate", false, null, Int32.MaxValue)]
+		public DateTime? EndDate;
+
+		[JsonProperty("correctiveActions")]
+		[Field("correctiveActions", false, null, Int32.MaxValue)]
 		public string? CorrectiveActions;
 
-		[Field("description")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
 		public string? Description;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("reference")]
+		[JsonProperty("reference")]
+		[Field("reference", false, null, Int32.MaxValue)]
 		public string? Reference;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("responsible")]
+		[JsonProperty("responsible")]
+		[Field("responsible", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.Employee? Responsible;
 
-		[Field("rootCause")]
+		[JsonProperty("rootCause")]
+		[Field("rootCause", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Quality.Db.RootCause? RootCause;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("product")]
+		[JsonProperty("deadLineDate")]
+		[Field("deadLineDate", false, null, Int32.MaxValue)]
+		public DateTime? DeadLineDate;
+
+		[JsonProperty("product")]
+		[Field("product", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("fullName")]
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("prioritySelect")]
+		[JsonProperty("prioritySelect")]
+		[Field("prioritySelect", false, "0", Int32.MaxValue)]
 		public int? PrioritySelect;
 
-		[Field("team")]
+		[JsonProperty("team")]
+		[Field("team", true, null, Int32.MaxValue)]
 		public Axelor.Team.Db.Team? Team;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("preventiveActions")]
+		[JsonProperty("preventiveActions")]
+		[Field("preventiveActions", false, null, Int32.MaxValue)]
 		public string? PreventiveActions;
 
-		[Field("workCenter")]
+		[JsonProperty("workCenter")]
+		[Field("workCenter", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.WorkCenter? WorkCenter;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "0", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("qualityTagSet")]
+		[JsonProperty("qualityTagSet")]
+		[Field("qualityTagSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Quality.Db.QualityTag>? QualityTagSet;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
+
+		[JsonProperty("startDate")]
+		[Field("startDate", false, null, Int32.MaxValue)]
+		public DateTime? StartDate;
 
 	}
 }

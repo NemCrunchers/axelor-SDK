@@ -1,83 +1,110 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.Journal")]
 	public class Journal : AxelorModel
 	{
-		[Field("excessPaymentOk")]
+		[JsonProperty("excessPaymentOk")]
+		[Field("excessPaymentOk", false, "False", Int32.MaxValue)]
 		public bool? ExcessPaymentOk;
 
-		[Field("editReceiptOk")]
+		[JsonProperty("editReceiptOk")]
+		[Field("editReceiptOk", false, "False", Int32.MaxValue)]
 		public bool? EditReceiptOk;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", false, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("validAccountSet")]
+		[JsonProperty("validAccountSet")]
+		[Field("validAccountSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Account.Db.Account>? ValidAccountSet;
 
-		[Field("descriptionIdentificationOk")]
+		[JsonProperty("descriptionIdentificationOk")]
+		[Field("descriptionIdentificationOk", false, "False", Int32.MaxValue)]
 		public bool? DescriptionIdentificationOk;
 
-		[Field("validAccountTypeSet")]
+		[JsonProperty("validAccountTypeSet")]
+		[Field("validAccountTypeSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Account.Db.AccountType>? ValidAccountTypeSet;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("notExportOk")]
+		[JsonProperty("notExportOk")]
+		[Field("notExportOk", false, "False", Int32.MaxValue)]
 		public bool? NotExportOk;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "0", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("exportCode")]
+		[JsonProperty("exportCode")]
+		[Field("exportCode", false, null, Int32.MaxValue)]
 		public string? ExportCode;
 
-		[Field("isInvoiceMoveConsolidated")]
+		[JsonProperty("isInvoiceMoveConsolidated")]
+		[Field("isInvoiceMoveConsolidated", false, "False", Int32.MaxValue)]
 		public bool? IsInvoiceMoveConsolidated;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? Sequence;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("journalType")]
+		[JsonProperty("journalType")]
+		[Field("journalType", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.JournalType? JournalType;
 
-		[Field("descriptionModel")]
+		[JsonProperty("descriptionModel")]
+		[Field("descriptionModel", false, null, Int32.MaxValue)]
 		public string? DescriptionModel;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
 	}

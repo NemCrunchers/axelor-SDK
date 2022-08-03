@@ -1,98 +1,142 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Helpdesk.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.helpdesk.db.Ticket")]
 	public class Ticket : AxelorModel
 	{
-		[Field("assignedToUser")]
+		[JsonProperty("assignedToUser")]
+		[Field("assignedToUser", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? AssignedToUser;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("isSlaCompleted")]
+		[JsonProperty("isSlaCompleted")]
+		[Field("isSlaCompleted", false, "False", Int32.MaxValue)]
 		public bool? IsSlaCompleted;
 
-		[Field("subject")]
+		[JsonProperty("subject")]
+		[Field("subject", true, null, Int32.MaxValue)]
 		public string? Subject;
 
-		[Field("project")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("project")]
+		[Field("project", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Project.Db.Project? Project;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("duration")]
+		[JsonProperty("duration")]
+		[Field("duration", false, "0", Int32.MaxValue)]
 		public long? Duration;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("mailSubject")]
+		[JsonProperty("mailSubject")]
+		[Field("mailSubject", false, null, Int32.MaxValue)]
 		public string? MailSubject;
 
-		[Field("startDateT")]
+		[JsonProperty("startDateT")]
+		[Field("startDateT", false, null, Int32.MaxValue)]
 		public DateTime? StartDateT;
 
-		[Field("timerState")]
+		[JsonProperty("timerState")]
+		[Field("timerState", false, "False", Int32.MaxValue)]
 		public bool? TimerState;
 
-		[Field("contactPartner")]
+		[JsonProperty("contactPartner")]
+		[Field("contactPartner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? ContactPartner;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("progressSelect")]
+		[JsonProperty("progressSelect")]
+		[Field("progressSelect", false, "0", Int32.MaxValue)]
 		public int? ProgressSelect;
 
-		[Field("endDateT")]
+		[JsonProperty("endDateT")]
+		[Field("endDateT", false, null, Int32.MaxValue)]
 		public DateTime? EndDateT;
 
-		[Field("responsibleUser")]
+		[JsonProperty("responsibleUser")]
+		[Field("responsibleUser", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? ResponsibleUser;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("deadlineDateT")]
+		[JsonProperty("realTotalDuration")]
+		[Field("realTotalDuration", false, "0", Int32.MaxValue)]
+		public decimal? RealTotalDuration;
+
+		[JsonProperty("deadlineDateT")]
+		[Field("deadlineDateT", false, null, Int32.MaxValue)]
 		public DateTime? DeadlineDateT;
 
-		[Field("ticketType")]
+		[JsonProperty("ticketType")]
+		[Field("ticketType", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Helpdesk.Db.TicketType? TicketType;
 
-		[Field("prioritySelect")]
+		[JsonProperty("timerList")]
+		[Field("timerList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.Timer>? TimerList;
+
+		[JsonProperty("prioritySelect")]
+		[Field("prioritySelect", false, "2", Int32.MaxValue)]
 		public int? PrioritySelect;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("lead")]
+		[JsonProperty("lead")]
+		[Field("lead", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Crm.Db.Lead? Lead;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "0", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("slaPolicy")]
+		[JsonProperty("slaPolicy")]
+		[Field("slaPolicy", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Helpdesk.Db.Sla? SlaPolicy;
 
-		[Field("ticketSeq")]
+		[JsonProperty("ticketSeq")]
+		[Field("ticketSeq", false, null, Int32.MaxValue)]
 		public string? TicketSeq;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("customer")]
+		[JsonProperty("customer")]
+		[Field("customer", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? Customer;
 
 	}

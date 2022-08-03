@@ -1,62 +1,90 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.Bank")]
 	public class Bank : AxelorModel
 	{
-		[Field("country")]
+		[JsonProperty("country")]
+		[Field("country", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Country? Country;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", true, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("fullName")]
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("bankName")]
+		[JsonProperty("bankName")]
+		[Field("bankName", false, null, 255)]
 		public string? BankName;
 
-		[Field("businessPartyPrefix")]
+		[JsonProperty("businessPartyPrefix")]
+		[Field("businessPartyPrefix", false, null, 4)]
 		public string? BusinessPartyPrefix;
 
-		[Field("businessPartySuffix")]
+		[JsonProperty("businessPartySuffix")]
+		[Field("businessPartySuffix", false, null, 2)]
 		public string? BusinessPartySuffix;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("branchIdentifier")]
+		[JsonProperty("bankDetails")]
+		[Field("bankDetails", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.BankDetails>? BankDetails;
+
+		[JsonProperty("branchIdentifier")]
+		[Field("branchIdentifier", false, null, 3)]
 		public string? BranchIdentifier;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("bankAddressList")]
+		[Field("bankAddressList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.BankAddress>? BankAddressList;
+
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("bankDetailsTypeSelect")]
+		[JsonProperty("bankDetailsTypeSelect")]
+		[Field("bankDetailsTypeSelect", true, "1", Int32.MaxValue)]
 		public int? BankDetailsTypeSelect;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

@@ -1,44 +1,62 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Meta.Db
 {
+	[Serializable]
 	[Model("com.axelor.meta.db.MetaHelp")]
 	public class MetaHelp : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("language")]
+		[JsonProperty("language")]
+		[Field("language", true, null, Int32.MaxValue)]
 		public string? Language;
 
-		[Field("menu")]
+		[JsonProperty("menu")]
+		[Field("menu", false, null, Int32.MaxValue)]
 		public string? Menu;
 
-		[Field("type")]
+		[JsonProperty("type")]
+		[Field("type", false, null, Int32.MaxValue)]
 		public string? Type;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("view")]
+		[JsonProperty("help")]
+		[Field("help", true, null, 1024)]
+		public string? Help;
+
+		[JsonProperty("view")]
+		[Field("view", false, null, Int32.MaxValue)]
 		public string? View;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("field")]
+		[JsonProperty("field")]
+		[Field("field", false, null, Int32.MaxValue)]
 		public string? Field;
 
-		[Field("model")]
+		[JsonProperty("model")]
+		[Field("model", false, null, Int32.MaxValue)]
 		public string? Model;
 
-		[Field("style")]
+		[JsonProperty("style")]
+		[Field("style", false, null, Int32.MaxValue)]
 		public string? Style;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

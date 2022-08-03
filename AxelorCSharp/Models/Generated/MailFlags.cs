@@ -1,50 +1,66 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Mail.Db
 {
+	[Serializable]
 	[Model("com.axelor.mail.db.MailFlags")]
 	public class MailFlags : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("isArchived")]
+		[JsonProperty("isArchived")]
+		[Field("isArchived", false, "False", Int32.MaxValue)]
 		public bool? IsArchived;
 
-		[Field("isRead")]
+		[JsonProperty("isRead")]
+		[Field("isRead", false, "False", Int32.MaxValue)]
 		public bool? IsRead;
 
-		[Field("isStarred")]
+		[JsonProperty("isStarred")]
+		[Field("isStarred", false, "False", Int32.MaxValue)]
 		public bool? IsStarred;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("message")]
+		[JsonProperty("message")]
+		[Field("message", false, null, Int32.MaxValue)]
 		public Axelor.Mail.Db.MailMessage? Message;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("user")]
+		[JsonProperty("user")]
+		[Field("user", true, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? User;
 
 	}

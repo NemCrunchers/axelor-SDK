@@ -1,86 +1,126 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Stock.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.stock.db.Inventory")]
 	public class Inventory : AxelorModel
 	{
-		[Field("productFamily")]
+		[JsonProperty("productFamily")]
+		[Field("productFamily", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.ProductFamily? ProductFamily;
 
-		[Field("formatSelect")]
+		[JsonProperty("formatSelect")]
+		[Field("formatSelect", false, null, Int32.MaxValue)]
 		public string? FormatSelect;
 
-		[Field("importOrigin")]
+		[JsonProperty("inventoryLineList")]
+		[Field("inventoryLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Stock.Db.InventoryLine>? InventoryLineList;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("stockLocation")]
+		[JsonProperty("stockLocation")]
+		[Field("stockLocation", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockLocation? StockLocation;
 
-		[Field("toRack")]
+		[JsonProperty("toRack")]
+		[Field("toRack", false, null, Int32.MaxValue)]
 		public string? ToRack;
 
-		[Field("dateT")]
+		[JsonProperty("dateT")]
+		[Field("dateT", true, null, Int32.MaxValue)]
 		public DateTime? DateT;
 
-		[Field("createdOn")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("productCategory")]
+		[JsonProperty("productCategory")]
+		[Field("productCategory", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.ProductCategory? ProductCategory;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("inventorySeq")]
+		[JsonProperty("inventorySeq")]
+		[Field("inventorySeq", false, null, Int32.MaxValue)]
 		public string? InventorySeq;
 
-		[Field("product")]
+		[JsonProperty("product")]
+		[Field("product", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("excludeOutOfStock")]
+		[JsonProperty("excludeOutOfStock")]
+		[Field("excludeOutOfStock", false, "False", Int32.MaxValue)]
 		public bool? ExcludeOutOfStock;
 
-		[Field("importFile")]
+		[JsonProperty("importFile")]
+		[Field("importFile", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? ImportFile;
 
-		[Field("includeObsolete")]
+		[JsonProperty("includeObsolete")]
+		[Field("includeObsolete", false, "False", Int32.MaxValue)]
 		public bool? IncludeObsolete;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("fromRack")]
+		[JsonProperty("fromRack")]
+		[Field("fromRack", false, null, Int32.MaxValue)]
 		public string? FromRack;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "0", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("importId")]
+		[JsonProperty("validatedOn")]
+		[Field("validatedOn", false, null, Int32.MaxValue)]
+		public DateTime? ValidatedOn;
+
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("validatedBy")]
+		[JsonProperty("validatedBy")]
+		[Field("validatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? ValidatedBy;
 
-		[Field("completedBy")]
+		[JsonProperty("completedBy")]
+		[Field("completedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CompletedBy;
 
 	}

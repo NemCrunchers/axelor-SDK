@@ -1,59 +1,78 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.CalendarConfiguration")]
 	public class CalendarConfiguration : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("role")]
+		[JsonProperty("role")]
+		[Field("role", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.Role? Role;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("metaAction")]
+		[JsonProperty("metaAction")]
+		[Field("metaAction", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaAction? MetaAction;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("calendarGroup")]
+		[JsonProperty("calendarGroup")]
+		[Field("calendarGroup", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.Group? CalendarGroup;
 
-		[Field("calendarUser")]
+		[JsonProperty("calendarUser")]
+		[Field("calendarUser", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CalendarUser;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("calendarSet")]
+		[JsonProperty("calendarSet")]
+		[Field("calendarSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.ICalendar>? CalendarSet;
 
-		[Field("parentMetaMenu")]
+		[JsonProperty("parentMetaMenu")]
+		[Field("parentMetaMenu", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaMenu? ParentMetaMenu;
 
 	}

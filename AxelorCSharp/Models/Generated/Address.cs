@@ -1,74 +1,110 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.Address")]
 	public class Address : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("certifiedOk")]
+		[JsonProperty("certifiedOk")]
+		[Field("certifiedOk", false, "False", Int32.MaxValue)]
 		public bool? CertifiedOk;
 
-		[Field("city")]
+		[JsonProperty("city")]
+		[Field("city", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.City? City;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("inseeCode")]
+		[JsonProperty("inseeCode")]
+		[Field("inseeCode", false, null, Int32.MaxValue)]
 		public string? InseeCode;
 
-		[Field("id")]
+		[JsonProperty("latit")]
+		[Field("latit", false, null, Int32.MaxValue)]
+		public decimal? Latit;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("zip")]
+		[JsonProperty("zip")]
+		[Field("zip", false, null, Int32.MaxValue)]
 		public string? Zip;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("fullName")]
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("zoom")]
+		[JsonProperty("zoom")]
+		[Field("zoom", false, "0", Int32.MaxValue)]
 		public int? Zoom;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("addressL2")]
+		[JsonProperty("pickList")]
+		[Field("pickList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.PickListEntry>? PickList;
+
+		[JsonProperty("addressL2")]
+		[Field("addressL2", false, null, Int32.MaxValue)]
 		public string? AddressL2;
 
-		[Field("addressL3")]
+		[JsonProperty("addressL3")]
+		[Field("addressL3", false, null, Int32.MaxValue)]
 		public string? AddressL3;
 
-		[Field("addressL4")]
+		[JsonProperty("addressL4")]
+		[Field("addressL4", true, null, Int32.MaxValue)]
 		public string? AddressL4;
 
-		[Field("addressL5")]
+		[JsonProperty("longit")]
+		[Field("longit", false, null, Int32.MaxValue)]
+		public decimal? Longit;
+
+		[JsonProperty("addressL5")]
+		[Field("addressL5", false, null, Int32.MaxValue)]
 		public string? AddressL5;
 
-		[Field("addressL6")]
+		[JsonProperty("addressL6")]
+		[Field("addressL6", false, null, Int32.MaxValue)]
 		public string? AddressL6;
 
-		[Field("addressL7Country")]
+		[JsonProperty("addressL7Country")]
+		[Field("addressL7Country", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Country? AddressL7Country;
 
 	}

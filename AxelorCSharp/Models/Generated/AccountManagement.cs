@@ -1,89 +1,118 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.AccountManagement")]
 	public class AccountManagement : AxelorModel
 	{
-		[Field("productFamily")]
+		[JsonProperty("productFamily")]
+		[Field("productFamily", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.ProductFamily? ProductFamily;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("typeSelect")]
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", true, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("bankDetails")]
+		[JsonProperty("bankDetails")]
+		[Field("bankDetails", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.BankDetails? BankDetails;
 
-		[Field("journal")]
+		[JsonProperty("journal")]
+		[Field("journal", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Journal? Journal;
 
-		[Field("purchaseTax")]
+		[JsonProperty("purchaseTax")]
+		[Field("purchaseTax", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Tax? PurchaseTax;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("product")]
+		[JsonProperty("product")]
+		[Field("product", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("paymentMode")]
+		[JsonProperty("paymentMode")]
+		[Field("paymentMode", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.PaymentMode? PaymentMode;
 
-		[Field("purchaseAccount")]
+		[JsonProperty("purchaseAccount")]
+		[Field("purchaseAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? PurchaseAccount;
 
-		[Field("tax")]
+		[JsonProperty("tax")]
+		[Field("tax", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Tax? Tax;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? Sequence;
 
-		[Field("cashAccount")]
+		[JsonProperty("cashAccount")]
+		[Field("cashAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? CashAccount;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("purchFixedAssetsAccount")]
+		[JsonProperty("purchFixedAssetsAccount")]
+		[Field("purchFixedAssetsAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? PurchFixedAssetsAccount;
 
-		[Field("saleAccount")]
+		[JsonProperty("saleAccount")]
+		[Field("saleAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? SaleAccount;
 
-		[Field("saleTax")]
+		[JsonProperty("saleTax")]
+		[Field("saleTax", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Tax? SaleTax;
 
-		[Field("analyticDistributionTemplate")]
+		[JsonProperty("analyticDistributionTemplate")]
+		[Field("analyticDistributionTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.AnalyticDistributionTemplate? AnalyticDistributionTemplate;
 
-		[Field("fixedAssetCategory")]
+		[JsonProperty("fixedAssetCategory")]
+		[Field("fixedAssetCategory", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.FixedAssetCategory? FixedAssetCategory;
 
 	}

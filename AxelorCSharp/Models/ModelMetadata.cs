@@ -44,7 +44,7 @@ namespace Axelor.SDK.Models
         [JsonProperty("readonly")]
         public bool ReadOnly;
         [JsonProperty("required")]
-        public bool Required;
+        public bool Required = false;
         [JsonProperty("targetName")]
         public string TargetName;
         [JsonProperty("targetSearch")]
@@ -67,6 +67,10 @@ namespace Axelor.SDK.Models
         public bool Json;
         [JsonProperty("nullable")]
         public bool Nullable;
+        [JsonProperty("maxSize")]
+        public int MaxSize = Int32.MaxValue;
+        [JsonProperty("minSize")]
+        public int MinSize = Int32.MinValue;
         [JsonProperty("unique")]
         public bool Unique;
     }

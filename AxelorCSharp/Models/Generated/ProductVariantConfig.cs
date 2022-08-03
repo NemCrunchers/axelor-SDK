@@ -1,65 +1,86 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.ProductVariantConfig")]
 	public class ProductVariantConfig : AxelorModel
 	{
-		[Field("productVariantValue2Set")]
+		[JsonProperty("productVariantValue2Set")]
+		[Field("productVariantValue2Set", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.ProductVariantValue>? ProductVariantValue2Set;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("productVariantValue4Set")]
+		[JsonProperty("productVariantValue4Set")]
+		[Field("productVariantValue4Set", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.ProductVariantValue>? ProductVariantValue4Set;
 
-		[Field("productVariantValue3Set")]
+		[JsonProperty("productVariantValue3Set")]
+		[Field("productVariantValue3Set", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.ProductVariantValue>? ProductVariantValue3Set;
 
-		[Field("productVariantValue1Set")]
+		[JsonProperty("productVariantValue1Set")]
+		[Field("productVariantValue1Set", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.ProductVariantValue>? ProductVariantValue1Set;
 
-		[Field("productVariantAttr3")]
+		[JsonProperty("productVariantAttr3")]
+		[Field("productVariantAttr3", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.ProductVariantAttr? ProductVariantAttr3;
 
-		[Field("productVariantAttr4")]
+		[JsonProperty("productVariantAttr4")]
+		[Field("productVariantAttr4", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.ProductVariantAttr? ProductVariantAttr4;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("productVariantAttr1")]
+		[JsonProperty("productVariantAttr1")]
+		[Field("productVariantAttr1", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.ProductVariantAttr? ProductVariantAttr1;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("productVariantAttr2")]
+		[JsonProperty("productVariantAttr2")]
+		[Field("productVariantAttr2", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.ProductVariantAttr? ProductVariantAttr2;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

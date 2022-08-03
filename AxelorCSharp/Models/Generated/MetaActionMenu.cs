@@ -1,65 +1,86 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Meta.Db
 {
+	[Serializable]
 	[Model("com.axelor.meta.db.MetaActionMenu")]
 	public class MetaActionMenu : AxelorModel
 	{
-		[Field("parent")]
+		[JsonProperty("parent")]
+		[Field("parent", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaActionMenu? Parent;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("hidden")]
+		[JsonProperty("hidden")]
+		[Field("hidden", false, "False", Int32.MaxValue)]
 		public bool? Hidden;
 
-		[Field("module")]
+		[JsonProperty("module")]
+		[Field("module", false, null, Int32.MaxValue)]
 		public string? Module;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("priority")]
+		[JsonProperty("priority")]
+		[Field("priority", false, "0", Int32.MaxValue)]
 		public int? Priority;
 
-		[Field("title")]
+		[JsonProperty("title")]
+		[Field("title", true, null, Int32.MaxValue)]
 		public string? Title;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("action")]
+		[JsonProperty("action")]
+		[Field("action", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaAction? Action;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("category")]
+		[JsonProperty("category")]
+		[Field("category", false, null, Int32.MaxValue)]
 		public string? Category;
 
-		[Field("xmlId")]
+		[JsonProperty("xmlId")]
+		[Field("xmlId", false, null, Int32.MaxValue)]
 		public string? XmlId;
 
-		[Field("order")]
+		[JsonProperty("order")]
+		[Field("order", false, "0", Int32.MaxValue)]
 		public int? Order;
 
 	}

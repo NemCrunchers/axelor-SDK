@@ -1,57 +1,99 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.DepositSlip")]
 	public class DepositSlip : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("paymentModeTypeSelect")]
+		[JsonProperty("toDate")]
+		[Field("toDate", false, null, Int32.MaxValue)]
+		public DateTime? ToDate;
+
+		[JsonProperty("paymentModeTypeSelect")]
+		[Field("paymentModeTypeSelect", true, "0", Int32.MaxValue)]
 		public int? PaymentModeTypeSelect;
 
-		[Field("updatedOn")]
+		[JsonProperty("paymentVoucherList")]
+		[Field("paymentVoucherList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Account.Db.PaymentVoucher>? PaymentVoucherList;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("chequeCount")]
+		[JsonProperty("chequeCount")]
+		[Field("chequeCount", false, "0", Int32.MaxValue)]
 		public int? ChequeCount;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("companyBankDetails")]
+		[JsonProperty("companyBankDetails")]
+		[Field("companyBankDetails", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.BankDetails? CompanyBankDetails;
 
-		[Field("archived")]
+		[JsonProperty("fromDate")]
+		[Field("fromDate", false, null, Int32.MaxValue)]
+		public DateTime? FromDate;
+
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("depositNumber")]
+		[JsonProperty("totalAmount")]
+		[Field("totalAmount", false, "0", Int32.MaxValue)]
+		public decimal? TotalAmount;
+
+		[JsonProperty("depositDate")]
+		[Field("depositDate", true, null, Int32.MaxValue)]
+		public DateTime? DepositDate;
+
+		[JsonProperty("depositNumber")]
+		[Field("depositNumber", false, null, Int32.MaxValue)]
 		public string? DepositNumber;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("currency")]
+		[JsonProperty("currency")]
+		[Field("currency", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Currency? Currency;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
+
+		[JsonProperty("publicationDate")]
+		[Field("publicationDate", false, null, Int32.MaxValue)]
+		public DateTime? PublicationDate;
 
 	}
 }

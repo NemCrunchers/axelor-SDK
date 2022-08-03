@@ -2,6 +2,7 @@ using Axelor.SDK.Test;
 
 namespace Axelor.SDK.Test.Dms.Db
 {
+    [Ignore]
     [TestClass]
     public class DMSPermissionTest: TestModel
     {

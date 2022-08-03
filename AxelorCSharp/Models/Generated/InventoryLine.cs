@@ -1,50 +1,86 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Stock.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.stock.db.InventoryLine")]
 	public class InventoryLine : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("product")]
+		[JsonProperty("product")]
+		[Field("product", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("rack")]
+		[JsonProperty("rack")]
+		[Field("rack", false, null, Int32.MaxValue)]
 		public string? Rack;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("updatedOn")]
+		[JsonProperty("gapValue")]
+		[Field("gapValue", false, "0", Int32.MaxValue)]
+		public decimal? GapValue;
+
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("currentQty")]
+		[Field("currentQty", false, "0", Int32.MaxValue)]
+		public decimal? CurrentQty;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("inventory")]
+		[JsonProperty("inventory")]
+		[Field("inventory", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.Inventory? Inventory;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("realQty")]
+		[Field("realQty", false, null, Int32.MaxValue)]
+		public decimal? RealQty;
+
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("id")]
+		[JsonProperty("gap")]
+		[Field("gap", false, "0", Int32.MaxValue)]
+		public decimal? Gap;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("trackingNumber")]
+		[JsonProperty("trackingNumber")]
+		[Field("trackingNumber", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.TrackingNumber? TrackingNumber;
 
 	}

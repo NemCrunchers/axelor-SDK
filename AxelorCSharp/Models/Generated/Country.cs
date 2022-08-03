@@ -1,62 +1,82 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.Country")]
 	public class Country : AxelorModel
 	{
-		[Field("phonePrefix")]
+		[JsonProperty("phonePrefix")]
+		[Field("phonePrefix", false, null, Int32.MaxValue)]
 		public string? PhonePrefix;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("alpha2Code")]
+		[JsonProperty("alpha2Code")]
+		[Field("alpha2Code", false, null, 2)]
 		public string? Alpha2Code;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("numericCode")]
+		[JsonProperty("numericCode")]
+		[Field("numericCode", false, null, 3)]
 		public string? NumericCode;
 
-		[Field("alpha3Code")]
+		[JsonProperty("alpha3Code")]
+		[Field("alpha3Code", false, null, 3)]
 		public string? Alpha3Code;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("economicArea")]
+		[JsonProperty("economicArea")]
+		[Field("economicArea", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.EconomicArea? EconomicArea;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("isIspmRequired")]
+		[JsonProperty("isIspmRequired")]
+		[Field("isIspmRequired", false, "False", Int32.MaxValue)]
 		public bool? IsIspmRequired;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("cog")]
+		[JsonProperty("cog")]
+		[Field("cog", false, null, Int32.MaxValue)]
 		public string? Cog;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

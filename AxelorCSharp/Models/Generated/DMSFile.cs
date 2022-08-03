@@ -1,59 +1,86 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Dms.Db
 {
+	[Serializable]
 	[Model("com.axelor.dms.db.DMSFile")]
 	public class DMSFile : AxelorModel
 	{
-		[Field("parent")]
+		[JsonProperty("parent")]
+		[Field("parent", false, null, Int32.MaxValue)]
 		public Axelor.Dms.Db.DMSFile? Parent;
 
-		[Field("fileName")]
+		[JsonProperty("fileName")]
+		[Field("fileName", true, null, Int32.MaxValue)]
 		public string? FileName;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("relatedModel")]
+		[JsonProperty("relatedModel")]
+		[Field("relatedModel", false, null, Int32.MaxValue)]
 		public string? RelatedModel;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("relatedId")]
+		[JsonProperty("content")]
+		[Field("content", false, null, Int32.MaxValue)]
+		public string? Content;
+
+		[JsonProperty("relatedId")]
+		[Field("relatedId", false, "0", Int32.MaxValue)]
 		public long? RelatedId;
 
-		[Field("tags")]
+		[JsonProperty("tags")]
+		[Field("tags", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Dms.Db.DMSFileTag>? Tags;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("id")]
+		[JsonProperty("permissions")]
+		[Field("permissions", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Dms.Db.DMSPermission>? Permissions;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("contentType")]
+		[JsonProperty("contentType")]
+		[Field("contentType", false, null, Int32.MaxValue)]
 		public string? ContentType;
 
-		[Field("isDirectory")]
+		[JsonProperty("isDirectory")]
+		[Field("isDirectory", false, "False", Int32.MaxValue)]
 		public bool? IsDirectory;
 
-		[Field("metaFile")]
+		[JsonProperty("metaFile")]
+		[Field("metaFile", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? MetaFile;
 
 	}

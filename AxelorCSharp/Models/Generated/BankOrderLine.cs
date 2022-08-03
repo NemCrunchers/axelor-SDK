@@ -1,117 +1,179 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Bankpayment.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.bankpayment.db.BankOrderLine")]
 	public class BankOrderLine : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("bankOrderDate")]
+		[Field("bankOrderDate", false, null, Int32.MaxValue)]
+		public DateTime? BankOrderDate;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("receiverCompany")]
+		[JsonProperty("receiverCompany")]
+		[Field("receiverCompany", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? ReceiverCompany;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("feesImputationModeSelect")]
+		[JsonProperty("feesImputationModeSelect")]
+		[Field("feesImputationModeSelect", false, "0", Int32.MaxValue)]
 		public int? FeesImputationModeSelect;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("receiverCountry")]
+		[JsonProperty("rejectAmount")]
+		[Field("rejectAmount", false, "0", Int32.MaxValue)]
+		public decimal? RejectAmount;
+
+		[JsonProperty("receiverCountry")]
+		[Field("receiverCountry", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Country? ReceiverCountry;
 
-		[Field("senderMove")]
+		[JsonProperty("senderMove")]
+		[Field("senderMove", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Move? SenderMove;
 
-		[Field("specialInstructionsLine3")]
+		[JsonProperty("rejectDate")]
+		[Field("rejectDate", false, null, Int32.MaxValue)]
+		public DateTime? RejectDate;
+
+		[JsonProperty("bankOrderLineOriginList")]
+		[Field("bankOrderLineOriginList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Bankpayment.Db.BankOrderLineOrigin>? BankOrderLineOriginList;
+
+		[JsonProperty("specialInstructionsLine3")]
+		[Field("specialInstructionsLine3", false, null, 35)]
 		public string? SpecialInstructionsLine3;
 
-		[Field("specialInstructionsLine2")]
+		[JsonProperty("specialInstructionsLine2")]
+		[Field("specialInstructionsLine2", false, null, 35)]
 		public string? SpecialInstructionsLine2;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("receiverMove")]
+		[JsonProperty("receiverMove")]
+		[Field("receiverMove", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Move? ReceiverMove;
 
-		[Field("bankOrderEconomicReason")]
+		[JsonProperty("bankOrderEconomicReason")]
+		[Field("bankOrderEconomicReason", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Bankpayment.Db.BankOrderEconomicReason? BankOrderEconomicReason;
 
-		[Field("paymentReasonLine1")]
+		[JsonProperty("companyCurrencyAmount")]
+		[Field("companyCurrencyAmount", false, "0", Int32.MaxValue)]
+		public decimal? CompanyCurrencyAmount;
+
+		[JsonProperty("paymentReasonLine1")]
+		[Field("paymentReasonLine1", false, null, 35)]
 		public string? PaymentReasonLine1;
 
-		[Field("bankOrderCurrency")]
+		[JsonProperty("bankOrderCurrency")]
+		[Field("bankOrderCurrency", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Currency? BankOrderCurrency;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("bankOrder")]
+		[JsonProperty("bankOrder")]
+		[Field("bankOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Bankpayment.Db.BankOrder? BankOrder;
 
-		[Field("paymentReasonLine4")]
+		[JsonProperty("paymentReasonLine4")]
+		[Field("paymentReasonLine4", false, null, 35)]
 		public string? PaymentReasonLine4;
 
-		[Field("receiverBankDetails")]
+		[JsonProperty("receiverBankDetails")]
+		[Field("receiverBankDetails", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.BankDetails? ReceiverBankDetails;
 
-		[Field("paymentReasonLine3")]
+		[JsonProperty("paymentReasonLine3")]
+		[Field("paymentReasonLine3", false, null, 35)]
 		public string? PaymentReasonLine3;
 
-		[Field("specialInstructionsLine1")]
+		[JsonProperty("specialInstructionsLine1")]
+		[Field("specialInstructionsLine1", false, null, 35)]
 		public string? SpecialInstructionsLine1;
 
-		[Field("paymentReasonLine2")]
+		[JsonProperty("paymentReasonLine2")]
+		[Field("paymentReasonLine2", false, null, 35)]
 		public string? PaymentReasonLine2;
 
-		[Field("counter")]
+		[JsonProperty("counter")]
+		[Field("counter", false, "0", Int32.MaxValue)]
 		public int? Counter;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("receiverAddressStr")]
+		[JsonProperty("receiverAddressStr")]
+		[Field("receiverAddressStr", false, null, Int32.MaxValue)]
 		public string? ReceiverAddressStr;
 
-		[Field("rejectMove")]
+		[JsonProperty("rejectMove")]
+		[Field("rejectMove", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Move? RejectMove;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("paymentModeSelect")]
+		[JsonProperty("paymentModeSelect")]
+		[Field("paymentModeSelect", false, "0", Int32.MaxValue)]
 		public int? PaymentModeSelect;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, null, Int32.MaxValue)]
 		public string? Sequence;
 
-		[Field("interbankCodeLine")]
+		[JsonProperty("interbankCodeLine")]
+		[Field("interbankCodeLine", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.InterbankCodeLine? InterbankCodeLine;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("partner")]
+		[JsonProperty("partner")]
+		[Field("partner", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? Partner;
 
-		[Field("receiverReference")]
+		[JsonProperty("receiverReference")]
+		[Field("receiverReference", false, null, Int32.MaxValue)]
 		public string? ReceiverReference;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("receiverLabel")]
+		[JsonProperty("receiverLabel")]
+		[Field("receiverLabel", false, null, Int32.MaxValue)]
 		public string? ReceiverLabel;
 
-		[Field("isRejected")]
+		[JsonProperty("isRejected")]
+		[Field("isRejected", false, "False", Int32.MaxValue)]
 		public bool? IsRejected;
+
+		[JsonProperty("bankOrderAmount")]
+		[Field("bankOrderAmount", true, "0", Int32.MaxValue)]
+		public decimal? BankOrderAmount;
 
 	}
 }

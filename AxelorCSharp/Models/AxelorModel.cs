@@ -8,5 +8,6 @@ namespace Axelor.SDK
 {
     public class AxelorModel
     {
+        public string ______default______ = "";
     }
 }

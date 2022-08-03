@@ -1,137 +1,246 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Purchase.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.purchase.db.PurchaseOrder")]
 	public class PurchaseOrder : AxelorModel
 	{
-		[Field("project")]
+		[JsonProperty("priceRequest")]
+		[Field("priceRequest", false, null, Int32.MaxValue)]
+		public string? PriceRequest;
+
+		[JsonProperty("notes")]
+		[Field("notes", false, null, Int32.MaxValue)]
+		public string? Notes;
+
+		[JsonProperty("companyExTaxTotal")]
+		[Field("companyExTaxTotal", false, "0", Int32.MaxValue)]
+		public decimal? CompanyExTaxTotal;
+
+		[JsonProperty("taxTotal")]
+		[Field("taxTotal", false, "0", Int32.MaxValue)]
+		public decimal? TaxTotal;
+
+		[JsonProperty("expectedRealisationDate")]
+		[Field("expectedRealisationDate", false, null, Int32.MaxValue)]
+		public DateTime? ExpectedRealisationDate;
+
+		[JsonProperty("project")]
+		[Field("project", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Project.Db.Project? Project;
 
-		[Field("supplierPartner")]
+		[JsonProperty("validationDate")]
+		[Field("validationDate", false, null, Int32.MaxValue)]
+		public DateTime? ValidationDate;
+
+		[JsonProperty("supplierPartner")]
+		[Field("supplierPartner", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? SupplierPartner;
 
-		[Field("purchaseOrderSeq")]
+		[JsonProperty("purchaseOrderSeq")]
+		[Field("purchaseOrderSeq", false, null, Int32.MaxValue)]
 		public string? PurchaseOrderSeq;
 
-		[Field("id")]
+		[JsonProperty("purchaseOrderLineList")]
+		[Field("purchaseOrderLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Purchase.Db.PurchaseOrderLine>? PurchaseOrderLineList;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("freightCarrierMode")]
+		[JsonProperty("freightCarrierMode")]
+		[Field("freightCarrierMode", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.FreightCarrierMode? FreightCarrierMode;
 
-		[Field("budget")]
+		[JsonProperty("budget")]
+		[Field("budget", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Budget? Budget;
 
-		[Field("generatedSaleOrderId")]
+		[JsonProperty("generatedSaleOrderId")]
+		[Field("generatedSaleOrderId", false, "0", Int32.MaxValue)]
 		public long? GeneratedSaleOrderId;
 
-		[Field("updatedBy")]
+		[JsonProperty("inTaxTotal")]
+		[Field("inTaxTotal", false, "0", Int32.MaxValue)]
+		public decimal? InTaxTotal;
+
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("isPurchaseParent")]
+		[JsonProperty("isPurchaseParent")]
+		[Field("isPurchaseParent", false, "False", Int32.MaxValue)]
 		public bool? IsPurchaseParent;
 
-		[Field("buyerUser")]
+		[JsonProperty("buyerUser")]
+		[Field("buyerUser", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? BuyerUser;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("externalReference")]
+		[JsonProperty("externalReference")]
+		[Field("externalReference", false, null, Int32.MaxValue)]
 		public string? ExternalReference;
 
-		[Field("receiptState")]
+		[JsonProperty("receiptState")]
+		[Field("receiptState", false, "1", Int32.MaxValue)]
 		public int? ReceiptState;
 
-		[Field("importOrigin")]
+		[JsonProperty("orderDate")]
+		[Field("orderDate", false, null, Int32.MaxValue)]
+		public DateTime? OrderDate;
+
+		[JsonProperty("amountToBeSpreadOverTheTimetable")]
+		[Field("amountToBeSpreadOverTheTimetable", false, "0", Int32.MaxValue)]
+		public decimal? AmountToBeSpreadOverTheTimetable;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("validatedByUser")]
+		[JsonProperty("validatedByUser")]
+		[Field("validatedByUser", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? ValidatedByUser;
 
-		[Field("stockLocation")]
+		[JsonProperty("stockLocation")]
+		[Field("stockLocation", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockLocation? StockLocation;
 
-		[Field("createdByInterco")]
+		[JsonProperty("createdByInterco")]
+		[Field("createdByInterco", false, "False", Int32.MaxValue)]
 		public bool? CreatedByInterco;
 
-		[Field("inAti")]
+		[JsonProperty("inAti")]
+		[Field("inAti", false, "False", Int32.MaxValue)]
 		public bool? InAti;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("priceList")]
+		[JsonProperty("priceList")]
+		[Field("priceList", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.PriceList? PriceList;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("printingSettings")]
+		[JsonProperty("printingSettings")]
+		[Field("printingSettings", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.PrintingSettings? PrintingSettings;
 
-		[Field("company")]
+		[JsonProperty("timetableList")]
+		[Field("timetableList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Supplychain.Db.Timetable>? TimetableList;
+
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("currency")]
+		[JsonProperty("currency")]
+		[Field("currency", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Currency? Currency;
 
-		[Field("contactPartner")]
+		[JsonProperty("contactPartner")]
+		[Field("contactPartner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? ContactPartner;
 
-		[Field("parentPurchaseOrder")]
+		[JsonProperty("deliveryDate")]
+		[Field("deliveryDate", false, null, Int32.MaxValue)]
+		public DateTime? DeliveryDate;
+
+		[JsonProperty("parentPurchaseOrder")]
+		[Field("parentPurchaseOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Purchase.Db.PurchaseOrder? ParentPurchaseOrder;
 
-		[Field("tradingName")]
+		[JsonProperty("tradingName")]
+		[Field("tradingName", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.TradingName? TradingName;
 
-		[Field("priceDisplay")]
+		[JsonProperty("priceDisplay")]
+		[Field("priceDisplay", false, "False", Int32.MaxValue)]
 		public bool? PriceDisplay;
 
-		[Field("paymentCondition")]
+		[JsonProperty("paymentCondition")]
+		[Field("paymentCondition", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.PaymentCondition? PaymentCondition;
 
-		[Field("paymentMode")]
+		[JsonProperty("paymentMode")]
+		[Field("paymentMode", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.PaymentMode? PaymentMode;
 
-		[Field("fullName")]
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("internalReference")]
+		[JsonProperty("exTaxTotal")]
+		[Field("exTaxTotal", false, "0", Int32.MaxValue)]
+		public decimal? ExTaxTotal;
+
+		[JsonProperty("internalReference")]
+		[Field("internalReference", false, null, Int32.MaxValue)]
 		public string? InternalReference;
 
-		[Field("shipmentMode")]
+		[JsonProperty("shipmentMode")]
+		[Field("shipmentMode", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.ShipmentMode? ShipmentMode;
 
-		[Field("team")]
+		[JsonProperty("team")]
+		[Field("team", false, null, Int32.MaxValue)]
 		public Axelor.Team.Db.Team? Team;
 
-		[Field("versionNumber")]
+		[JsonProperty("purchaseOrderLineTaxList")]
+		[Field("purchaseOrderLineTaxList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Purchase.Db.PurchaseOrderLineTax>? PurchaseOrderLineTaxList;
+
+		[JsonProperty("versionNumber")]
+		[Field("versionNumber", false, "1", Int32.MaxValue)]
 		public int? VersionNumber;
 
-		[Field("companyBankDetails")]
+		[JsonProperty("companyBankDetails")]
+		[Field("companyBankDetails", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.BankDetails? CompanyBankDetails;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "0", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("importId")]
+		[JsonProperty("amountInvoiced")]
+		[Field("amountInvoiced", false, "0", Int32.MaxValue)]
+		public decimal? AmountInvoiced;
+
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("invoice")]
+		[JsonProperty("internalNote")]
+		[Field("internalNote", false, null, Int32.MaxValue)]
+		public string? InternalNote;
+
+		[JsonProperty("invoice")]
+		[Field("invoice", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Invoice? Invoice;
 
-		[Field("interco")]
+		[JsonProperty("interco")]
+		[Field("interco", false, "False", Int32.MaxValue)]
 		public bool? Interco;
 
 	}

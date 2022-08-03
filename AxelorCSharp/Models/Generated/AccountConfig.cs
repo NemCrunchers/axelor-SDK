@@ -1,314 +1,450 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.AccountConfig")]
 	public class AccountConfig : AxelorModel
 	{
-		[Field("hasChartImported")]
+		[JsonProperty("hasChartImported")]
+		[Field("hasChartImported", false, "False", Int32.MaxValue)]
 		public bool? HasChartImported;
 
-		[Field("suppInvSequence")]
+		[JsonProperty("suppInvSequence")]
+		[Field("suppInvSequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? SuppInvSequence;
 
-		[Field("defPaymentCondition")]
+		[JsonProperty("defPaymentCondition")]
+		[Field("defPaymentCondition", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.PaymentCondition? DefPaymentCondition;
 
-		[Field("irrecoverableStandardRateTax")]
+		[JsonProperty("irrecoverableStandardRateTax")]
+		[Field("irrecoverableStandardRateTax", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Tax? IrrecoverableStandardRateTax;
 
-		[Field("cashPositionVariationAccount")]
+		[JsonProperty("cashPositionVariationAccount")]
+		[Field("cashPositionVariationAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? CashPositionVariationAccount;
 
-		[Field("factorDebitAccount")]
+		[JsonProperty("factorDebitAccount")]
+		[Field("factorDebitAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? FactorDebitAccount;
 
-		[Field("displayTaxDetailOnPrinting")]
+		[JsonProperty("displayTaxDetailOnPrinting")]
+		[Field("displayTaxDetailOnPrinting", false, "False", Int32.MaxValue)]
 		public bool? DisplayTaxDetailOnPrinting;
 
-		[Field("autoReconcileOnPayment")]
+		[JsonProperty("autoReconcileOnPayment")]
+		[Field("autoReconcileOnPayment", false, "False", Int32.MaxValue)]
 		public bool? AutoReconcileOnPayment;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("expenseJournal")]
+		[JsonProperty("expenseJournal")]
+		[Field("expenseJournal", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Journal? ExpenseJournal;
 
-		[Field("purchaseJournalType")]
+		[JsonProperty("purchaseJournalType")]
+		[Field("purchaseJournalType", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.JournalType? PurchaseJournalType;
 
-		[Field("supplierAccount")]
+		[JsonProperty("supplierAccount")]
+		[Field("supplierAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? SupplierAccount;
 
-		[Field("invoiceMessageTemplate")]
+		[JsonProperty("invoiceMessageTemplate")]
+		[Field("invoiceMessageTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? InvoiceMessageTemplate;
 
-		[Field("cashJournalType")]
+		[JsonProperty("cashJournalType")]
+		[Field("cashJournalType", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.JournalType? CashJournalType;
 
-		[Field("forecastedInvSuppAccount")]
+		[JsonProperty("forecastedInvSuppAccount")]
+		[Field("forecastedInvSuppAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? ForecastedInvSuppAccount;
 
-		[Field("employeeAccountSequence")]
+		[JsonProperty("employeeAccountSequence")]
+		[Field("employeeAccountSequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? EmployeeAccountSequence;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("tempReimbImportFolderPathCFONB")]
+		[JsonProperty("tempReimbImportFolderPathCFONB")]
+		[Field("tempReimbImportFolderPathCFONB", false, null, Int32.MaxValue)]
 		public string? TempReimbImportFolderPathCFONB;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("irrecoverableAccount")]
+		[JsonProperty("irrecoverableAccount")]
+		[Field("irrecoverableAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? IrrecoverableAccount;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("supplierPurchaseJournal")]
+		[JsonProperty("invoiceClientBox")]
+		[Field("invoiceClientBox", false, null, Int32.MaxValue)]
+		public string? InvoiceClientBox;
+
+		[JsonProperty("supplierPurchaseJournal")]
+		[Field("supplierPurchaseJournal", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Journal? SupplierPurchaseJournal;
 
-		[Field("displayDelAddrOnPrinting")]
+		[JsonProperty("displayDelAddrOnPrinting")]
+		[Field("displayDelAddrOnPrinting", false, "False", Int32.MaxValue)]
 		public bool? DisplayDelAddrOnPrinting;
 
-		[Field("manualMiscOpeJournal")]
+		[JsonProperty("manualMiscOpeJournal")]
+		[Field("manualMiscOpeJournal", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Journal? ManualMiscOpeJournal;
 
-		[Field("paymentScheduleRejectNumLimit")]
+		[JsonProperty("paymentScheduleRejectNumLimit")]
+		[Field("paymentScheduleRejectNumLimit", false, "0", Int32.MaxValue)]
 		public int? PaymentScheduleRejectNumLimit;
 
-		[Field("customerAccount")]
+		[JsonProperty("customerAccount")]
+		[Field("customerAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? CustomerAccount;
 
-		[Field("rejectionPaymentMode")]
+		[JsonProperty("rejectionPaymentMode")]
+		[Field("rejectionPaymentMode", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.PaymentMode? RejectionPaymentMode;
 
-		[Field("payboxConfig")]
+		[JsonProperty("payboxConfig")]
+		[Field("payboxConfig", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.PayboxConfig? PayboxConfig;
 
-		[Field("rejectImportPathAndFileName")]
+		[JsonProperty("rejectImportPathAndFileName")]
+		[Field("rejectImportPathAndFileName", false, null, Int32.MaxValue)]
 		public string? RejectImportPathAndFileName;
 
-		[Field("creditNoteJournalType")]
+		[JsonProperty("creditNoteJournalType")]
+		[Field("creditNoteJournalType", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.JournalType? CreditNoteJournalType;
 
-		[Field("advancePaymentProduct")]
+		[JsonProperty("debtRecoveryConfigLineList")]
+		[Field("debtRecoveryConfigLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Account.Db.DebtRecoveryConfigLine>? DebtRecoveryConfigLineList;
+
+		[JsonProperty("advancePaymentProduct")]
+		[Field("advancePaymentProduct", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? AdvancePaymentProduct;
 
-		[Field("profitAccount")]
+		[JsonProperty("profitAccount")]
+		[Field("profitAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? ProfitAccount;
 
-		[Field("paymentScheduleExportFolderPathCFONB")]
+		[JsonProperty("lowerThresholdReimbursement")]
+		[Field("lowerThresholdReimbursement", false, "0", Int32.MaxValue)]
+		public decimal? LowerThresholdReimbursement;
+
+		[JsonProperty("paymentScheduleExportFolderPathCFONB")]
+		[Field("paymentScheduleExportFolderPathCFONB", false, null, Int32.MaxValue)]
 		public string? PaymentScheduleExportFolderPathCFONB;
 
-		[Field("supplierCreditNoteJournal")]
+		[JsonProperty("supplierCreditNoteJournal")]
+		[Field("supplierCreditNoteJournal", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Journal? SupplierCreditNoteJournal;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("reimbursementExportFolderPathCFONB")]
+		[JsonProperty("reimbursementExportFolderPathCFONB")]
+		[Field("reimbursementExportFolderPathCFONB", false, null, Int32.MaxValue)]
 		public string? ReimbursementExportFolderPathCFONB;
 
-		[Field("reimbursementImportFolderPathCFONB")]
+		[JsonProperty("reimbursementImportFolderPathCFONB")]
+		[Field("reimbursementImportFolderPathCFONB", false, null, Int32.MaxValue)]
 		public string? ReimbursementImportFolderPathCFONB;
 
-		[Field("saleJournalType")]
+		[JsonProperty("saleJournalType")]
+		[Field("saleJournalType", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.JournalType? SaleJournalType;
 
-		[Field("tempImportPathAndFileName")]
+		[JsonProperty("tempImportPathAndFileName")]
+		[Field("tempImportPathAndFileName", false, null, Int32.MaxValue)]
 		public string? TempImportPathAndFileName;
 
-		[Field("rejectPaymentScheduleTemplate")]
+		[JsonProperty("rejectPaymentScheduleTemplate")]
+		[Field("rejectPaymentScheduleTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? RejectPaymentScheduleTemplate;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("custInvSequence")]
+		[JsonProperty("custInvSequence")]
+		[Field("custInvSequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? CustInvSequence;
 
-		[Field("displayTimesheetOnPrinting")]
+		[JsonProperty("displayTimesheetOnPrinting")]
+		[Field("displayTimesheetOnPrinting", false, "False", Int32.MaxValue)]
 		public bool? DisplayTimesheetOnPrinting;
 
-		[Field("standardRateTax")]
+		[JsonProperty("standardRateTax")]
+		[Field("standardRateTax", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Tax? StandardRateTax;
 
-		[Field("allowRemovalValidatedMove")]
+		[JsonProperty("allowRemovalValidatedMove")]
+		[Field("allowRemovalValidatedMove", false, "False", Int32.MaxValue)]
 		public bool? AllowRemovalValidatedMove;
 
-		[Field("irrecoverableReasonPassage")]
+		[JsonProperty("irrecoverableReasonPassage")]
+		[Field("irrecoverableReasonPassage", false, "Manual shift into irrecoverable receivables", Int32.MaxValue)]
 		public string? IrrecoverableReasonPassage;
 
-		[Field("reimbursementExportFolderPath")]
+		[JsonProperty("reimbursementExportFolderPath")]
+		[Field("reimbursementExportFolderPath", false, null, Int32.MaxValue)]
 		public string? ReimbursementExportFolderPath;
 
-		[Field("factorPartner")]
+		[JsonProperty("factorPartner")]
+		[Field("factorPartner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? FactorPartner;
 
-		[Field("irrecoverableJournal")]
+		[JsonProperty("irrecoverableJournal")]
+		[Field("irrecoverableJournal", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Journal? IrrecoverableJournal;
 
-		[Field("autoMiscOpeJournal")]
+		[JsonProperty("autoMiscOpeJournal")]
+		[Field("autoMiscOpeJournal", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Journal? AutoMiscOpeJournal;
 
-		[Field("cfonbConfig")]
+		[JsonProperty("cfonbConfig")]
+		[Field("cfonbConfig", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.CfonbConfig? CfonbConfig;
 
-		[Field("customerCreditNoteJournal")]
+		[JsonProperty("customerCreditNoteJournal")]
+		[Field("customerCreditNoteJournal", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Journal? CustomerCreditNoteJournal;
 
-		[Field("displayProductCodeOnPrinting")]
+		[JsonProperty("displayProductCodeOnPrinting")]
+		[Field("displayProductCodeOnPrinting", false, "False", Int32.MaxValue)]
 		public bool? DisplayProductCodeOnPrinting;
 
-		[Field("generateMoveForAdvancePayment")]
+		[JsonProperty("generateMoveForAdvancePayment")]
+		[Field("generateMoveForAdvancePayment", false, "True", Int32.MaxValue)]
 		public bool? GenerateMoveForAdvancePayment;
 
-		[Field("invoiceAutomaticMail")]
+		[JsonProperty("saleInvoiceLegalNote")]
+		[Field("saleInvoiceLegalNote", false, null, Int32.MaxValue)]
+		public string? SaleInvoiceLegalNote;
+
+		[JsonProperty("invoiceAutomaticMail")]
+		[Field("invoiceAutomaticMail", false, "False", Int32.MaxValue)]
 		public bool? InvoiceAutomaticMail;
 
-		[Field("reimbursementJournal")]
+		[JsonProperty("reimbursementJournal")]
+		[Field("reimbursementJournal", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Journal? ReimbursementJournal;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("generateMoveForInvoicePayment")]
+		[JsonProperty("generateMoveForInvoicePayment")]
+		[Field("generateMoveForInvoicePayment", false, "True", Int32.MaxValue)]
 		public bool? GenerateMoveForInvoicePayment;
 
-		[Field("accountingDaybook")]
+		[JsonProperty("accountingDaybook")]
+		[Field("accountingDaybook", false, "False", Int32.MaxValue)]
 		public bool? AccountingDaybook;
 
-		[Field("threeMonthDebtPassReason")]
+		[JsonProperty("threeMonthDebtPassReason")]
+		[Field("threeMonthDebtPassReason", false, "Receivables over 3 months", Int32.MaxValue)]
 		public string? ThreeMonthDebtPassReason;
 
-		[Field("custRefSequence")]
+		[JsonProperty("custRefSequence")]
+		[Field("custRefSequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? CustRefSequence;
 
-		[Field("exportFileName")]
+		[JsonProperty("exportFileName")]
+		[Field("exportFileName", false, null, Int32.MaxValue)]
 		public string? ExportFileName;
 
-		[Field("employeeAccountPrefix")]
+		[JsonProperty("employeeAccountPrefix")]
+		[Field("employeeAccountPrefix", false, null, Int32.MaxValue)]
 		public string? EmployeeAccountPrefix;
 
-		[Field("exportPath")]
+		[JsonProperty("exportPath")]
+		[Field("exportPath", false, null, Int32.MaxValue)]
 		public string? ExportPath;
 
-		[Field("customerAccountSequence")]
+		[JsonProperty("customerAccountSequence")]
+		[Field("customerAccountSequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? CustomerAccountSequence;
 
-		[Field("customerAccountPrefix")]
+		[JsonProperty("customerAccountPrefix")]
+		[Field("customerAccountPrefix", false, null, Int32.MaxValue)]
 		public string? CustomerAccountPrefix;
 
-		[Field("clearanceAccountSet")]
+		[JsonProperty("clearanceAccountSet")]
+		[Field("clearanceAccountSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Account.Db.Account>? ClearanceAccountSet;
 
-		[Field("employeeAccount")]
+		[JsonProperty("employeeAccount")]
+		[Field("employeeAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? EmployeeAccount;
 
-		[Field("expenseTaxAccount")]
+		[JsonProperty("expenseTaxAccount")]
+		[Field("expenseTaxAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? ExpenseTaxAccount;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("partnerAccountGenerationModeSelect")]
+		[JsonProperty("partnerAccountGenerationModeSelect")]
+		[Field("partnerAccountGenerationModeSelect", false, "0", Int32.MaxValue)]
 		public int? PartnerAccountGenerationModeSelect;
 
-		[Field("sixMonthDebtMonthNumber")]
+		[JsonProperty("sixMonthDebtMonthNumber")]
+		[Field("sixMonthDebtMonthNumber", false, "6", Int32.MaxValue)]
 		public int? SixMonthDebtMonthNumber;
 
-		[Field("rejectJournal")]
+		[JsonProperty("rejectJournal")]
+		[Field("rejectJournal", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Journal? RejectJournal;
 
-		[Field("accountClearanceJournal")]
+		[JsonProperty("accountClearanceJournal")]
+		[Field("accountClearanceJournal", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Journal? AccountClearanceJournal;
 
-		[Field("factorCreditAccount")]
+		[JsonProperty("factorCreditAccount")]
+		[Field("factorCreditAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? FactorCreditAccount;
 
-		[Field("forecastedInvCustAccount")]
+		[JsonProperty("forecastedInvCustAccount")]
+		[Field("forecastedInvCustAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? ForecastedInvCustAccount;
 
-		[Field("outPaymentMode")]
+		[JsonProperty("outPaymentMode")]
+		[Field("outPaymentMode", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.PaymentMode? OutPaymentMode;
 
-		[Field("mailTransitTime")]
+		[JsonProperty("mailTransitTime")]
+		[Field("mailTransitTime", false, "0", Int32.MaxValue)]
 		public int? MailTransitTime;
 
-		[Field("invoicingProduct")]
+		[JsonProperty("invoicingProduct")]
+		[Field("invoicingProduct", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? InvoicingProduct;
 
-		[Field("allowCancelVentilatedInvoice")]
+		[JsonProperty("allowCancelVentilatedInvoice")]
+		[Field("allowCancelVentilatedInvoice", false, "False", Int32.MaxValue)]
 		public bool? AllowCancelVentilatedInvoice;
 
-		[Field("supplierAccountPrefix")]
+		[JsonProperty("supplierAccountPrefix")]
+		[Field("supplierAccountPrefix", false, null, Int32.MaxValue)]
 		public string? SupplierAccountPrefix;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("sixMonthDebtPassReason")]
+		[JsonProperty("thresholdDistanceFromRegulation")]
+		[Field("thresholdDistanceFromRegulation", false, "0", Int32.MaxValue)]
+		public decimal? ThresholdDistanceFromRegulation;
+
+		[JsonProperty("sixMonthDebtPassReason")]
+		[Field("sixMonthDebtPassReason", false, "Receivables over 6 months", Int32.MaxValue)]
 		public string? SixMonthDebtPassReason;
 
-		[Field("reimbursementAccount")]
+		[JsonProperty("reimbursementAccount")]
+		[Field("reimbursementAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? ReimbursementAccount;
 
-		[Field("payingBackTax")]
+		[JsonProperty("upperThresholdReimbursement")]
+		[Field("upperThresholdReimbursement", false, "0", Int32.MaxValue)]
+		public decimal? UpperThresholdReimbursement;
+
+		[JsonProperty("payingBackTax")]
+		[Field("payingBackTax", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Tax? PayingBackTax;
 
-		[Field("accountChart")]
+		[JsonProperty("accountChart")]
+		[Field("accountChart", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.AccountChart? AccountChart;
 
-		[Field("inPaymentMode")]
+		[JsonProperty("inPaymentMode")]
+		[Field("inPaymentMode", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.PaymentMode? InPaymentMode;
 
-		[Field("invoiceInAtiSelect")]
+		[JsonProperty("invoiceInAtiSelect")]
+		[Field("invoiceInAtiSelect", false, "1", Int32.MaxValue)]
 		public int? InvoiceInAtiSelect;
 
-		[Field("doubtfulCustomerAccount")]
+		[JsonProperty("termsAndConditions")]
+		[Field("termsAndConditions", false, null, Int32.MaxValue)]
+		public string? TermsAndConditions;
+
+		[JsonProperty("doubtfulCustomerAccount")]
+		[Field("doubtfulCustomerAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? DoubtfulCustomerAccount;
 
-		[Field("advancePaymentAccount")]
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
+		public Axelor.Apps.Base.Db.Company? Company;
+
+		[JsonProperty("advancePaymentAccount")]
+		[Field("advancePaymentAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? AdvancePaymentAccount;
 
-		[Field("displayPartnerSeqOnPrinting")]
+		[JsonProperty("displayPartnerSeqOnPrinting")]
+		[Field("displayPartnerSeqOnPrinting", false, "False", Int32.MaxValue)]
 		public bool? DisplayPartnerSeqOnPrinting;
 
-		[Field("autoReconcileOnInvoice")]
+		[JsonProperty("autoReconcileOnInvoice")]
+		[Field("autoReconcileOnInvoice", false, "False", Int32.MaxValue)]
 		public bool? AutoReconcileOnInvoice;
 
-		[Field("threeMonthDebtMontsNumber")]
+		[JsonProperty("threeMonthDebtMontsNumber")]
+		[Field("threeMonthDebtMontsNumber", false, "3", Int32.MaxValue)]
 		public int? ThreeMonthDebtMontsNumber;
 
-		[Field("reimbursementTemplate")]
+		[JsonProperty("reimbursementTemplate")]
+		[Field("reimbursementTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? ReimbursementTemplate;
 
-		[Field("fixedAssetCatReqOnInvoice")]
+		[JsonProperty("fixedAssetCatReqOnInvoice")]
+		[Field("fixedAssetCatReqOnInvoice", false, "False", Int32.MaxValue)]
 		public bool? FixedAssetCatReqOnInvoice;
 
-		[Field("suppRefSequence")]
+		[JsonProperty("suppRefSequence")]
+		[Field("suppRefSequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? SuppRefSequence;
 
-		[Field("customerSalesJournal")]
+		[JsonProperty("customerSalesJournal")]
+		[Field("customerSalesJournal", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Journal? CustomerSalesJournal;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("displayExpenseOnPrinting")]
+		[JsonProperty("displayExpenseOnPrinting")]
+		[Field("displayExpenseOnPrinting", false, "False", Int32.MaxValue)]
 		public bool? DisplayExpenseOnPrinting;
 
-		[Field("directDebitPaymentMode")]
+		[JsonProperty("directDebitPaymentMode")]
+		[Field("directDebitPaymentMode", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.PaymentMode? DirectDebitPaymentMode;
 
-		[Field("invoiceRejectNumLimit")]
+		[JsonProperty("invoiceRejectNumLimit")]
+		[Field("invoiceRejectNumLimit", false, "0", Int32.MaxValue)]
 		public int? InvoiceRejectNumLimit;
 
-		[Field("supplierAccountSequence")]
+		[JsonProperty("supplierAccountSequence")]
+		[Field("supplierAccountSequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? SupplierAccountSequence;
 
 	}

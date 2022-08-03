@@ -1,71 +1,110 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Hr.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.hr.db.TimesheetLine")]
 	public class TimesheetLine : AxelorModel
 	{
-		[Field("toInvoice")]
+		[JsonProperty("date")]
+		[Field("date", true, null, Int32.MaxValue)]
+		public DateTime? Date;
+
+		[JsonProperty("toInvoice")]
+		[Field("toInvoice", false, "False", Int32.MaxValue)]
 		public bool? ToInvoice;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("project")]
+		[JsonProperty("project")]
+		[Field("project", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Project.Db.Project? Project;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("duration")]
+		[Field("duration", false, "0", Int32.MaxValue)]
+		public decimal? Duration;
+
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("operationOrder")]
+		[JsonProperty("operationOrder")]
+		[Field("operationOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.OperationOrder? OperationOrder;
 
-		[Field("id")]
+		[JsonProperty("hoursDuration")]
+		[Field("hoursDuration", false, "0", Int32.MaxValue)]
+		public decimal? HoursDuration;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("product")]
+		[JsonProperty("product")]
+		[Field("product", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("updatedBy")]
+		[JsonProperty("comments")]
+		[Field("comments", false, null, Int32.MaxValue)]
+		public string? Comments;
+
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("invoiced")]
+		[JsonProperty("invoiced")]
+		[Field("invoiced", false, "False", Int32.MaxValue)]
 		public bool? Invoiced;
 
-		[Field("fullName")]
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("manufOrder")]
+		[JsonProperty("manufOrder")]
+		[Field("manufOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.ManufOrder? ManufOrder;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("timesheet")]
+		[JsonProperty("timesheet")]
+		[Field("timesheet", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.Timesheet? Timesheet;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("enableEditor")]
+		[JsonProperty("enableEditor")]
+		[Field("enableEditor", false, null, Int32.MaxValue)]
 		public bool? EnableEditor;
 
-		[Field("projectPlanningTime")]
+		[JsonProperty("projectPlanningTime")]
+		[Field("projectPlanningTime", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Project.Db.ProjectPlanningTime? ProjectPlanningTime;
 
-		[Field("user")]
+		[JsonProperty("user")]
+		[Field("user", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? User;
 
 	}

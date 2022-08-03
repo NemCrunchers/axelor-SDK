@@ -1,68 +1,94 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.Sequence")]
 	public class Sequence : AxelorModel
 	{
-		[Field("padding")]
+		[JsonProperty("sequenceVersionList")]
+		[Field("sequenceVersionList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.SequenceVersion>? SequenceVersionList;
+
+		[JsonProperty("padding")]
+		[Field("padding", true, "0", Int32.MaxValue)]
 		public int? Padding;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", true, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("fullName")]
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("monthlyResetOk")]
+		[JsonProperty("monthlyResetOk")]
+		[Field("monthlyResetOk", false, "False", Int32.MaxValue)]
 		public bool? MonthlyResetOk;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("yearlyResetOk")]
+		[JsonProperty("yearlyResetOk")]
+		[Field("yearlyResetOk", false, "False", Int32.MaxValue)]
 		public bool? YearlyResetOk;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("prefixe")]
+		[JsonProperty("prefixe")]
+		[Field("prefixe", false, null, Int32.MaxValue)]
 		public string? Prefixe;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("suffixe")]
+		[JsonProperty("suffixe")]
+		[Field("suffixe", false, null, Int32.MaxValue)]
 		public string? Suffixe;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("toBeAdded")]
+		[JsonProperty("toBeAdded")]
+		[Field("toBeAdded", true, "0", Int32.MaxValue)]
 		public int? ToBeAdded;
 
 	}

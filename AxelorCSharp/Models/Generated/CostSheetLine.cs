@@ -1,72 +1,115 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Production.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.production.db.CostSheetLine")]
 	public class CostSheetLine : AxelorModel
 	{
-		[Field("bomLevel")]
+		[JsonProperty("bomLevel")]
+		[Field("bomLevel", false, "0", Int32.MaxValue)]
 		public int? BomLevel;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", false, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("typeSelect")]
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", false, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("createdOn")]
+		[JsonProperty("unitCostPrice")]
+		[Field("unitCostPrice", false, "0", Int32.MaxValue)]
+		public decimal? UnitCostPrice;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("costSheetGroup")]
+		[JsonProperty("costSheetGroup")]
+		[Field("costSheetGroup", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.CostSheetGroup? CostSheetGroup;
 
-		[Field("typeSelectIcon")]
+		[JsonProperty("typeSelectIcon")]
+		[Field("typeSelectIcon", false, "0", Int32.MaxValue)]
 		public int? TypeSelectIcon;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("parentCostSheetLine")]
+		[JsonProperty("parentCostSheetLine")]
+		[Field("parentCostSheetLine", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.CostSheetLine? ParentCostSheetLine;
 
-		[Field("product")]
+		[JsonProperty("product")]
+		[Field("product", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("costSheet")]
+		[JsonProperty("costPrice")]
+		[Field("costPrice", false, "0", Int32.MaxValue)]
+		public decimal? CostPrice;
+
+		[JsonProperty("costSheet")]
+		[Field("costSheet", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.CostSheet? CostSheet;
 
-		[Field("updatedOn")]
+		[JsonProperty("costSheetLineList")]
+		[Field("costSheetLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Production.Db.CostSheetLine>? CostSheetLineList;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("workCenter")]
+		[JsonProperty("workCenter")]
+		[Field("workCenter", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.WorkCenter? WorkCenter;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("unit")]
+		[JsonProperty("unit")]
+		[Field("unit", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Unit? Unit;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("consumptionQty")]
+		[Field("consumptionQty", false, "0", Int32.MaxValue)]
+		public decimal? ConsumptionQty;
+
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
+
+		[JsonProperty("ratio")]
+		[Field("ratio", false, "0", Int32.MaxValue)]
+		public decimal? Ratio;
 
 	}
 }

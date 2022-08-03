@@ -1,83 +1,110 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.PayboxConfig")]
 	public class PayboxConfig : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", false, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("payboxRetour")]
+		[JsonProperty("payboxRetour")]
+		[Field("payboxRetour", false, null, Int32.MaxValue)]
 		public string? PayboxRetour;
 
-		[Field("payboxSite")]
+		[JsonProperty("payboxSite")]
+		[Field("payboxSite", false, null, 7)]
 		public string? PayboxSite;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("payboxDefaultEmail")]
+		[JsonProperty("payboxDefaultEmail")]
+		[Field("payboxDefaultEmail", false, null, Int32.MaxValue)]
 		public string? PayboxDefaultEmail;
 
-		[Field("payboxRetourUrlAnnule")]
+		[JsonProperty("payboxRetourUrlAnnule")]
+		[Field("payboxRetourUrlAnnule", false, "http://localhost:8080/axelor/#/ds/account.root.periodic.processing.account.voucher/edit/%id?retour=3", Int32.MaxValue)]
 		public string? PayboxRetourUrlAnnule;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("payboxPublicKeyPath")]
+		[JsonProperty("payboxPublicKeyPath")]
+		[Field("payboxPublicKeyPath", false, "/home/axelor/Paybox/pubkey.pem", Int32.MaxValue)]
 		public string? PayboxPublicKeyPath;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("payboxRetourUrlEffectue")]
+		[JsonProperty("payboxRetourUrlEffectue")]
+		[Field("payboxRetourUrlEffectue", false, "http://localhost:8080/axelor/#/ds/account.root.periodic.processing.account.voucher/edit/%id?retour=1", Int32.MaxValue)]
 		public string? PayboxRetourUrlEffectue;
 
-		[Field("payboxRang")]
+		[JsonProperty("payboxRang")]
+		[Field("payboxRang", false, null, 2)]
 		public string? PayboxRang;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("payboxHmac")]
+		[JsonProperty("payboxHmac")]
+		[Field("payboxHmac", false, null, Int32.MaxValue)]
 		public string? PayboxHmac;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("payboxDevise")]
+		[JsonProperty("payboxDevise")]
+		[Field("payboxDevise", false, "978", 3)]
 		public string? PayboxDevise;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("payboxRetourUrlRefuse")]
+		[JsonProperty("payboxRetourUrlRefuse")]
+		[Field("payboxRetourUrlRefuse", false, "http://localhost:8080/axelor/#/ds/account.root.periodic.processing.account.voucher/edit/%id?retour=2", Int32.MaxValue)]
 		public string? PayboxRetourUrlRefuse;
 
-		[Field("payboxUrl")]
+		[JsonProperty("payboxUrl")]
+		[Field("payboxUrl", false, null, Int32.MaxValue)]
 		public string? PayboxUrl;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("payboxIdentifiant")]
+		[JsonProperty("payboxIdentifiant")]
+		[Field("payboxIdentifiant", false, null, 9)]
 		public string? PayboxIdentifiant;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("payboxHashSelect")]
+		[JsonProperty("payboxHashSelect")]
+		[Field("payboxHashSelect", false, "SHA512", Int32.MaxValue)]
 		public string? PayboxHashSelect;
 
 	}

@@ -1,57 +1,99 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Hr.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.hr.db.ExtraHours")]
 	public class ExtraHours : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("fullName")]
+		[JsonProperty("totalQty")]
+		[Field("totalQty", false, "0", Int32.MaxValue)]
+		public decimal? TotalQty;
+
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("updatedOn")]
+		[JsonProperty("refusalDate")]
+		[Field("refusalDate", false, null, Int32.MaxValue)]
+		public DateTime? RefusalDate;
+
+		[JsonProperty("groundForRefusal")]
+		[Field("groundForRefusal", false, null, Int32.MaxValue)]
+		public string? GroundForRefusal;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("validationDate")]
+		[Field("validationDate", false, null, Int32.MaxValue)]
+		public DateTime? ValidationDate;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "1", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("refusedBy")]
+		[JsonProperty("refusedBy")]
+		[Field("refusedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? RefusedBy;
 
-		[Field("importId")]
+		[JsonProperty("sentDate")]
+		[Field("sentDate", false, null, Int32.MaxValue)]
+		public DateTime? SentDate;
+
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("validatedBy")]
+		[JsonProperty("validatedBy")]
+		[Field("validatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? ValidatedBy;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("user")]
+		[JsonProperty("user")]
+		[Field("user", true, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? User;
+
+		[JsonProperty("extraHoursLineList")]
+		[Field("extraHoursLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Hr.Db.ExtraHoursLine>? ExtraHoursLineList;
 
 	}
 }

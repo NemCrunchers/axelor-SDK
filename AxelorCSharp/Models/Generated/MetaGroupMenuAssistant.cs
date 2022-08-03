@@ -1,53 +1,74 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Meta.Db
 {
+	[Serializable]
 	[Model("com.axelor.meta.db.MetaGroupMenuAssistant")]
 	public class MetaGroupMenuAssistant : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("menuSet")]
+		[JsonProperty("log")]
+		[Field("log", false, null, Int32.MaxValue)]
+		public string? Log;
+
+		[JsonProperty("menuSet")]
+		[Field("menuSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Meta.Db.MetaMenu>? MenuSet;
 
-		[Field("language")]
+		[JsonProperty("language")]
+		[Field("language", false, "en", Int32.MaxValue)]
 		public string? Language;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("groupSet")]
+		[JsonProperty("groupSet")]
+		[Field("groupSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Auth.Db.Group>? GroupSet;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("importDate")]
+		[JsonProperty("importDate")]
+		[Field("importDate", false, null, Int32.MaxValue)]
 		public DateTime? ImportDate;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("roleSet")]
+		[JsonProperty("roleSet")]
+		[Field("roleSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Auth.Db.Role>? RoleSet;
 
-		[Field("metaFile")]
+		[JsonProperty("metaFile")]
+		[Field("metaFile", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? MetaFile;
 
 	}

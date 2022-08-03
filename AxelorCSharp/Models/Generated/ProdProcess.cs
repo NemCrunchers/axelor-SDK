@@ -1,83 +1,118 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Production.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.production.db.ProdProcess")]
 	public class ProdProcess : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("launchQty")]
+		[Field("launchQty", false, "0", Int32.MaxValue)]
+		public decimal? LaunchQty;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", false, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("stockLocation")]
+		[JsonProperty("stockLocation")]
+		[Field("stockLocation", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockLocation? StockLocation;
 
-		[Field("createdOn")]
+		[JsonProperty("prodProcessLineList")]
+		[Field("prodProcessLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Production.Db.ProdProcessLine>? ProdProcessLineList;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("producedProductStockLocation")]
+		[JsonProperty("producedProductStockLocation")]
+		[Field("producedProductStockLocation", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockLocation? ProducedProductStockLocation;
 
-		[Field("workshopStockLocation")]
+		[JsonProperty("workshopStockLocation")]
+		[Field("workshopStockLocation", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockLocation? WorkshopStockLocation;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("product")]
+		[JsonProperty("product")]
+		[Field("product", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("stockMoveRealizeOrderSelect")]
+		[JsonProperty("stockMoveRealizeOrderSelect")]
+		[Field("stockMoveRealizeOrderSelect", false, "1", Int32.MaxValue)]
 		public int? StockMoveRealizeOrderSelect;
 
-		[Field("fullName")]
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("isConsProOnOperation")]
+		[JsonProperty("isConsProOnOperation")]
+		[Field("isConsProOnOperation", false, "False", Int32.MaxValue)]
 		public bool? IsConsProOnOperation;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("originalProdProcess")]
+		[JsonProperty("originalProdProcess")]
+		[Field("originalProdProcess", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.ProdProcess? OriginalProdProcess;
 
-		[Field("versionNumber")]
+		[JsonProperty("versionNumber")]
+		[Field("versionNumber", false, "1", Int32.MaxValue)]
 		public int? VersionNumber;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "1", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("outsourcing")]
+		[JsonProperty("outsourcing")]
+		[Field("outsourcing", false, "False", Int32.MaxValue)]
 		public bool? Outsourcing;
 
-		[Field("isEnabledForAllProducts")]
+		[JsonProperty("isEnabledForAllProducts")]
+		[Field("isEnabledForAllProducts", false, "False", Int32.MaxValue)]
 		public bool? IsEnabledForAllProducts;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
 	}

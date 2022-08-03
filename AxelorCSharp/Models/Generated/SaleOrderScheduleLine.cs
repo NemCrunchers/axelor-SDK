@@ -1,53 +1,82 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Sale.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.sale.db.SaleOrderScheduleLine")]
 	public class SaleOrderScheduleLine : AxelorModel
 	{
-		[Field("nbOfDay")]
+		[JsonProperty("nbOfDay")]
+		[Field("nbOfDay", false, "0", Int32.MaxValue)]
 		public int? NbOfDay;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("saleOrderLine")]
+		[JsonProperty("saleOrderLine")]
+		[Field("saleOrderLine", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Sale.Db.SaleOrderLine? SaleOrderLine;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, null, Int32.MaxValue)]
 		public string? Sequence;
 
-		[Field("importId")]
+		[JsonProperty("invoicingPercentage")]
+		[Field("invoicingPercentage", false, "0", Int32.MaxValue)]
+		public decimal? InvoicingPercentage;
+
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("accumulatedInvoicingPercentage")]
+		[Field("accumulatedInvoicingPercentage", false, "0", Int32.MaxValue)]
+		public decimal? AccumulatedInvoicingPercentage;
+
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("id")]
+		[JsonProperty("amountToBeInvoiced")]
+		[Field("amountToBeInvoiced", false, "0", Int32.MaxValue)]
+		public decimal? AmountToBeInvoiced;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("invoice")]
+		[JsonProperty("invoice")]
+		[Field("invoice", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Invoice? Invoice;
 
-		[Field("saleOrder")]
+		[JsonProperty("saleOrder")]
+		[Field("saleOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Sale.Db.SaleOrder? SaleOrder;
 
 	}

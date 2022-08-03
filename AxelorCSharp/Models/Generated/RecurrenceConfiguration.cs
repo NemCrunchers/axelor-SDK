@@ -1,78 +1,111 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Crm.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.crm.db.RecurrenceConfiguration")]
 	public class RecurrenceConfiguration : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("saturday")]
+		[JsonProperty("saturday")]
+		[Field("saturday", false, "False", Int32.MaxValue)]
 		public bool? Saturday;
 
-		[Field("endType")]
+		[JsonProperty("endDate")]
+		[Field("endDate", false, null, Int32.MaxValue)]
+		public DateTime? EndDate;
+
+		[JsonProperty("endType")]
+		[Field("endType", false, "0", Int32.MaxValue)]
 		public int? EndType;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("recurrenceType")]
+		[JsonProperty("recurrenceType")]
+		[Field("recurrenceType", false, "0", Int32.MaxValue)]
 		public int? RecurrenceType;
 
-		[Field("repetitionsNumber")]
+		[JsonProperty("repetitionsNumber")]
+		[Field("repetitionsNumber", false, "0", Int32.MaxValue)]
 		public int? RepetitionsNumber;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("recurrenceName")]
+		[JsonProperty("recurrenceName")]
+		[Field("recurrenceName", false, null, Int32.MaxValue)]
 		public string? RecurrenceName;
 
-		[Field("friday")]
+		[JsonProperty("friday")]
+		[Field("friday", false, "False", Int32.MaxValue)]
 		public bool? Friday;
 
-		[Field("wednesday")]
+		[JsonProperty("wednesday")]
+		[Field("wednesday", false, "False", Int32.MaxValue)]
 		public bool? Wednesday;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("monday")]
+		[JsonProperty("monday")]
+		[Field("monday", false, "False", Int32.MaxValue)]
 		public bool? Monday;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("thursday")]
+		[JsonProperty("thursday")]
+		[Field("thursday", false, "False", Int32.MaxValue)]
 		public bool? Thursday;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("monthRepeatType")]
+		[JsonProperty("monthRepeatType")]
+		[Field("monthRepeatType", false, "0", Int32.MaxValue)]
 		public int? MonthRepeatType;
 
-		[Field("sunday")]
+		[JsonProperty("sunday")]
+		[Field("sunday", false, "False", Int32.MaxValue)]
 		public bool? Sunday;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("tuesday")]
+		[JsonProperty("tuesday")]
+		[Field("tuesday", false, "False", Int32.MaxValue)]
 		public bool? Tuesday;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("periodicity")]
+		[JsonProperty("periodicity")]
+		[Field("periodicity", false, "0", Int32.MaxValue)]
 		public int? Periodicity;
+
+		[JsonProperty("startDate")]
+		[Field("startDate", false, null, Int32.MaxValue)]
+		public DateTime? StartDate;
 
 	}
 }

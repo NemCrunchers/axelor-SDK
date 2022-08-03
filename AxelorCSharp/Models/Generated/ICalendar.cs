@@ -1,80 +1,110 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.ICalendar")]
 	public class ICalendar : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("synchronizationDuration")]
+		[JsonProperty("synchronizationDuration")]
+		[Field("synchronizationDuration", false, "1", Int32.MaxValue)]
 		public int? SynchronizationDuration;
 
-		[Field("typeSelect")]
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", false, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("login")]
+		[JsonProperty("login")]
+		[Field("login", false, null, Int32.MaxValue)]
 		public string? Login;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("password")]
+		[JsonProperty("password")]
+		[Field("password", false, null, Int32.MaxValue)]
 		public string? Password;
 
-		[Field("keepRemote")]
+		[JsonProperty("keepRemote")]
+		[Field("keepRemote", false, "False", Int32.MaxValue)]
 		public bool? KeepRemote;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("isValid")]
+		[JsonProperty("isValid")]
+		[Field("isValid", false, "False", Int32.MaxValue)]
 		public bool? IsValid;
 
-		[Field("synchronizationSelect")]
+		[JsonProperty("synchronizationSelect")]
+		[Field("synchronizationSelect", false, null, Int32.MaxValue)]
 		public string? SynchronizationSelect;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("url")]
+		[JsonProperty("url")]
+		[Field("url", false, null, Int32.MaxValue)]
 		public string? Url;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("importId")]
+		[JsonProperty("sharingSettingList")]
+		[Field("sharingSettingList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.SharingSetting>? SharingSettingList;
+
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("port")]
+		[JsonProperty("port")]
+		[Field("port", false, "80", Int32.MaxValue)]
 		public int? Port;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("lastSynchronizationDateT")]
+		[JsonProperty("lastSynchronizationDateT")]
+		[Field("lastSynchronizationDateT", false, null, Int32.MaxValue)]
 		public DateTime? LastSynchronizationDateT;
 
-		[Field("isSslConnection")]
+		[JsonProperty("isSslConnection")]
+		[Field("isSslConnection", false, "False", Int32.MaxValue)]
 		public bool? IsSslConnection;
 
-		[Field("user")]
+		[JsonProperty("user")]
+		[Field("user", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? User;
 
-		[Field("cid")]
+		[JsonProperty("cid")]
+		[Field("cid", false, null, Int32.MaxValue)]
 		public string? Cid;
 
 	}

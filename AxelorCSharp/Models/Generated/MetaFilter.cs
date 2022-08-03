@@ -1,53 +1,74 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Meta.Db
 {
+	[Serializable]
 	[Model("com.axelor.meta.db.MetaFilter")]
 	public class MetaFilter : AxelorModel
 	{
-		[Field("shared")]
+		[JsonProperty("shared")]
+		[Field("shared", false, "False", Int32.MaxValue)]
 		public bool? Shared;
 
-		[Field("importOrigin")]
+		[JsonProperty("filterCustom")]
+		[Field("filterCustom", false, null, Int32.MaxValue)]
+		public string? FilterCustom;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("filters")]
+		[JsonProperty("filters")]
+		[Field("filters", false, null, Int32.MaxValue)]
 		public string? Filters;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("title")]
+		[JsonProperty("title")]
+		[Field("title", true, null, Int32.MaxValue)]
 		public string? Title;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("filterView")]
+		[JsonProperty("filterView")]
+		[Field("filterView", true, null, Int32.MaxValue)]
 		public string? FilterView;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("user")]
+		[JsonProperty("user")]
+		[Field("user", true, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? User;
 
 	}

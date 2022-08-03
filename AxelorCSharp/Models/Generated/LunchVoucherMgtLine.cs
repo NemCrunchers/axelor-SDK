@@ -1,74 +1,102 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Hr.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.hr.db.LunchVoucherMgtLine")]
 	public class LunchVoucherMgtLine : AxelorModel
 	{
-		[Field("inAdvanceNbr")]
+		[JsonProperty("inAdvanceNbr")]
+		[Field("inAdvanceNbr", false, "0", Int32.MaxValue)]
 		public int? InAdvanceNbr;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("lunchVoucherNumber")]
+		[JsonProperty("comments")]
+		[Field("comments", false, null, Int32.MaxValue)]
+		public string? Comments;
+
+		[JsonProperty("lunchVoucherNumber")]
+		[Field("lunchVoucherNumber", false, "0", Int32.MaxValue)]
 		public int? LunchVoucherNumber;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("daysWorkedNbr")]
+		[JsonProperty("daysWorkedNbr")]
+		[Field("daysWorkedNbr", false, "0", Int32.MaxValue)]
 		public int? DaysWorkedNbr;
 
-		[Field("givenToEmployee")]
+		[JsonProperty("givenToEmployee")]
+		[Field("givenToEmployee", false, "0", Int32.MaxValue)]
 		public int? GivenToEmployee;
 
-		[Field("lunchVoucherFormatSelect")]
+		[JsonProperty("lunchVoucherFormatSelect")]
+		[Field("lunchVoucherFormatSelect", false, "0", Int32.MaxValue)]
 		public int? LunchVoucherFormatSelect;
 
-		[Field("invitation")]
+		[JsonProperty("invitation")]
+		[Field("invitation", false, "0", Int32.MaxValue)]
 		public int? Invitation;
 
-		[Field("payrollPreparation")]
+		[JsonProperty("payrollPreparation")]
+		[Field("payrollPreparation", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.PayrollPreparation? PayrollPreparation;
 
-		[Field("lunchVoucherMgt")]
+		[JsonProperty("lunchVoucherMgt")]
+		[Field("lunchVoucherMgt", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.LunchVoucherMgt? LunchVoucherMgt;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("employee")]
+		[JsonProperty("employee")]
+		[Field("employee", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.Employee? Employee;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("canteenEntries")]
+		[JsonProperty("canteenEntries")]
+		[Field("canteenEntries", false, "0", Int32.MaxValue)]
 		public int? CanteenEntries;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "0", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("daysOverseas")]
+		[JsonProperty("daysOverseas")]
+		[Field("daysOverseas", false, "0", Int32.MaxValue)]
 		public int? DaysOverseas;
 
 	}

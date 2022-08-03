@@ -1,74 +1,102 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Bankpayment.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.bankpayment.db.BankPaymentConfig")]
 	public class BankPaymentConfig : AxelorModel
 	{
-		[Field("otherBankOrderSequence")]
+		[JsonProperty("otherBankOrderSequence")]
+		[Field("otherBankOrderSequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? OtherBankOrderSequence;
 
-		[Field("sepaCreditTransSequence")]
+		[JsonProperty("sepaCreditTransSequence")]
+		[Field("sepaCreditTransSequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? SepaCreditTransSequence;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("generateMoveOnBankOrderValidation")]
+		[JsonProperty("generateMoveOnBankOrderValidation")]
+		[Field("generateMoveOnBankOrderValidation", false, "False", Int32.MaxValue)]
 		public bool? GenerateMoveOnBankOrderValidation;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("defaultSignatoryUser")]
+		[JsonProperty("defaultSignatoryUser")]
+		[Field("defaultSignatoryUser", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? DefaultSignatoryUser;
 
-		[Field("sepaDirectDebitSequence")]
+		[JsonProperty("sepaDirectDebitSequence")]
+		[Field("sepaDirectDebitSequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? SepaDirectDebitSequence;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("intCreditTransSequence")]
+		[JsonProperty("intCreditTransSequence")]
+		[Field("intCreditTransSequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? IntCreditTransSequence;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("natTreasuryTransSequence")]
+		[JsonProperty("natTreasuryTransSequence")]
+		[Field("natTreasuryTransSequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? NatTreasuryTransSequence;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("icsNumber")]
+		[JsonProperty("icsNumber")]
+		[Field("icsNumber", false, null, 13)]
 		public string? IcsNumber;
 
-		[Field("intDirectDebitSequence")]
+		[JsonProperty("intDirectDebitSequence")]
+		[Field("intDirectDebitSequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? IntDirectDebitSequence;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("internalBankToBankAccount")]
+		[JsonProperty("internalBankToBankAccount")]
+		[Field("internalBankToBankAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? InternalBankToBankAccount;
 
-		[Field("id")]
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
+		public Axelor.Apps.Base.Db.Company? Company;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("externalBankToBankAccount")]
+		[JsonProperty("externalBankToBankAccount")]
+		[Field("externalBankToBankAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? ExternalBankToBankAccount;
 
-		[Field("intTreasuryTransSequence")]
+		[JsonProperty("intTreasuryTransSequence")]
+		[Field("intTreasuryTransSequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? IntTreasuryTransSequence;
 
 	}

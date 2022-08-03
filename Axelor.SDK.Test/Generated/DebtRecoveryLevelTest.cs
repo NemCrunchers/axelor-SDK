@@ -2,6 +2,7 @@ using Axelor.SDK.Test;
 
 namespace Axelor.SDK.Test.Apps.Account.Db
 {
+    [Ignore]
     [TestClass]
     public class DebtRecoveryLevelTest: TestModel
     {

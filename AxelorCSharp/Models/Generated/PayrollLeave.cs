@@ -1,47 +1,74 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Hr.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.hr.db.PayrollLeave")]
 	public class PayrollLeave : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("payrollPreparation")]
+		[JsonProperty("toDate")]
+		[Field("toDate", true, null, Int32.MaxValue)]
+		public DateTime? ToDate;
+
+		[JsonProperty("payrollPreparation")]
+		[Field("payrollPreparation", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.PayrollPreparation? PayrollPreparation;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("duration")]
+		[Field("duration", false, "0", Int32.MaxValue)]
+		public decimal? Duration;
+
+		[JsonProperty("fromDate")]
+		[Field("fromDate", true, null, Int32.MaxValue)]
+		public DateTime? FromDate;
+
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("leaveRequest")]
+		[JsonProperty("leaveRequest")]
+		[Field("leaveRequest", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.LeaveRequest? LeaveRequest;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("leaveReason")]
+		[JsonProperty("leaveReason")]
+		[Field("leaveReason", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.LeaveReason? LeaveReason;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

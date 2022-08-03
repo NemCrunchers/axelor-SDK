@@ -1,44 +1,70 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Hr.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.hr.db.KilometricAllowanceRule")]
 	public class KilometricAllowanceRule : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("minimumCondition")]
+		[Field("minimumCondition", false, "0", Int32.MaxValue)]
+		public decimal? MinimumCondition;
+
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("hrConfig")]
+		[JsonProperty("maximumCondition")]
+		[Field("maximumCondition", false, "0", Int32.MaxValue)]
+		public decimal? MaximumCondition;
+
+		[JsonProperty("hrConfig")]
+		[Field("hrConfig", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.HRConfig? HrConfig;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("kilometricAllowanceRate")]
+		[JsonProperty("rate")]
+		[Field("rate", true, "0", Int32.MaxValue)]
+		public decimal? Rate;
+
+		[JsonProperty("kilometricAllowanceRate")]
+		[Field("kilometricAllowanceRate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.KilometricAllowanceRate? KilometricAllowanceRate;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

@@ -1,71 +1,106 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Mail.Db
 {
+	[Serializable]
 	[Model("com.axelor.mail.db.MailMessage")]
 	public class MailMessage : AxelorModel
 	{
-		[Field("parent")]
+		[JsonProperty("parent")]
+		[Field("parent", false, null, Int32.MaxValue)]
 		public Axelor.Mail.Db.MailMessage? Parent;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("relatedName")]
+		[JsonProperty("relatedName")]
+		[Field("relatedName", false, null, Int32.MaxValue)]
 		public string? RelatedName;
 
-		[Field("subject")]
+		[JsonProperty("subject")]
+		[Field("subject", false, null, Int32.MaxValue)]
 		public string? Subject;
 
-		[Field("type")]
+		[JsonProperty("flags")]
+		[Field("flags", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Mail.Db.MailFlags>? Flags;
+
+		[JsonProperty("body")]
+		[Field("body", false, null, Int32.MaxValue)]
+		public string? Body;
+
+		[JsonProperty("type")]
+		[Field("type", false, null, Int32.MaxValue)]
 		public string? Type;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("relatedModel")]
+		[JsonProperty("relatedModel")]
+		[Field("relatedModel", false, null, Int32.MaxValue)]
 		public string? RelatedModel;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("root")]
+		[JsonProperty("root")]
+		[Field("root", false, null, Int32.MaxValue)]
 		public Axelor.Mail.Db.MailMessage? Root;
 
-		[Field("from")]
+		[JsonProperty("from")]
+		[Field("from", false, null, Int32.MaxValue)]
 		public Axelor.Mail.Db.MailAddress? From;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("summary")]
+		[JsonProperty("summary")]
+		[Field("summary", false, null, Int32.MaxValue)]
 		public string? Summary;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("author")]
+		[JsonProperty("author")]
+		[Field("author", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? Author;
 
-		[Field("messageId")]
+		[JsonProperty("messageId")]
+		[Field("messageId", false, null, Int32.MaxValue)]
 		public string? MessageId;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("relatedId")]
+		[JsonProperty("relatedId")]
+		[Field("relatedId", false, "0", Int32.MaxValue)]
 		public long? RelatedId;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("replies")]
+		[Field("replies", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Mail.Db.MailMessage>? Replies;
+
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("recipients")]
+		[JsonProperty("recipients")]
+		[Field("recipients", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Mail.Db.MailAddress>? Recipients;
 
 	}

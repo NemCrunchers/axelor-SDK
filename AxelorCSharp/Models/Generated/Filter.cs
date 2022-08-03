@@ -1,86 +1,114 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Studio.Db
 {
+	[Serializable]
 	[Model("com.axelor.studio.db.Filter")]
 	public class Filter : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("isTargetJson")]
+		[JsonProperty("isTargetJson")]
+		[Field("isTargetJson", false, "False", Int32.MaxValue)]
 		public bool? IsTargetJson;
 
-		[Field("defaultValue")]
+		[JsonProperty("defaultValue")]
+		[Field("defaultValue", false, null, Int32.MaxValue)]
 		public string? DefaultValue;
 
-		[Field("actionBuilder")]
+		[JsonProperty("actionBuilder")]
+		[Field("actionBuilder", false, null, Int32.MaxValue)]
 		public Axelor.Studio.Db.ActionBuilder? ActionBuilder;
 
-		[Field("moduleName")]
+		[JsonProperty("moduleName")]
+		[Field("moduleName", false, null, Int32.MaxValue)]
 		public string? ModuleName;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("operator")]
+		[JsonProperty("operator")]
+		[Field("operator", true, null, Int32.MaxValue)]
 		public string? Operator;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("wkfTransition")]
+		[JsonProperty("wkfTransition")]
+		[Field("wkfTransition", false, null, Int32.MaxValue)]
 		public Axelor.Studio.Db.WkfTransition? WkfTransition;
 
-		[Field("isJson")]
+		[JsonProperty("isJson")]
+		[Field("isJson", false, "False", Int32.MaxValue)]
 		public bool? IsJson;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("value")]
+		[JsonProperty("value")]
+		[Field("value", false, null, Int32.MaxValue)]
 		public string? Value;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("isParameter")]
+		[JsonProperty("isParameter")]
+		[Field("isParameter", false, "False", Int32.MaxValue)]
 		public bool? IsParameter;
 
-		[Field("targetTitle")]
+		[JsonProperty("targetTitle")]
+		[Field("targetTitle", false, null, Int32.MaxValue)]
 		public string? TargetTitle;
 
-		[Field("targetType")]
+		[JsonProperty("targetType")]
+		[Field("targetType", false, null, Int32.MaxValue)]
 		public string? TargetType;
 
-		[Field("metaField")]
+		[JsonProperty("metaField")]
+		[Field("metaField", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaField? MetaField;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("chartBuilder")]
+		[JsonProperty("chartBuilder")]
+		[Field("chartBuilder", false, null, Int32.MaxValue)]
 		public Axelor.Studio.Db.ChartBuilder? ChartBuilder;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("targetField")]
+		[JsonProperty("targetField")]
+		[Field("targetField", false, null, Int32.MaxValue)]
 		public string? TargetField;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("metaJsonField")]
+		[JsonProperty("metaJsonField")]
+		[Field("metaJsonField", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaJsonField? MetaJsonField;
 
-		[Field("logicOp")]
+		[JsonProperty("logicOp")]
+		[Field("logicOp", false, "0", Int32.MaxValue)]
 		public int? LogicOp;
 
 	}

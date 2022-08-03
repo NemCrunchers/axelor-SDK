@@ -1,71 +1,98 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Quality.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.quality.db.ControlPointModel")]
 	public class ControlPointModel : AxelorModel
 	{
-		[Field("instructions")]
+		[JsonProperty("instructions")]
+		[Field("instructions", false, null, Int32.MaxValue)]
 		public string? Instructions;
 
-		[Field("messageIfFailure")]
+		[JsonProperty("messageIfFailure")]
+		[Field("messageIfFailure", false, null, Int32.MaxValue)]
 		public string? MessageIfFailure;
 
-		[Field("importOrigin")]
+		[JsonProperty("controlFrequency")]
+		[Field("controlFrequency", false, "0", Int32.MaxValue)]
+		public decimal? ControlFrequency;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("product")]
+		[JsonProperty("product")]
+		[Field("product", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("notes")]
+		[JsonProperty("notes")]
+		[Field("notes", false, null, Int32.MaxValue)]
 		public string? Notes;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("testTypeSelect")]
+		[JsonProperty("testTypeSelect")]
+		[Field("testTypeSelect", false, "0", Int32.MaxValue)]
 		public int? TestTypeSelect;
 
-		[Field("team")]
+		[JsonProperty("team")]
+		[Field("team", true, null, Int32.MaxValue)]
 		public Axelor.Team.Db.Team? Team;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("priority")]
+		[JsonProperty("priority")]
+		[Field("priority", false, "0", Int32.MaxValue)]
 		public int? Priority;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("controlTypeSelect")]
+		[JsonProperty("controlTypeSelect")]
+		[Field("controlTypeSelect", false, "0", Int32.MaxValue)]
 		public int? ControlTypeSelect;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("responsible")]
+		[JsonProperty("responsible")]
+		[Field("responsible", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.Employee? Responsible;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("qualityProcess")]
+		[JsonProperty("qualityProcess")]
+		[Field("qualityProcess", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Quality.Db.QualityProcess? QualityProcess;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

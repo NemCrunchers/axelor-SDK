@@ -1,56 +1,98 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.PriceList")]
 	public class PriceList : AxelorModel
 	{
-		[Field("parentPriceList")]
+		[JsonProperty("parentPriceList")]
+		[Field("parentPriceList", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.PriceList? ParentPriceList;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("comments")]
+		[Field("comments", false, null, Int32.MaxValue)]
+		public string? Comments;
+
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("hideDiscount")]
+		[JsonProperty("applicationEndDate")]
+		[Field("applicationEndDate", false, null, Int32.MaxValue)]
+		public DateTime? ApplicationEndDate;
+
+		[JsonProperty("hideDiscount")]
+		[Field("hideDiscount", false, "False", Int32.MaxValue)]
 		public bool? HideDiscount;
 
-		[Field("typeSelect")]
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", true, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("isActive")]
+		[JsonProperty("isActive")]
+		[Field("isActive", false, "False", Int32.MaxValue)]
 		public bool? IsActive;
 
-		[Field("title")]
+		[JsonProperty("priceListLineList")]
+		[Field("priceListLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.PriceListLine>? PriceListLineList;
+
+		[JsonProperty("title")]
+		[Field("title", true, null, Int32.MaxValue)]
 		public string? Title;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("generalDiscount")]
+		[Field("generalDiscount", false, "0", Int32.MaxValue)]
+		public decimal? GeneralDiscount;
+
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("historizedPriceList")]
+		[Field("historizedPriceList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.PriceList>? HistorizedPriceList;
+
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("basedOnSelect")]
+		[JsonProperty("basedOnSelect")]
+		[Field("basedOnSelect", false, "0", Int32.MaxValue)]
 		public int? BasedOnSelect;
 
-		[Field("id")]
+		[JsonProperty("applicationBeginDate")]
+		[Field("applicationBeginDate", false, null, Int32.MaxValue)]
+		public DateTime? ApplicationBeginDate;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

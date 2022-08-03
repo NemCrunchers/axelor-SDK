@@ -1,74 +1,106 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Stock.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.stock.db.StockLocation")]
 	public class StockLocation : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("detailsStockLocationLineList")]
+		[Field("detailsStockLocationLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Stock.Db.StockLocationLine>? DetailsStockLocationLineList;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("usableOnPurchaseOrder")]
+		[JsonProperty("usableOnPurchaseOrder")]
+		[Field("usableOnPurchaseOrder", false, "False", Int32.MaxValue)]
 		public bool? UsableOnPurchaseOrder;
 
-		[Field("isWorkshop")]
+		[JsonProperty("isWorkshop")]
+		[Field("isWorkshop", false, "False", Int32.MaxValue)]
 		public bool? IsWorkshop;
 
-		[Field("typeSelect")]
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", true, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("stockLocationLineList")]
+		[Field("stockLocationLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Stock.Db.StockLocationLine>? StockLocationLineList;
+
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("directOrderLocation")]
+		[JsonProperty("directOrderLocation")]
+		[Field("directOrderLocation", false, "False", Int32.MaxValue)]
 		public bool? DirectOrderLocation;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("address")]
+		[JsonProperty("address")]
+		[Field("address", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Address? Address;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("usableOnSaleOrder")]
+		[JsonProperty("usableOnSaleOrder")]
+		[Field("usableOnSaleOrder", false, "False", Int32.MaxValue)]
 		public bool? UsableOnSaleOrder;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("partner")]
+		[JsonProperty("partner")]
+		[Field("partner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? Partner;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("usableOnProduction")]
+		[JsonProperty("usableOnProduction")]
+		[Field("usableOnProduction", false, "False", Int32.MaxValue)]
 		public bool? UsableOnProduction;
 
-		[Field("includeOutOfStock")]
+		[JsonProperty("includeOutOfStock")]
+		[Field("includeOutOfStock", false, "False", Int32.MaxValue)]
 		public bool? IncludeOutOfStock;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("parentStockLocation")]
+		[JsonProperty("parentStockLocation")]
+		[Field("parentStockLocation", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockLocation? ParentStockLocation;
 
 	}

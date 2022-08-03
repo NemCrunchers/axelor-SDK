@@ -1,47 +1,66 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Sale.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.sale.db.Configurator")]
 	public class Configurator : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("configuratorCreatorName")]
+		[JsonProperty("product")]
+		[Field("product", false, null, Int32.MaxValue)]
+		public Axelor.Apps.Base.Db.Product? Product;
+
+		[JsonProperty("configuratorCreatorName")]
+		[Field("configuratorCreatorName", false, null, Int32.MaxValue)]
 		public string? ConfiguratorCreatorName;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("indicators")]
+		[JsonProperty("indicators")]
+		[Field("indicators", false, null, Int32.MaxValue)]
 		public string? Indicators;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("configuratorCreator")]
+		[JsonProperty("configuratorCreator")]
+		[Field("configuratorCreator", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Sale.Db.ConfiguratorCreator? ConfiguratorCreator;
 
-		[Field("attributes")]
+		[JsonProperty("attributes")]
+		[Field("attributes", false, null, Int32.MaxValue)]
 		public string? Attributes;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

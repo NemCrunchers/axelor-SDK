@@ -2,6 +2,7 @@ using Axelor.SDK.Test;
 
 namespace Axelor.SDK.Test.Mail.Db
 {
+    [Ignore]
     [TestClass]
     public class MailFlagsTest: TestModel
     {

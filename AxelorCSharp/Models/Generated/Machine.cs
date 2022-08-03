@@ -1,71 +1,98 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Production.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.production.db.Machine")]
 	public class Machine : AxelorModel
 	{
-		[Field("operatingDuration")]
+		[JsonProperty("operatingDuration")]
+		[Field("operatingDuration", false, "0", Int32.MaxValue)]
 		public long? OperatingDuration;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("setupDuration")]
+		[JsonProperty("setupDuration")]
+		[Field("setupDuration", false, "0", Int32.MaxValue)]
 		public long? SetupDuration;
 
-		[Field("serialNumber")]
+		[JsonProperty("serialNumber")]
+		[Field("serialNumber", false, null, Int32.MaxValue)]
 		public string? SerialNumber;
 
-		[Field("startingDuration")]
+		[JsonProperty("startingDuration")]
+		[Field("startingDuration", false, "0", Int32.MaxValue)]
 		public long? StartingDuration;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("stockLocation")]
+		[JsonProperty("stockLocation")]
+		[Field("stockLocation", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockLocation? StockLocation;
 
-		[Field("updatedOn")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("weeklyPlanning")]
+		[JsonProperty("weeklyPlanning")]
+		[Field("weeklyPlanning", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.WeeklyPlanning? WeeklyPlanning;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("endingDuration")]
+		[JsonProperty("endingDuration")]
+		[Field("endingDuration", false, "0", Int32.MaxValue)]
 		public long? EndingDuration;
 
-		[Field("picture")]
+		[JsonProperty("picture")]
+		[Field("picture", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? Picture;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("brand")]
+		[JsonProperty("brand")]
+		[Field("brand", false, null, Int32.MaxValue)]
 		public string? Brand;
 
-		[Field("machineType")]
+		[JsonProperty("machineType")]
+		[Field("machineType", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.MachineType? MachineType;
 
 	}

@@ -1,69 +1,111 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Hr.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.hr.db.LunchVoucherMgt")]
 	public class LunchVoucherMgt : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("csvFile")]
+		[JsonProperty("csvFile")]
+		[Field("csvFile", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? CsvFile;
 
-		[Field("totalLunchVouchers")]
+		[JsonProperty("lunchVoucherMgtLineList")]
+		[Field("lunchVoucherMgtLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Hr.Db.LunchVoucherMgtLine>? LunchVoucherMgtLineList;
+
+		[JsonProperty("totalLunchVouchers")]
+		[Field("totalLunchVouchers", false, "0", Int32.MaxValue)]
 		public int? TotalLunchVouchers;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("leavePeriod")]
+		[JsonProperty("leavePeriod")]
+		[Field("leavePeriod", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Period? LeavePeriod;
 
-		[Field("payPeriod")]
+		[JsonProperty("payPeriod")]
+		[Field("payPeriod", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Period? PayPeriod;
 
-		[Field("givenLunchVouchers")]
+		[JsonProperty("givenLunchVouchers")]
+		[Field("givenLunchVouchers", false, "0", Int32.MaxValue)]
 		public int? GivenLunchVouchers;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("stockQuantityStatus")]
+		[JsonProperty("stockQuantityStatus")]
+		[Field("stockQuantityStatus", false, "0", Int32.MaxValue)]
 		public int? StockQuantityStatus;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("updatedOn")]
+		[JsonProperty("lunchVoucherWageShare")]
+		[Field("lunchVoucherWageShare", false, "0", Int32.MaxValue)]
+		public decimal? LunchVoucherWageShare;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "1", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("requestedLunchVouchers")]
+		[JsonProperty("requestedLunchVouchers")]
+		[Field("requestedLunchVouchers", false, "0", Int32.MaxValue)]
 		public int? RequestedLunchVouchers;
 
-		[Field("importId")]
+		[JsonProperty("exportDate")]
+		[Field("exportDate", false, null, Int32.MaxValue)]
+		public DateTime? ExportDate;
+
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("stockLineQuantity")]
+		[JsonProperty("lunchVoucherEmployersShare")]
+		[Field("lunchVoucherEmployersShare", false, "0", Int32.MaxValue)]
+		public decimal? LunchVoucherEmployersShare;
+
+		[JsonProperty("stockLineQuantity")]
+		[Field("stockLineQuantity", false, "0", Int32.MaxValue)]
 		public int? StockLineQuantity;
+
+		[JsonProperty("stockLineComment")]
+		[Field("stockLineComment", false, null, Int32.MaxValue)]
+		public string? StockLineComment;
 
 	}
 }

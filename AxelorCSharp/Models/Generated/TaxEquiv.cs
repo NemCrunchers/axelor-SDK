@@ -1,53 +1,74 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.TaxEquiv")]
 	public class TaxEquiv : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("toTax")]
+		[JsonProperty("toTax")]
+		[Field("toTax", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Tax? ToTax;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("specificNote")]
+		[Field("specificNote", false, null, Int32.MaxValue)]
+		public string? SpecificNote;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("fromTax")]
+		[JsonProperty("fromTax")]
+		[Field("fromTax", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Tax? FromTax;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("reverseCharge")]
+		[JsonProperty("reverseCharge")]
+		[Field("reverseCharge", false, "False", Int32.MaxValue)]
 		public bool? ReverseCharge;
 
-		[Field("reverseChargeTax")]
+		[JsonProperty("reverseChargeTax")]
+		[Field("reverseChargeTax", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Tax? ReverseChargeTax;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("fiscalPosition")]
+		[JsonProperty("fiscalPosition")]
+		[Field("fiscalPosition", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.FiscalPosition? FiscalPosition;
 
 	}

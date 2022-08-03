@@ -1,179 +1,294 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Stock.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.stock.db.StockMove")]
 	public class StockMove : AxelorModel
 	{
-		[Field("numOfPalettes")]
+		[JsonProperty("grossMass")]
+		[Field("grossMass", false, "0", Int32.MaxValue)]
+		public decimal? GrossMass;
+
+		[JsonProperty("numOfPalettes")]
+		[Field("numOfPalettes", false, "0", Int32.MaxValue)]
 		public int? NumOfPalettes;
 
-		[Field("availabilityRequest")]
+		[JsonProperty("availabilityRequest")]
+		[Field("availabilityRequest", false, "False", Int32.MaxValue)]
 		public bool? AvailabilityRequest;
 
-		[Field("isNeedingConformityCertificate")]
+		[JsonProperty("isNeedingConformityCertificate")]
+		[Field("isNeedingConformityCertificate", false, "False", Int32.MaxValue)]
 		public bool? IsNeedingConformityCertificate;
 
-		[Field("carrierPartner")]
+		[JsonProperty("carrierPartner")]
+		[Field("carrierPartner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? CarrierPartner;
 
-		[Field("typeSelect")]
+		[JsonProperty("estimatedDate")]
+		[Field("estimatedDate", false, null, Int32.MaxValue)]
+		public DateTime? EstimatedDate;
+
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", true, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("toAddress")]
+		[JsonProperty("toAddress")]
+		[Field("toAddress", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Address? ToAddress;
 
-		[Field("realStockMoveMessageTemplate")]
+		[JsonProperty("pickingEditDate")]
+		[Field("pickingEditDate", false, null, Int32.MaxValue)]
+		public DateTime? PickingEditDate;
+
+		[JsonProperty("realStockMoveMessageTemplate")]
+		[Field("realStockMoveMessageTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? RealStockMoveMessageTemplate;
 
-		[Field("inManufOrder")]
+		[JsonProperty("toAddressStr")]
+		[Field("toAddressStr", false, null, Int32.MaxValue)]
+		public string? ToAddressStr;
+
+		[JsonProperty("deliveryCondition")]
+		[Field("deliveryCondition", false, null, Int32.MaxValue)]
+		public string? DeliveryCondition;
+
+		[JsonProperty("inManufOrder")]
+		[Field("inManufOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.ManufOrder? InManufOrder;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("trackingNumber")]
+		[JsonProperty("trackingNumber")]
+		[Field("trackingNumber", false, null, Int32.MaxValue)]
 		public string? TrackingNumber;
 
-		[Field("freightCarrierMode")]
+		[JsonProperty("freightCarrierMode")]
+		[Field("freightCarrierMode", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.FreightCarrierMode? FreightCarrierMode;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("reservationDateTime")]
+		[JsonProperty("reservationDateTime")]
+		[Field("reservationDateTime", false, null, Int32.MaxValue)]
 		public DateTime? ReservationDateTime;
 
-		[Field("isWithReturnSurplus")]
+		[JsonProperty("isWithReturnSurplus")]
+		[Field("isWithReturnSurplus", false, "False", Int32.MaxValue)]
 		public bool? IsWithReturnSurplus;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("outManufOrder")]
+		[JsonProperty("outManufOrder")]
+		[Field("outManufOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.ManufOrder? OutManufOrder;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("electronicSignature")]
+		[JsonProperty("electronicSignature")]
+		[Field("electronicSignature", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? ElectronicSignature;
 
-		[Field("incoterm")]
+		[JsonProperty("incoterm")]
+		[Field("incoterm", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.Incoterm? Incoterm;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("isReversion")]
+		[JsonProperty("fromAddressStr")]
+		[Field("fromAddressStr", false, null, Int32.MaxValue)]
+		public string? FromAddressStr;
+
+		[JsonProperty("isReversion")]
+		[Field("isReversion", false, "False", Int32.MaxValue)]
 		public bool? IsReversion;
 
-		[Field("inOperationOrder")]
+		[JsonProperty("inOperationOrder")]
+		[Field("inOperationOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.OperationOrder? InOperationOrder;
 
-		[Field("plannedStockMoveMessageTemplate")]
+		[JsonProperty("plannedStockMoveMessageTemplate")]
+		[Field("plannedStockMoveMessageTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? PlannedStockMoveMessageTemplate;
 
-		[Field("plannedStockMoveAutomaticMail")]
+		[JsonProperty("plannedStockMoveAutomaticMail")]
+		[Field("plannedStockMoveAutomaticMail", false, "False", Int32.MaxValue)]
 		public bool? PlannedStockMoveAutomaticMail;
 
-		[Field("fullySpreadOverLogisticalFormsFlag")]
+		[JsonProperty("fullySpreadOverLogisticalFormsFlag")]
+		[Field("fullySpreadOverLogisticalFormsFlag", false, "False", Int32.MaxValue)]
 		public bool? FullySpreadOverLogisticalFormsFlag;
 
-		[Field("importOrigin")]
+		[JsonProperty("note")]
+		[Field("note", false, null, Int32.MaxValue)]
+		public string? Note;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("conformitySelect")]
+		[JsonProperty("supplierShipmentDate")]
+		[Field("supplierShipmentDate", false, null, Int32.MaxValue)]
+		public DateTime? SupplierShipmentDate;
+
+		[JsonProperty("conformitySelect")]
+		[Field("conformitySelect", false, "0", Int32.MaxValue)]
 		public int? ConformitySelect;
 
-		[Field("origin")]
+		[JsonProperty("origin")]
+		[Field("origin", false, null, Int32.MaxValue)]
 		public string? Origin;
 
-		[Field("forwarderPartner")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("forwarderPartner")]
+		[Field("forwarderPartner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? ForwarderPartner;
 
-		[Field("supplierShipmentRef")]
+		[JsonProperty("supplierShipmentRef")]
+		[Field("supplierShipmentRef", false, null, Int32.MaxValue)]
 		public string? SupplierShipmentRef;
 
-		[Field("batchSet")]
+		[JsonProperty("batchSet")]
+		[Field("batchSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.Batch>? BatchSet;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("plannedStockMoveLineList")]
+		[Field("plannedStockMoveLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Stock.Db.StockMoveLine>? PlannedStockMoveLineList;
+
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("originId")]
+		[JsonProperty("originId")]
+		[Field("originId", false, "0", Int32.MaxValue)]
 		public long? OriginId;
 
-		[Field("printingSettings")]
+		[JsonProperty("printingSettings")]
+		[Field("printingSettings", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.PrintingSettings? PrintingSettings;
 
-		[Field("toStockLocation")]
+		[JsonProperty("toStockLocation")]
+		[Field("toStockLocation", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockLocation? ToStockLocation;
 
-		[Field("isIspmRequired")]
+		[JsonProperty("isIspmRequired")]
+		[Field("isIspmRequired", false, "False", Int32.MaxValue)]
 		public bool? IsIspmRequired;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("fromAddress")]
+		[JsonProperty("fromAddress")]
+		[Field("fromAddress", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Address? FromAddress;
 
-		[Field("cancelReason")]
+		[JsonProperty("cancelReason")]
+		[Field("cancelReason", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.CancelReason? CancelReason;
 
-		[Field("signatoryUser")]
+		[JsonProperty("signatoryUser")]
+		[Field("signatoryUser", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? SignatoryUser;
 
-		[Field("tradingName")]
+		[JsonProperty("realDate")]
+		[Field("realDate", false, null, Int32.MaxValue)]
+		public DateTime? RealDate;
+
+		[JsonProperty("tradingName")]
+		[Field("tradingName", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.TradingName? TradingName;
 
-		[Field("fromStockLocation")]
+		[JsonProperty("fromStockLocation")]
+		[Field("fromStockLocation", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.StockLocation? FromStockLocation;
 
-		[Field("originTypeSelect")]
+		[JsonProperty("specificPackage")]
+		[Field("specificPackage", false, null, Int32.MaxValue)]
+		public string? SpecificPackage;
+
+		[JsonProperty("originTypeSelect")]
+		[Field("originTypeSelect", false, null, Int32.MaxValue)]
 		public string? OriginTypeSelect;
 
-		[Field("shipmentMode")]
+		[JsonProperty("exTaxTotal")]
+		[Field("exTaxTotal", false, "0", Int32.MaxValue)]
+		public decimal? ExTaxTotal;
+
+		[JsonProperty("shipmentMode")]
+		[Field("shipmentMode", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Stock.Db.ShipmentMode? ShipmentMode;
 
-		[Field("stockMoveSeq")]
+		[JsonProperty("stockMoveSeq")]
+		[Field("stockMoveSeq", false, null, Int32.MaxValue)]
 		public string? StockMoveSeq;
 
-		[Field("numOfPackages")]
+		[JsonProperty("stockMoveLineList")]
+		[Field("stockMoveLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Stock.Db.StockMoveLine>? StockMoveLineList;
+
+		[JsonProperty("numOfPackages")]
+		[Field("numOfPackages", false, "0", Int32.MaxValue)]
 		public int? NumOfPackages;
 
-		[Field("pickingIsEdited")]
+		[JsonProperty("pickingIsEdited")]
+		[Field("pickingIsEdited", false, "False", Int32.MaxValue)]
 		public bool? PickingIsEdited;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", true, "1", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("partner")]
+		[JsonProperty("partner")]
+		[Field("partner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? Partner;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("isWithBackorder")]
+		[JsonProperty("isWithBackorder")]
+		[Field("isWithBackorder", false, "False", Int32.MaxValue)]
 		public bool? IsWithBackorder;
 
-		[Field("isConformityCertifSigned")]
+		[JsonProperty("isConformityCertifSigned")]
+		[Field("isConformityCertifSigned", false, "False", Int32.MaxValue)]
 		public bool? IsConformityCertifSigned;
 
-		[Field("invoice")]
+		[JsonProperty("invoice")]
+		[Field("invoice", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Invoice? Invoice;
 
-		[Field("realStockMoveAutomaticMail")]
+		[JsonProperty("realStockMoveAutomaticMail")]
+		[Field("realStockMoveAutomaticMail", false, "False", Int32.MaxValue)]
 		public bool? RealStockMoveAutomaticMail;
 
 	}

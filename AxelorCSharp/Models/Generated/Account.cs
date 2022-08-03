@@ -1,80 +1,106 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.Account")]
 	public class Account : AxelorModel
 	{
-		[Field("analyticDistributionRequiredOnInvoiceLines")]
+		[JsonProperty("analyticDistributionRequiredOnInvoiceLines")]
+		[Field("analyticDistributionRequiredOnInvoiceLines", false, "False", Int32.MaxValue)]
 		public bool? AnalyticDistributionRequiredOnInvoiceLines;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", true, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("isTaxRequiredOnMoveLine")]
+		[JsonProperty("isTaxRequiredOnMoveLine")]
+		[Field("isTaxRequiredOnMoveLine", false, "False", Int32.MaxValue)]
 		public bool? IsTaxRequiredOnMoveLine;
 
-		[Field("reconcileOk")]
+		[JsonProperty("reconcileOk")]
+		[Field("reconcileOk", false, "False", Int32.MaxValue)]
 		public bool? ReconcileOk;
 
-		[Field("analyticDistributionAuthorized")]
+		[JsonProperty("analyticDistributionAuthorized")]
+		[Field("analyticDistributionAuthorized", false, "False", Int32.MaxValue)]
 		public bool? AnalyticDistributionAuthorized;
 
-		[Field("parentAccount")]
+		[JsonProperty("parentAccount")]
+		[Field("parentAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? ParentAccount;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("isTaxAuthorizedOnMoveLine")]
+		[JsonProperty("isTaxAuthorizedOnMoveLine")]
+		[Field("isTaxAuthorizedOnMoveLine", false, "False", Int32.MaxValue)]
 		public bool? IsTaxAuthorizedOnMoveLine;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("accountType")]
+		[JsonProperty("accountType")]
+		[Field("accountType", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.AccountType? AccountType;
 
-		[Field("useForPartnerBalance")]
+		[JsonProperty("useForPartnerBalance")]
+		[Field("useForPartnerBalance", false, "False", Int32.MaxValue)]
 		public bool? UseForPartnerBalance;
 
-		[Field("label")]
+		[JsonProperty("label")]
+		[Field("label", false, null, Int32.MaxValue)]
 		public string? Label;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("analyticDistributionRequiredOnMoveLines")]
+		[JsonProperty("analyticDistributionRequiredOnMoveLines")]
+		[Field("analyticDistributionRequiredOnMoveLines", false, "False", Int32.MaxValue)]
 		public bool? AnalyticDistributionRequiredOnMoveLines;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("compatibleAccountSet")]
+		[JsonProperty("compatibleAccountSet")]
+		[Field("compatibleAccountSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Account.Db.Account>? CompatibleAccountSet;
 
 	}

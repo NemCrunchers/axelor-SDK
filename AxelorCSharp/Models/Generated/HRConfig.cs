@@ -1,149 +1,218 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Hr.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.hr.db.HRConfig")]
 	public class HRConfig : AxelorModel
 	{
-		[Field("exportCodeForLunchVoucherManagement")]
+		[JsonProperty("exportCodeForLunchVoucherManagement")]
+		[Field("exportCodeForLunchVoucherManagement", false, null, Int32.MaxValue)]
 		public string? ExportCodeForLunchVoucherManagement;
 
-		[Field("validatedExtraHoursTemplate")]
+		[JsonProperty("validatedExtraHoursTemplate")]
+		[Field("validatedExtraHoursTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? ValidatedExtraHoursTemplate;
 
-		[Field("validatedLeaveTemplate")]
+		[JsonProperty("validatedLeaveTemplate")]
+		[Field("validatedLeaveTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? ValidatedLeaveTemplate;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("refusedExpenseTemplate")]
+		[JsonProperty("refusedExpenseTemplate")]
+		[Field("refusedExpenseTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? RefusedExpenseTemplate;
 
-		[Field("leaveMailNotification")]
+		[JsonProperty("leaveMailNotification")]
+		[Field("leaveMailNotification", false, "False", Int32.MaxValue)]
 		public bool? LeaveMailNotification;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("sentTimesheetTemplate")]
+		[JsonProperty("sentTimesheetTemplate")]
+		[Field("sentTimesheetTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? SentTimesheetTemplate;
 
-		[Field("publicHolidayEventsPlanning")]
+		[JsonProperty("publicHolidayEventsPlanning")]
+		[Field("publicHolidayEventsPlanning", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.EventsPlanning? PublicHolidayEventsPlanning;
 
-		[Field("supplierLunchVoucher")]
+		[JsonProperty("supplierLunchVoucher")]
+		[Field("supplierLunchVoucher", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? SupplierLunchVoucher;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("sentLeaveTemplate")]
+		[JsonProperty("sentLeaveTemplate")]
+		[Field("sentLeaveTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? SentLeaveTemplate;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("sentExpenseTemplate")]
+		[JsonProperty("sentExpenseTemplate")]
+		[Field("sentExpenseTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? SentExpenseTemplate;
 
-		[Field("toJustifyLeaveReason")]
+		[JsonProperty("lunchVoucherEmployersShare")]
+		[Field("lunchVoucherEmployersShare", false, "0", Int32.MaxValue)]
+		public decimal? LunchVoucherEmployersShare;
+
+		[JsonProperty("toJustifyLeaveReason")]
+		[Field("toJustifyLeaveReason", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Hr.Db.LeaveReason? ToJustifyLeaveReason;
 
-		[Field("timesheetMailNotification")]
+		[JsonProperty("timesheetMailNotification")]
+		[Field("timesheetMailNotification", false, "False", Int32.MaxValue)]
 		public bool? TimesheetMailNotification;
 
-		[Field("refusedLeaveTemplate")]
+		[JsonProperty("refusedLeaveTemplate")]
+		[Field("refusedLeaveTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? RefusedLeaveTemplate;
 
-		[Field("workingDaysVariableName")]
+		[JsonProperty("workingDaysVariableName")]
+		[Field("workingDaysVariableName", false, null, Int32.MaxValue)]
 		public string? WorkingDaysVariableName;
 
-		[Field("refusedExtraHoursTemplate")]
+		[JsonProperty("refusedExtraHoursTemplate")]
+		[Field("refusedExtraHoursTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? RefusedExtraHoursTemplate;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("canceledTimesheetTemplate")]
+		[JsonProperty("canceledTimesheetTemplate")]
+		[Field("canceledTimesheetTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? CanceledTimesheetTemplate;
 
-		[Field("expenseSequence")]
+		[JsonProperty("expenseSequence")]
+		[Field("expenseSequence", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Sequence? ExpenseSequence;
 
-		[Field("lunchVoucherFormatSelect")]
+		[JsonProperty("lunchVoucherFormatSelect")]
+		[Field("lunchVoucherFormatSelect", false, "0", Int32.MaxValue)]
 		public int? LunchVoucherFormatSelect;
 
-		[Field("exportCodeForExtraHours")]
+		[JsonProperty("exportCodeForExtraHours")]
+		[Field("exportCodeForExtraHours", false, null, Int32.MaxValue)]
 		public string? ExportCodeForExtraHours;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("sentExtraHoursTemplate")]
+		[JsonProperty("sentExtraHoursTemplate")]
+		[Field("sentExtraHoursTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? SentExtraHoursTemplate;
 
-		[Field("useUniqueProductForTimesheet")]
+		[JsonProperty("useUniqueProductForTimesheet")]
+		[Field("useUniqueProductForTimesheet", false, "False", Int32.MaxValue)]
 		public bool? UseUniqueProductForTimesheet;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("canceledLeaveTemplate")]
+		[JsonProperty("canceledLeaveTemplate")]
+		[Field("canceledLeaveTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? CanceledLeaveTemplate;
 
-		[Field("uniqueTimesheetProduct")]
+		[JsonProperty("uniqueTimesheetProduct")]
+		[Field("uniqueTimesheetProduct", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? UniqueTimesheetProduct;
 
-		[Field("availableStockLunchVoucher")]
+		[JsonProperty("leaveManagementBatchRuleList")]
+		[Field("leaveManagementBatchRuleList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Hr.Db.LeaveManagementBatchRule>? LeaveManagementBatchRuleList;
+
+		[JsonProperty("availableStockLunchVoucher")]
+		[Field("availableStockLunchVoucher", false, "0", Int32.MaxValue)]
 		public int? AvailableStockLunchVoucher;
 
-		[Field("validatedTimesheetTemplate")]
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
+		public Axelor.Apps.Base.Db.Company? Company;
+
+		[JsonProperty("validatedTimesheetTemplate")]
+		[Field("validatedTimesheetTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? ValidatedTimesheetTemplate;
 
-		[Field("minStockLunchVoucher")]
+		[JsonProperty("minStockLunchVoucher")]
+		[Field("minStockLunchVoucher", false, "0", Int32.MaxValue)]
 		public int? MinStockLunchVoucher;
 
-		[Field("canceledExpenseTemplate")]
+		[JsonProperty("canceledExpenseTemplate")]
+		[Field("canceledExpenseTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? CanceledExpenseTemplate;
 
-		[Field("validatedExpenseTemplate")]
+		[JsonProperty("validatedExpenseTemplate")]
+		[Field("validatedExpenseTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? ValidatedExpenseTemplate;
 
-		[Field("ageVariableName")]
+		[JsonProperty("ageVariableName")]
+		[Field("ageVariableName", false, null, Int32.MaxValue)]
 		public string? AgeVariableName;
 
-		[Field("canceledExtraHoursTemplate")]
+		[JsonProperty("canceledExtraHoursTemplate")]
+		[Field("canceledExtraHoursTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? CanceledExtraHoursTemplate;
 
-		[Field("expenseMailNotification")]
+		[JsonProperty("kilometricAllowanceRateList")]
+		[Field("kilometricAllowanceRateList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Hr.Db.KilometricAllowanceRate>? KilometricAllowanceRateList;
+
+		[JsonProperty("expenseMailNotification")]
+		[Field("expenseMailNotification", false, "False", Int32.MaxValue)]
 		public bool? ExpenseMailNotification;
 
-		[Field("weeklyPlanning")]
+		[JsonProperty("lunchVoucherWageShare")]
+		[Field("lunchVoucherWageShare", false, "0", Int32.MaxValue)]
+		public decimal? LunchVoucherWageShare;
+
+		[JsonProperty("weeklyPlanning")]
+		[Field("weeklyPlanning", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.WeeklyPlanning? WeeklyPlanning;
 
-		[Field("kilometricExpenseProduct")]
+		[JsonProperty("kilometricExpenseProduct")]
+		[Field("kilometricExpenseProduct", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? KilometricExpenseProduct;
 
-		[Field("refusedTimesheetTemplate")]
+		[JsonProperty("refusedTimesheetTemplate")]
+		[Field("refusedTimesheetTemplate", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? RefusedTimesheetTemplate;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("extraHoursMailNotification")]
+		[JsonProperty("extraHoursMailNotification")]
+		[Field("extraHoursMailNotification", false, "False", Int32.MaxValue)]
 		public bool? ExtraHoursMailNotification;
 
-		[Field("seniorityVariableName")]
+		[JsonProperty("seniorityVariableName")]
+		[Field("seniorityVariableName", false, null, Int32.MaxValue)]
 		public string? SeniorityVariableName;
 
-		[Field("totalWorkingDaysVariableName")]
+		[JsonProperty("totalWorkingDaysVariableName")]
+		[Field("totalWorkingDaysVariableName", false, null, Int32.MaxValue)]
 		public string? TotalWorkingDaysVariableName;
 
 	}

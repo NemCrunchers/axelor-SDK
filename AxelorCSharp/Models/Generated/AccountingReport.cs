@@ -1,96 +1,151 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Account.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.account.db.AccountingReport")]
 	public class AccountingReport : AxelorModel
 	{
-		[Field("analyticJournal")]
+		[JsonProperty("analyticJournal")]
+		[Field("analyticJournal", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.AnalyticJournal? AnalyticJournal;
 
-		[Field("importOrigin")]
+		[JsonProperty("date")]
+		[Field("date", true, null, Int32.MaxValue)]
+		public DateTime? Date;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("exportTypeSelect")]
+		[JsonProperty("exportTypeSelect")]
+		[Field("exportTypeSelect", false, null, Int32.MaxValue)]
 		public string? ExportTypeSelect;
 
-		[Field("year")]
+		[JsonProperty("year")]
+		[Field("year", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Year? Year;
 
-		[Field("global")]
+		[JsonProperty("global")]
+		[Field("global", false, "False", Int32.MaxValue)]
 		public bool? Global;
 
-		[Field("typeSelect")]
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", true, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("batchSet")]
+		[JsonProperty("batchSet")]
+		[Field("batchSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.Batch>? BatchSet;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("ref")]
+		[JsonProperty("ref")]
+		[Field("ref", false, null, Int32.MaxValue)]
 		public string? Ref;
 
-		[Field("journal")]
+		[JsonProperty("journal")]
+		[Field("journal", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Journal? Journal;
 
-		[Field("publicationDateTime")]
+		[JsonProperty("balance")]
+		[Field("balance", false, "0", Int32.MaxValue)]
+		public decimal? Balance;
+
+		[JsonProperty("publicationDateTime")]
+		[Field("publicationDateTime", false, null, Int32.MaxValue)]
 		public DateTime? PublicationDateTime;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", true, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("currency")]
+		[JsonProperty("currency")]
+		[Field("currency", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Currency? Currency;
 
-		[Field("globalByPartner")]
+		[JsonProperty("globalByPartner")]
+		[Field("globalByPartner", false, "False", Int32.MaxValue)]
 		public bool? GlobalByPartner;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("partnerSet")]
+		[JsonProperty("partnerSet")]
+		[Field("partnerSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.Partner>? PartnerSet;
 
-		[Field("period")]
+		[JsonProperty("period")]
+		[Field("period", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Period? Period;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("paymentMode")]
+		[JsonProperty("paymentMode")]
+		[Field("paymentMode", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.PaymentMode? PaymentMode;
 
-		[Field("accountSet")]
+		[JsonProperty("totalCredit")]
+		[Field("totalCredit", false, "0", Int32.MaxValue)]
+		public decimal? TotalCredit;
+
+		[JsonProperty("accountSet")]
+		[Field("accountSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Account.Db.Account>? AccountSet;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("dateFrom")]
+		[Field("dateFrom", false, null, Int32.MaxValue)]
+		public DateTime? DateFrom;
+
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "1", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("globalByDate")]
+		[JsonProperty("globalByDate")]
+		[Field("globalByDate", false, "False", Int32.MaxValue)]
 		public bool? GlobalByDate;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("detailed")]
+		[JsonProperty("detailed")]
+		[Field("detailed", false, "False", Int32.MaxValue)]
 		public bool? Detailed;
+
+		[JsonProperty("dateTo")]
+		[Field("dateTo", false, null, Int32.MaxValue)]
+		public DateTime? DateTo;
+
+		[JsonProperty("totalDebit")]
+		[Field("totalDebit", false, "0", Int32.MaxValue)]
+		public decimal? TotalDebit;
 
 	}
 }

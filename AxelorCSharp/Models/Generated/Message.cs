@@ -1,101 +1,146 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Message.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.message.db.Message")]
 	public class Message : AxelorModel
 	{
-		[Field("template")]
+		[JsonProperty("template")]
+		[Field("template", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.Template? Template;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("subject")]
+		[JsonProperty("subject")]
+		[Field("subject", false, null, Int32.MaxValue)]
 		public string? Subject;
 
-		[Field("toEmailAddressSet")]
+		[JsonProperty("toEmailAddressSet")]
+		[Field("toEmailAddressSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Message.Db.EmailAddress>? ToEmailAddressSet;
 
-		[Field("typeSelect")]
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", false, "2", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("sentDateT")]
+		[JsonProperty("content")]
+		[Field("content", false, null, Int32.MaxValue)]
+		public string? Content;
+
+		[JsonProperty("sentDateT")]
+		[Field("sentDateT", false, null, Int32.MaxValue)]
 		public DateTime? SentDateT;
 
-		[Field("relatedTo2Select")]
+		[JsonProperty("relatedTo2Select")]
+		[Field("relatedTo2Select", false, null, Int32.MaxValue)]
 		public string? RelatedTo2Select;
 
-		[Field("replyToEmailAddressSet")]
+		[JsonProperty("replyToEmailAddressSet")]
+		[Field("replyToEmailAddressSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Message.Db.EmailAddress>? ReplyToEmailAddressSet;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("mediaTypeSelect")]
+		[JsonProperty("mediaTypeSelect")]
+		[Field("mediaTypeSelect", false, "0", Int32.MaxValue)]
 		public int? MediaTypeSelect;
 
-		[Field("senderUser")]
+		[JsonProperty("sendScheduleDate")]
+		[Field("sendScheduleDate", false, null, Int32.MaxValue)]
+		public DateTime? SendScheduleDate;
+
+		[JsonProperty("senderUser")]
+		[Field("senderUser", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? SenderUser;
 
-		[Field("company")]
+		[JsonProperty("company")]
+		[Field("company", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Company? Company;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("relatedTo1SelectId")]
+		[JsonProperty("relatedTo1SelectId")]
+		[Field("relatedTo1SelectId", false, "0", Int32.MaxValue)]
 		public long? RelatedTo1SelectId;
 
-		[Field("event")]
+		[JsonProperty("event")]
+		[Field("event", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Crm.Db.Event? Event;
 
-		[Field("relatedTo2SelectId")]
+		[JsonProperty("addressBlock")]
+		[Field("addressBlock", false, null, Int32.MaxValue)]
+		public string? AddressBlock;
+
+		[JsonProperty("relatedTo2SelectId")]
+		[Field("relatedTo2SelectId", false, "0", Int32.MaxValue)]
 		public long? RelatedTo2SelectId;
 
-		[Field("ccEmailAddressSet")]
+		[JsonProperty("ccEmailAddressSet")]
+		[Field("ccEmailAddressSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Message.Db.EmailAddress>? CcEmailAddressSet;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("recipientUser")]
+		[JsonProperty("recipientUser")]
+		[Field("recipientUser", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? RecipientUser;
 
-		[Field("mailAccount")]
+		[JsonProperty("mailAccount")]
+		[Field("mailAccount", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.EmailAccount? MailAccount;
 
-		[Field("bccEmailAddressSet")]
+		[JsonProperty("bccEmailAddressSet")]
+		[Field("bccEmailAddressSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Message.Db.EmailAddress>? BccEmailAddressSet;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "1", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("relatedTo1Select")]
+		[JsonProperty("relatedTo1Select")]
+		[Field("relatedTo1Select", false, null, Int32.MaxValue)]
 		public string? RelatedTo1Select;
 
-		[Field("sentByEmail")]
+		[JsonProperty("sentByEmail")]
+		[Field("sentByEmail", false, "False", Int32.MaxValue)]
 		public bool? SentByEmail;
 
-		[Field("fromEmailAddress")]
+		[JsonProperty("fromEmailAddress")]
+		[Field("fromEmailAddress", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Message.Db.EmailAddress? FromEmailAddress;
 
 	}

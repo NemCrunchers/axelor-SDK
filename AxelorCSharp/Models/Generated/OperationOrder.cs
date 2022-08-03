@@ -1,89 +1,150 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Production.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.production.db.OperationOrder")]
 	public class OperationOrder : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("prodProcessLine")]
+		[JsonProperty("prodProcessLine")]
+		[Field("prodProcessLine", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.ProdProcessLine? ProdProcessLine;
 
-		[Field("plannedStartDateT")]
+		[JsonProperty("plannedStartDateT")]
+		[Field("plannedStartDateT", false, null, Int32.MaxValue)]
 		public DateTime? PlannedStartDateT;
 
-		[Field("createdOn")]
+		[JsonProperty("operationOrderDurationList")]
+		[Field("operationOrderDurationList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Production.Db.OperationOrderDuration>? OperationOrderDurationList;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("diffConsumeProdProductList")]
+		[Field("diffConsumeProdProductList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Production.Db.ProdProduct>? DiffConsumeProdProductList;
+
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("isToInvoice")]
+		[JsonProperty("isToInvoice")]
+		[Field("isToInvoice", false, "False", Int32.MaxValue)]
 		public bool? IsToInvoice;
 
-		[Field("plannedDuration")]
+		[JsonProperty("plannedDuration")]
+		[Field("plannedDuration", false, "0", Int32.MaxValue)]
 		public long? PlannedDuration;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("plannedEndDateT")]
+		[JsonProperty("plannedEndDateT")]
+		[Field("plannedEndDateT", false, null, Int32.MaxValue)]
 		public DateTime? PlannedEndDateT;
 
-		[Field("updatedBy")]
+		[JsonProperty("comments")]
+		[Field("comments", false, null, Int32.MaxValue)]
+		public string? Comments;
+
+		[JsonProperty("timesheetLineList")]
+		[Field("timesheetLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Hr.Db.TimesheetLine>? TimesheetLineList;
+
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("manufOrder")]
+		[JsonProperty("manufOrder")]
+		[Field("manufOrder", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.ManufOrder? ManufOrder;
 
-		[Field("operationName")]
+		[JsonProperty("prodHumanResourceList")]
+		[Field("prodHumanResourceList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Production.Db.ProdHumanResource>? ProdHumanResourceList;
+
+		[JsonProperty("operationName")]
+		[Field("operationName", false, null, Int32.MaxValue)]
 		public string? OperationName;
 
-		[Field("realStartDateT")]
+		[JsonProperty("realStartDateT")]
+		[Field("realStartDateT", false, null, Int32.MaxValue)]
 		public DateTime? RealStartDateT;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("priority")]
+		[JsonProperty("priority")]
+		[Field("priority", false, "0", Int32.MaxValue)]
 		public int? Priority;
 
-		[Field("isWithDifference")]
+		[JsonProperty("consumedStockMoveLineList")]
+		[Field("consumedStockMoveLineList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Stock.Db.StockMoveLine>? ConsumedStockMoveLineList;
+
+		[JsonProperty("inStockMoveList")]
+		[Field("inStockMoveList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Stock.Db.StockMove>? InStockMoveList;
+
+		[JsonProperty("isWithDifference")]
+		[Field("isWithDifference", false, null, Int32.MaxValue)]
 		public bool? IsWithDifference;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("workCenter")]
+		[JsonProperty("workCenter")]
+		[Field("workCenter", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.WorkCenter? WorkCenter;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("barCode")]
+		[JsonProperty("barCode")]
+		[Field("barCode", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? BarCode;
 
-		[Field("statusSelect")]
+		[JsonProperty("statusSelect")]
+		[Field("statusSelect", false, "0", Int32.MaxValue)]
 		public int? StatusSelect;
 
-		[Field("realEndDateT")]
+		[JsonProperty("realEndDateT")]
+		[Field("realEndDateT", false, null, Int32.MaxValue)]
 		public DateTime? RealEndDateT;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("realDuration")]
+		[JsonProperty("realDuration")]
+		[Field("realDuration", false, "0", Int32.MaxValue)]
 		public long? RealDuration;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("machineWorkCenter")]
+		[JsonProperty("toConsumeProdProductList")]
+		[Field("toConsumeProdProductList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Production.Db.ProdProduct>? ToConsumeProdProductList;
+
+		[JsonProperty("machineWorkCenter")]
+		[Field("machineWorkCenter", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Production.Db.WorkCenter? MachineWorkCenter;
 
 	}

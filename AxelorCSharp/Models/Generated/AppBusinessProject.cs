@@ -1,122 +1,170 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.AppBusinessProject")]
 	public class AppBusinessProject : AxelorModel
 	{
-		[Field("demoDataLoaded")]
+		[JsonProperty("demoDataLoaded")]
+		[Field("demoDataLoaded", false, "False", Int32.MaxValue)]
 		public bool? DemoDataLoaded;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("code")]
+		[JsonProperty("code")]
+		[Field("code", true, null, Int32.MaxValue)]
 		public string? Code;
 
-		[Field("showSaleInvoiceLineRelatedToProject")]
+		[JsonProperty("showSaleInvoiceLineRelatedToProject")]
+		[Field("showSaleInvoiceLineRelatedToProject", false, "False", Int32.MaxValue)]
 		public bool? ShowSaleInvoiceLineRelatedToProject;
 
-		[Field("dependsOnSet")]
+		[JsonProperty("dependsOnSet")]
+		[Field("dependsOnSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Apps.Base.Db.App>? DependsOnSet;
 
-		[Field("enableTaskTemplatesByProduct")]
+		[JsonProperty("enableTaskTemplatesByProduct")]
+		[Field("enableTaskTemplatesByProduct", false, "False", Int32.MaxValue)]
 		public bool? EnableTaskTemplatesByProduct;
 
-		[Field("createdOn")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("initDataLoaded")]
+		[JsonProperty("initDataLoaded")]
+		[Field("initDataLoaded", false, "False", Int32.MaxValue)]
 		public bool? InitDataLoaded;
 
-		[Field("enableToInvoiceTimesheet")]
+		[JsonProperty("enableToInvoiceTimesheet")]
+		[Field("enableToInvoiceTimesheet", false, "False", Int32.MaxValue)]
 		public bool? EnableToInvoiceTimesheet;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("generatedElementTypeSelect")]
+		[JsonProperty("generatedElementTypeSelect")]
+		[Field("generatedElementTypeSelect", false, "3", Int32.MaxValue)]
 		public int? GeneratedElementTypeSelect;
 
-		[Field("languageSelect")]
+		[JsonProperty("languageSelect")]
+		[Field("languageSelect", false, null, Int32.MaxValue)]
 		public string? LanguageSelect;
 
-		[Field("projectPurchaseOrderLines")]
+		[JsonProperty("projectPurchaseOrderLines")]
+		[Field("projectPurchaseOrderLines", false, "False", Int32.MaxValue)]
 		public bool? ProjectPurchaseOrderLines;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("installOrder")]
+		[JsonProperty("installOrder")]
+		[Field("installOrder", false, "0", Int32.MaxValue)]
 		public int? InstallOrder;
 
-		[Field("projectSaleOrderLines")]
+		[JsonProperty("projectSaleOrderLines")]
+		[Field("projectSaleOrderLines", false, "False", Int32.MaxValue)]
 		public bool? ProjectSaleOrderLines;
 
-		[Field("projectInvoiceLines")]
+		[JsonProperty("projectInvoiceLines")]
+		[Field("projectInvoiceLines", false, "False", Int32.MaxValue)]
 		public bool? ProjectInvoiceLines;
 
-		[Field("enableToInvoiceExpense")]
+		[JsonProperty("enableToInvoiceExpense")]
+		[Field("enableToInvoiceExpense", false, "False", Int32.MaxValue)]
 		public bool? EnableToInvoiceExpense;
 
-		[Field("image")]
+		[JsonProperty("image")]
+		[Field("image", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaFile? Image;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("showExpenseLineRelatedToProject")]
+		[JsonProperty("showExpenseLineRelatedToProject")]
+		[Field("showExpenseLineRelatedToProject", false, "False", Int32.MaxValue)]
 		public bool? ShowExpenseLineRelatedToProject;
 
-		[Field("isRolesImported")]
+		[JsonProperty("isRolesImported")]
+		[Field("isRolesImported", false, "False", Int32.MaxValue)]
 		public bool? IsRolesImported;
 
-		[Field("showPurchaseInvoiceLineRelatedToProject")]
+		[JsonProperty("showPurchaseInvoiceLineRelatedToProject")]
+		[Field("showPurchaseInvoiceLineRelatedToProject", false, "False", Int32.MaxValue)]
 		public bool? ShowPurchaseInvoiceLineRelatedToProject;
 
-		[Field("active")]
+		[JsonProperty("active")]
+		[Field("active", false, "False", Int32.MaxValue)]
 		public bool? Active;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("modules")]
+		[JsonProperty("modules")]
+		[Field("modules", false, null, Int32.MaxValue)]
 		public string? Modules;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, "0", Int32.MaxValue)]
 		public int? Sequence;
 
-		[Field("automaticProject")]
+		[JsonProperty("automaticProject")]
+		[Field("automaticProject", false, "False", Int32.MaxValue)]
 		public bool? AutomaticProject;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("productInvoicingProject")]
+		[JsonProperty("productInvoicingProject")]
+		[Field("productInvoicingProject", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? ProductInvoicingProject;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("generateProjectOrder")]
+		[JsonProperty("generateProjectOrder")]
+		[Field("generateProjectOrder", false, "False", Int32.MaxValue)]
 		public bool? GenerateProjectOrder;
 
-		[Field("showSaleOrderLineRelatedToProject")]
+		[JsonProperty("showSaleOrderLineRelatedToProject")]
+		[Field("showSaleOrderLineRelatedToProject", false, "False", Int32.MaxValue)]
 		public bool? ShowSaleOrderLineRelatedToProject;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("showPurchaseOrderLineRelatedToProject")]
+		[JsonProperty("showPurchaseOrderLineRelatedToProject")]
+		[Field("showPurchaseOrderLineRelatedToProject", false, "False", Int32.MaxValue)]
 		public bool? ShowPurchaseOrderLineRelatedToProject;
 
-		[Field("showProductionOrderRelatedToProject")]
+		[JsonProperty("accessConfigList")]
+		[Field("accessConfigList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.AccessConfig>? AccessConfigList;
+
+		[JsonProperty("showProductionOrderRelatedToProject")]
+		[Field("showProductionOrderRelatedToProject", false, "False", Int32.MaxValue)]
 		public bool? ShowProductionOrderRelatedToProject;
 
 	}

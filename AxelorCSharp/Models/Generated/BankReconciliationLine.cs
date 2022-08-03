@@ -1,62 +1,98 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Bankpayment.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.bankpayment.db.BankReconciliationLine")]
 	public class BankReconciliationLine : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("effectDate")]
+		[Field("effectDate", true, null, Int32.MaxValue)]
+		public DateTime? EffectDate;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("bankStatementLine")]
+		[JsonProperty("bankStatementLine")]
+		[Field("bankStatementLine", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Bankpayment.Db.BankStatementLine? BankStatementLine;
 
-		[Field("moveLine")]
+		[JsonProperty("moveLine")]
+		[Field("moveLine", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.MoveLine? MoveLine;
 
-		[Field("typeSelect")]
+		[JsonProperty("typeSelect")]
+		[Field("typeSelect", false, "0", Int32.MaxValue)]
 		public int? TypeSelect;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("reference")]
+		[JsonProperty("reference")]
+		[Field("reference", false, null, Int32.MaxValue)]
 		public string? Reference;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("bankReconciliation")]
+		[JsonProperty("bankReconciliation")]
+		[Field("bankReconciliation", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Bankpayment.Db.BankReconciliation? BankReconciliation;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("isPosted")]
+		[JsonProperty("isPosted")]
+		[Field("isPosted", false, "False", Int32.MaxValue)]
 		public bool? IsPosted;
 
-		[Field("partner")]
+		[JsonProperty("partner")]
+		[Field("partner", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Partner? Partner;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("id")]
+		[JsonProperty("name")]
+		[Field("name", false, null, Int32.MaxValue)]
+		public string? Name;
+
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("account")]
+		[JsonProperty("credit")]
+		[Field("credit", false, "0", Int32.MaxValue)]
+		public decimal? Credit;
+
+		[JsonProperty("debit")]
+		[Field("debit", false, "0", Int32.MaxValue)]
+		public decimal? Debit;
+
+		[JsonProperty("account")]
+		[Field("account", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Account.Db.Account? Account;
 
 	}

@@ -1,71 +1,98 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Studio.Db
 {
+	[Serializable]
 	[Model("com.axelor.studio.db.WkfTransition")]
 	public class WkfTransition : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("alertTypeSelect")]
+		[JsonProperty("alertTypeSelect")]
+		[Field("alertTypeSelect", false, "0", Int32.MaxValue)]
 		public int? AlertTypeSelect;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("buttonTitle")]
+		[JsonProperty("buttonTitle")]
+		[Field("buttonTitle", false, null, Int32.MaxValue)]
 		public string? ButtonTitle;
 
-		[Field("source")]
+		[JsonProperty("source")]
+		[Field("source", false, null, Int32.MaxValue)]
 		public Axelor.Studio.Db.WkfNode? Source;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("alertMsg")]
+		[JsonProperty("alertMsg")]
+		[Field("alertMsg", false, null, Int32.MaxValue)]
 		public string? AlertMsg;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("target")]
+		[JsonProperty("target")]
+		[Field("target", false, null, Int32.MaxValue)]
 		public Axelor.Studio.Db.WkfNode? Target;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("isButton")]
+		[JsonProperty("isButton")]
+		[Field("isButton", false, "False", Int32.MaxValue)]
 		public bool? IsButton;
 
-		[Field("wkf")]
+		[JsonProperty("wkf")]
+		[Field("wkf", false, null, Int32.MaxValue)]
 		public Axelor.Studio.Db.Wkf? Wkf;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("successMsg")]
+		[JsonProperty("successMsg")]
+		[Field("successMsg", false, null, Int32.MaxValue)]
 		public string? SuccessMsg;
 
-		[Field("xmlId")]
+		[JsonProperty("conditions")]
+		[Field("conditions", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Studio.Db.Filter>? Conditions;
+
+		[JsonProperty("xmlId")]
+		[Field("xmlId", false, null, Int32.MaxValue)]
 		public string? XmlId;
 
-		[Field("roleSet")]
+		[JsonProperty("roleSet")]
+		[Field("roleSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Auth.Db.Role>? RoleSet;
 
 	}

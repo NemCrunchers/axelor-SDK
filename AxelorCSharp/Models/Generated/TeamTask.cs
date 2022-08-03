@@ -1,108 +1,207 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Team.Db
 {
+	[Serializable]
 	[Model("com.axelor.team.db.TeamTask")]
 	public class TeamTask : AxelorModel
 	{
-		[Field("toInvoice")]
+		[JsonProperty("toInvoice")]
+		[Field("toInvoice", false, "False", Int32.MaxValue)]
 		public bool? ToInvoice;
 
-		[Field("relatedName")]
+		[JsonProperty("relatedName")]
+		[Field("relatedName", false, null, Int32.MaxValue)]
 		public string? RelatedName;
 
-		[Field("project")]
+		[JsonProperty("discountAmount")]
+		[Field("discountAmount", false, "0", Int32.MaxValue)]
+		public decimal? DiscountAmount;
+
+		[JsonProperty("project")]
+		[Field("project", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Project.Db.Project? Project;
 
-		[Field("relatedModel")]
+		[JsonProperty("relatedModel")]
+		[Field("relatedModel", false, null, Int32.MaxValue)]
 		public string? RelatedModel;
 
-		[Field("projectCategory")]
+		[JsonProperty("projectCategory")]
+		[Field("projectCategory", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Project.Db.ProjectCategory? ProjectCategory;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("progressSelect")]
+		[JsonProperty("progressSelect")]
+		[Field("progressSelect", false, "0", Int32.MaxValue)]
 		public int? ProgressSelect;
 
-		[Field("updatedBy")]
+		[JsonProperty("unitPrice")]
+		[Field("unitPrice", false, "0", Int32.MaxValue)]
+		public decimal? UnitPrice;
+
+		[JsonProperty("plannedProgress")]
+		[Field("plannedProgress", false, "0", Int32.MaxValue)]
+		public decimal? PlannedProgress;
+
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("invoiced")]
+		[JsonProperty("invoiced")]
+		[Field("invoiced", false, "False", Int32.MaxValue)]
 		public bool? Invoiced;
 
-		[Field("parentTask")]
+		[JsonProperty("parentTask")]
+		[Field("parentTask", false, null, Int32.MaxValue)]
 		public Axelor.Team.Db.TeamTask? ParentTask;
 
-		[Field("updatedOn")]
+		[JsonProperty("projectPlanningTimeList")]
+		[Field("projectPlanningTimeList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Project.Db.ProjectPlanningTime>? ProjectPlanningTimeList;
+
+		[JsonProperty("timerList")]
+		[Field("timerList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Apps.Base.Db.Timer>? TimerList;
+
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("priority")]
+		[JsonProperty("priority")]
+		[Field("priority", false, null, Int32.MaxValue)]
 		public string? Priority;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("relatedId")]
+		[JsonProperty("relatedId")]
+		[Field("relatedId", false, "0", Int32.MaxValue)]
 		public long? RelatedId;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, "0", Int32.MaxValue)]
 		public int? Sequence;
 
-		[Field("unit")]
+		[JsonProperty("unit")]
+		[Field("unit", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Unit? Unit;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("status")]
+		[JsonProperty("totalRealHrs")]
+		[Field("totalRealHrs", false, "0", Int32.MaxValue)]
+		public decimal? TotalRealHrs;
+
+		[JsonProperty("status")]
+		[Field("status", false, null, Int32.MaxValue)]
 		public string? Status;
 
-		[Field("importOrigin")]
+		[JsonProperty("durationHours")]
+		[Field("durationHours", false, "0", Int32.MaxValue)]
+		public decimal? DurationHours;
+
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("createdOn")]
+		[JsonProperty("description")]
+		[Field("description", false, null, Int32.MaxValue)]
+		public string? Description;
+
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("discountTypeSelect")]
+		[JsonProperty("discountTypeSelect")]
+		[Field("discountTypeSelect", false, "3", Int32.MaxValue)]
 		public int? DiscountTypeSelect;
 
-		[Field("assignedTo")]
+		[JsonProperty("assignedTo")]
+		[Field("assignedTo", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? AssignedTo;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("finishToStartSet")]
+		[JsonProperty("taskEndDate")]
+		[Field("taskEndDate", false, null, Int32.MaxValue)]
+		public DateTime? TaskEndDate;
+
+		[JsonProperty("taskDate")]
+		[Field("taskDate", false, null, Int32.MaxValue)]
+		public DateTime? TaskDate;
+
+		[JsonProperty("teamTaskList")]
+		[Field("teamTaskList", false, null, Int32.MaxValue)]
+		public IEnumerable<Axelor.Team.Db.TeamTask>? TeamTaskList;
+
+		[JsonProperty("finishToStartSet")]
+		[Field("finishToStartSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Team.Db.TeamTask>? FinishToStartSet;
 
-		[Field("currency")]
+		[JsonProperty("currency")]
+		[Field("currency", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Currency? Currency;
 
-		[Field("product")]
+		[JsonProperty("product")]
+		[Field("product", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Product? Product;
 
-		[Field("membersUserSet")]
+		[JsonProperty("membersUserSet")]
+		[Field("membersUserSet", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Auth.Db.User>? MembersUserSet;
 
-		[Field("taskDuration")]
+		[JsonProperty("quantity")]
+		[Field("quantity", false, "0", Int32.MaxValue)]
+		public decimal? Quantity;
+
+		[JsonProperty("taskDeadline")]
+		[Field("taskDeadline", false, null, Int32.MaxValue)]
+		public DateTime? TaskDeadline;
+
+		[JsonProperty("taskDuration")]
+		[Field("taskDuration", false, "0", Int32.MaxValue)]
 		public int? TaskDuration;
 
-		[Field("fullName")]
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("team")]
+		[JsonProperty("exTaxTotal")]
+		[Field("exTaxTotal", false, "0", Int32.MaxValue)]
+		public decimal? ExTaxTotal;
+
+		[JsonProperty("team")]
+		[Field("team", false, null, Int32.MaxValue)]
 		public Axelor.Team.Db.Team? Team;
 
-		[Field("importId")]
+		[JsonProperty("totalPlannedHrs")]
+		[Field("totalPlannedHrs", false, "0", Int32.MaxValue)]
+		public decimal? TotalPlannedHrs;
+
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
+
+		[JsonProperty("priceDiscounted")]
+		[Field("priceDiscounted", false, "0", Int32.MaxValue)]
+		public decimal? PriceDiscounted;
 
 	}
 }

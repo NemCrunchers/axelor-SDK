@@ -1,71 +1,94 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Base.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.base.db.PickListEntry")]
 	public class PickListEntry : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("address")]
+		[JsonProperty("address")]
+		[Field("address", false, null, Int32.MaxValue)]
 		public Axelor.Apps.Base.Db.Address? Address;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("l2")]
+		[JsonProperty("l2")]
+		[Field("l2", false, null, Int32.MaxValue)]
 		public string? L2;
 
-		[Field("l3")]
+		[JsonProperty("l3")]
+		[Field("l3", false, null, Int32.MaxValue)]
 		public string? L3;
 
-		[Field("picklist")]
+		[JsonProperty("picklist")]
+		[Field("picklist", false, null, Int32.MaxValue)]
 		public string? Picklist;
 
-		[Field("postcode")]
+		[JsonProperty("postcode")]
+		[Field("postcode", false, null, Int32.MaxValue)]
 		public string? Postcode;
 
-		[Field("fullName")]
+		[JsonProperty("fullName")]
+		[Field("fullName", false, null, Int32.MaxValue)]
 		public string? FullName;
 
-		[Field("l5")]
+		[JsonProperty("l5")]
+		[Field("l5", false, null, Int32.MaxValue)]
 		public string? L5;
 
-		[Field("moniker")]
+		[JsonProperty("moniker")]
+		[Field("moniker", false, null, Int32.MaxValue)]
 		public string? Moniker;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("score")]
+		[JsonProperty("score")]
+		[Field("score", false, null, Int32.MaxValue)]
 		public string? Score;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("inseeCode")]
+		[JsonProperty("inseeCode")]
+		[Field("inseeCode", false, null, Int32.MaxValue)]
 		public string? InseeCode;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("partialAddress")]
+		[JsonProperty("partialAddress")]
+		[Field("partialAddress", false, null, Int32.MaxValue)]
 		public string? PartialAddress;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
 	}

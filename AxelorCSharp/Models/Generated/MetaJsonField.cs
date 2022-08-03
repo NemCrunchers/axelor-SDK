@@ -1,167 +1,226 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Meta.Db
 {
+	[Serializable]
 	[Model("com.axelor.meta.db.MetaJsonField")]
 	public class MetaJsonField : AxelorModel
 	{
-		[Field("jsonCreator")]
+		[JsonProperty("jsonCreator")]
+		[Field("jsonCreator", false, null, Int32.MaxValue)]
 		public Axelor.Studio.Db.JsonCreator? JsonCreator;
 
-		[Field("onClick")]
+		[JsonProperty("onClick")]
+		[Field("onClick", false, null, Int32.MaxValue)]
 		public string? OnClick;
 
-		[Field("defaultValue")]
+		[JsonProperty("defaultValue")]
+		[Field("defaultValue", false, null, Int32.MaxValue)]
 		public string? DefaultValue;
 
-		[Field("precision")]
+		[JsonProperty("precision")]
+		[Field("precision", false, "6", Int32.MaxValue)]
 		public int? Precision;
 
-		[Field("nameField")]
+		[JsonProperty("nameField")]
+		[Field("nameField", false, "False", Int32.MaxValue)]
 		public bool? NameField;
 
-		[Field("type")]
+		[JsonProperty("type")]
+		[Field("type", true, null, Int32.MaxValue)]
 		public string? Type;
 
-		[Field("required")]
+		[JsonProperty("required")]
+		[Field("required", false, "False", Int32.MaxValue)]
 		public bool? Required;
 
-		[Field("hideIf")]
+		[JsonProperty("hideIf")]
+		[Field("hideIf", false, null, Int32.MaxValue)]
 		public string? HideIf;
 
-		[Field("readonly")]
+		[JsonProperty("readonly")]
+		[Field("readonly", false, "False", Int32.MaxValue)]
 		public bool? Readonly;
 
-		[Field("minSize")]
+		[JsonProperty("minSize")]
+		[Field("minSize", false, "0", Int32.MaxValue)]
 		public int? MinSize;
 
-		[Field("model")]
+		[JsonProperty("model")]
+		[Field("model", true, null, Int32.MaxValue)]
 		public string? Model;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("targetJsonModel")]
+		[JsonProperty("targetJsonModel")]
+		[Field("targetJsonModel", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaJsonModel? TargetJsonModel;
 
-		[Field("includeIf")]
+		[JsonProperty("includeIf")]
+		[Field("includeIf", false, null, Int32.MaxValue)]
 		public string? IncludeIf;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("onChange")]
+		[JsonProperty("onChange")]
+		[Field("onChange", false, null, Int32.MaxValue)]
 		public string? OnChange;
 
-		[Field("contextField")]
+		[JsonProperty("contextField")]
+		[Field("contextField", false, null, Int32.MaxValue)]
 		public string? ContextField;
 
-		[Field("targetModel")]
+		[JsonProperty("targetModel")]
+		[Field("targetModel", false, null, Int32.MaxValue)]
 		public string? TargetModel;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("sequence")]
+		[JsonProperty("sequence")]
+		[Field("sequence", false, "0", Int32.MaxValue)]
 		public int? Sequence;
 
-		[Field("regex")]
+		[JsonProperty("regex")]
+		[Field("regex", false, null, Int32.MaxValue)]
 		public string? Regex;
 
-		[Field("selection")]
+		[JsonProperty("selection")]
+		[Field("selection", false, null, Int32.MaxValue)]
 		public string? Selection;
 
-		[Field("formView")]
+		[JsonProperty("formView")]
+		[Field("formView", false, null, Int32.MaxValue)]
 		public string? FormView;
 
-		[Field("domain")]
+		[JsonProperty("domain")]
+		[Field("domain", false, null, Int32.MaxValue)]
 		public string? Domain;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("modelField")]
+		[JsonProperty("modelField")]
+		[Field("modelField", true, null, Int32.MaxValue)]
 		public string? ModelField;
 
-		[Field("widget")]
+		[JsonProperty("widget")]
+		[Field("widget", false, null, Int32.MaxValue)]
 		public string? Widget;
 
-		[Field("hidden")]
+		[JsonProperty("hidden")]
+		[Field("hidden", false, "False", Int32.MaxValue)]
 		public bool? Hidden;
 
-		[Field("roles")]
+		[JsonProperty("roles")]
+		[Field("roles", false, null, Int32.MaxValue)]
 		public IEnumerable<Axelor.Auth.Db.Role>? Roles;
 
-		[Field("enumType")]
+		[JsonProperty("enumType")]
+		[Field("enumType", false, null, Int32.MaxValue)]
 		public string? EnumType;
 
-		[Field("scale")]
+		[JsonProperty("scale")]
+		[Field("scale", false, "2", Int32.MaxValue)]
 		public int? Scale;
 
-		[Field("maxSize")]
+		[JsonProperty("maxSize")]
+		[Field("maxSize", false, "0", Int32.MaxValue)]
 		public int? MaxSize;
 
-		[Field("title")]
+		[JsonProperty("title")]
+		[Field("title", false, null, Int32.MaxValue)]
 		public string? Title;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("showIf")]
+		[JsonProperty("showIf")]
+		[Field("showIf", false, null, Int32.MaxValue)]
 		public string? ShowIf;
 
-		[Field("jsonModel")]
+		[JsonProperty("valueExpr")]
+		[Field("valueExpr", false, null, Int32.MaxValue)]
+		public string? ValueExpr;
+
+		[JsonProperty("jsonModel")]
+		[Field("jsonModel", false, null, Int32.MaxValue)]
 		public Axelor.Meta.Db.MetaJsonModel? JsonModel;
 
-		[Field("contextFieldValue")]
+		[JsonProperty("contextFieldValue")]
+		[Field("contextFieldValue", false, null, Int32.MaxValue)]
 		public string? ContextFieldValue;
 
-		[Field("readonlyIf")]
+		[JsonProperty("readonlyIf")]
+		[Field("readonlyIf", false, null, Int32.MaxValue)]
 		public string? ReadonlyIf;
 
-		[Field("requiredIf")]
+		[JsonProperty("requiredIf")]
+		[Field("requiredIf", false, null, Int32.MaxValue)]
 		public string? RequiredIf;
 
-		[Field("contextFieldTargetName")]
+		[JsonProperty("contextFieldTargetName")]
+		[Field("contextFieldTargetName", false, null, Int32.MaxValue)]
 		public string? ContextFieldTargetName;
 
-		[Field("widgetAttrs")]
+		[JsonProperty("widgetAttrs")]
+		[Field("widgetAttrs", false, null, Int32.MaxValue)]
 		public string? WidgetAttrs;
 
-		[Field("contextFieldTitle")]
+		[JsonProperty("contextFieldTitle")]
+		[Field("contextFieldTitle", false, null, Int32.MaxValue)]
 		public string? ContextFieldTitle;
 
-		[Field("help")]
+		[JsonProperty("help")]
+		[Field("help", false, null, Int32.MaxValue)]
 		public string? Help;
 
-		[Field("contextFieldTarget")]
+		[JsonProperty("contextFieldTarget")]
+		[Field("contextFieldTarget", false, null, Int32.MaxValue)]
 		public string? ContextFieldTarget;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("isWkf")]
+		[JsonProperty("isWkf")]
+		[Field("isWkf", false, "False", Int32.MaxValue)]
 		public bool? IsWkf;
 
-		[Field("visibleInGrid")]
+		[JsonProperty("visibleInGrid")]
+		[Field("visibleInGrid", false, "False", Int32.MaxValue)]
 		public bool? VisibleInGrid;
 
-		[Field("gridView")]
+		[JsonProperty("gridView")]
+		[Field("gridView", false, null, Int32.MaxValue)]
 		public string? GridView;
 
-		[Field("appBuilder")]
+		[JsonProperty("appBuilder")]
+		[Field("appBuilder", false, null, Int32.MaxValue)]
 		public Axelor.Studio.Db.AppBuilder? AppBuilder;
 
 	}

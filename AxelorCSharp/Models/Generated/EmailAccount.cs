@@ -1,68 +1,94 @@
 using Axelor.SDK;
+using Newtonsoft.Json;
 
 namespace Axelor.Apps.Message.Db
 {
+	[Serializable]
 	[Model("com.axelor.apps.message.db.EmailAccount")]
 	public class EmailAccount : AxelorModel
 	{
-		[Field("importOrigin")]
+		[JsonProperty("importOrigin")]
+		[Field("importOrigin", false, null, Int32.MaxValue)]
 		public string? ImportOrigin;
 
-		[Field("updatedBy")]
+		[JsonProperty("updatedBy")]
+		[Field("updatedBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? UpdatedBy;
 
-		[Field("serverTypeSelect")]
+		[JsonProperty("serverTypeSelect")]
+		[Field("serverTypeSelect", true, "1", Int32.MaxValue)]
 		public int? ServerTypeSelect;
 
-		[Field("isValid")]
+		[JsonProperty("signature")]
+		[Field("signature", false, null, Int32.MaxValue)]
+		public string? Signature;
+
+		[JsonProperty("isValid")]
+		[Field("isValid", false, "False", Int32.MaxValue)]
 		public bool? IsValid;
 
-		[Field("updatedOn")]
+		[JsonProperty("updatedOn")]
+		[Field("updatedOn", false, null, Int32.MaxValue)]
 		public DateTime? UpdatedOn;
 
-		[Field("login")]
+		[JsonProperty("login")]
+		[Field("login", false, null, Int32.MaxValue)]
 		public string? Login;
 
-		[Field("securitySelect")]
+		[JsonProperty("securitySelect")]
+		[Field("securitySelect", false, "0", Int32.MaxValue)]
 		public int? SecuritySelect;
 
-		[Field("createdOn")]
+		[JsonProperty("createdOn")]
+		[Field("createdOn", false, null, Int32.MaxValue)]
 		public DateTime? CreatedOn;
 
-		[Field("version")]
+		[JsonProperty("version")]
+		[Field("version", false, null, Int32.MaxValue)]
 		public int? Version;
 
-		[Field("attrs")]
+		[JsonProperty("attrs")]
+		[Field("attrs", false, null, Int32.MaxValue)]
 		public string? Attrs;
 
-		[Field("archived")]
+		[JsonProperty("archived")]
+		[Field("archived", false, null, Int32.MaxValue)]
 		public bool? Archived;
 
-		[Field("isDefault")]
+		[JsonProperty("isDefault")]
+		[Field("isDefault", false, "False", Int32.MaxValue)]
 		public bool? IsDefault;
 
-		[Field("password")]
+		[JsonProperty("password")]
+		[Field("password", false, null, Int32.MaxValue)]
 		public string? Password;
 
-		[Field("importId")]
+		[JsonProperty("importId")]
+		[Field("importId", false, null, Int32.MaxValue)]
 		public string? ImportId;
 
-		[Field("createdBy")]
+		[JsonProperty("createdBy")]
+		[Field("createdBy", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? CreatedBy;
 
-		[Field("port")]
+		[JsonProperty("port")]
+		[Field("port", false, null, Int32.MaxValue)]
 		public int? Port;
 
-		[Field("host")]
+		[JsonProperty("host")]
+		[Field("host", true, null, Int32.MaxValue)]
 		public string? Host;
 
-		[Field("name")]
+		[JsonProperty("name")]
+		[Field("name", true, null, Int32.MaxValue)]
 		public string? Name;
 
-		[Field("id")]
+		[JsonProperty("id")]
+		[Field("id", false, null, Int32.MaxValue)]
 		public long? Id;
 
-		[Field("user")]
+		[JsonProperty("user")]
+		[Field("user", false, null, Int32.MaxValue)]
 		public Axelor.Auth.Db.User? User;
 
 	}
