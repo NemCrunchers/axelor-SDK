@@ -1,7 +1,7 @@
 using Axelor.SDK;
 using Newtonsoft.Json;
 
-namespace Axelor.Apps.Base.Db cast object of type 'AsyncStateMachineBox`1[
+namespace Axelor.Apps.Base.Db
 {
 	[Serializable]
 	[Model("com.axelor.apps.base.db.DayPlanning")]
