@@ -18,6 +18,10 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release /p:Version=${VERSION}
     - name: Test
+      env:
+        AxelorBaseUrl: ${{ secrets.TEST_AXELOR_INSTANCE }}
+        AxelorUser: ${{ secrets.TEST_AXELOR_USER }}
+        AxelorPassword: ${{ secrets.TEST_AXELOR_PASSWORD }}
       run: dotnet test --configuration Release /p:Version=${VERSION} --no-build
     - name: Pack
       run: dotnet pack --configuration Release /p:Version=${VERSION} --no-build --output .
