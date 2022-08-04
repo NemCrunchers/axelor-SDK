@@ -1,0 +1,29 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      env:
+        AxelorBaseUrl: ${{ secrets.TEST_AXELOR_INSTANCE }}
+        AxelorUser: ${{ secrets.TEST_AXELOR_USER }}
+        AxelorPassword: ${{ secrets.TEST_AXELOR_PASSWORD }}
+      run: dotnet test --no-build --verbosity normal
