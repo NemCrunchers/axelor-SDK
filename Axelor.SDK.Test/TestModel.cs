@@ -23,14 +23,17 @@ namespace Axelor.SDK.Test
             ModelType = type;
             this.ModelName = AxelorModelHelper.VerifyTypeAndGetModelName(ModelType);
             HttpClient httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri("https://7ebb376912.axelor.nemcrunchers.dev"); // TODO: pull this out into environment variables
+            httpClient.BaseAddress = new Uri(Environment.GetEnvironmentVariable("AxelorBaseUrl") ?? "https://demo.axelor.com");
             _AxelorClient = new AxelorClient(httpClient);
         }
 
-        [ClassInitialize]
-        public async Task TestFixtureSetupAsync(TestContext context)
+        [TestInitialize]
+        public async Task TestFixtureSetupAsync()
         {
-            await this._AxelorClient.AuthorizeUser("admin", "admin");// TODO: pull this out into environment variables
+            if (!this._AxelorClient.isAuthenticated())
+            {
+                await this._AxelorClient.AuthorizeUser(Environment.GetEnvironmentVariable("AxelorUser") ?? "admin", Environment.GetEnvironmentVariable("AxelorPassword") ?? "admin");
+            }
         }
         [TestMethod]
         public async Task ListModel()

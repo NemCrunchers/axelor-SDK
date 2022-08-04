@@ -40,7 +40,7 @@ List<string> ignoredTests = new List<string>()
 
 
 HttpClient httpClient = new HttpClient();
-httpClient.BaseAddress = new Uri("https://7ebb376912.axelor.nemcrunchers.dev");
+httpClient.BaseAddress = new Uri(Environment.GetEnvironmentVariable("AxelorBaseUrl"));
 AxelorClient axelorClient = new AxelorClient(httpClient);
 await axelorClient.AuthorizeUser( "admin", "admin");
 ServiceMetadata serviceMetadata = await axelorClient.GetServiceMetadataAsync();
